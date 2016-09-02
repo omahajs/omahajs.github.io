@@ -1,6 +1,6 @@
-tech-project
-==================
-> Super cool project
+OMAHA JS
+========
+> Home page for Omaha JS
 
 Folder Structure
 ----------------
