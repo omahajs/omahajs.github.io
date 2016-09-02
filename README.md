@@ -29,8 +29,7 @@ Folder Structure
     |   |- default.js
     |   \- karma.conf.js
     +- tasks
-    |   |- main.js
-    |   \- omahajs.js
+    |   \- webapp.js
     +- test
     |   +- data
     |   +- jasmine
