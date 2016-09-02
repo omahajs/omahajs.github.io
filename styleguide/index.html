@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Style Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="primer.css" rel="stylesheet"><link href="style.css" rel="stylesheet"><link href="octicons/octicons.css" rel="stylesheet">
+    <script>examples={"base":"","target":"_self","css":[".././app/style.css",".././assets/css/style.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
+    
+  </head>
+  <body>
+    <header class="masthead" style="background-color: #4078c0;">
+      <div class="container">
+        <a href="/" class="masthead-logo">
+          <img src="mdcss-logo.png" alt="Style Guide" height="32"> Style Guide
+        </a>
+        <nav class="masthead-nav">
+            
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="columns docs-layout">
+        <div class="one-fourth column">
+          <nav class="menu docs-menu">
+            
+    
+        <a class="menu-heading" href="#base-css"><span>Base CSS</span></a>
+        
+    
+        <a class="menu-item" href="#variables"><span>Variables</span></a>
+        
+        
+        <a class="menu-item" href="#colors"><span>Colors</span></a>
+        
+        
+        <a class="menu-item" href="#structure"><span>Structure</span></a>
+        
+        
+        <a class="menu-item" href="#headers"><span>Headers</span></a>
+        
+        
+        <a class="menu-item" href="#links"><span>Links</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#input-controls"><span>Input Controls</span></a>
+        
+    
+        <a class="menu-item" href="#buttons"><span>Buttons</span></a>
+        
+        
+  
+        
+  
+          </nav>
+        </div>
+
+        <main class="three-fourths column markdown-body">
+          
+    <section id="base-css">
+      <h1 class="page-title">Base CSS</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="variables">
+      <h2 class="page-title">Variables</h2>
+
+      <div class="markdown-body">
+        <p>Various variables for site</p>
+
+        
+      </div>
+    </section>
+    
+    <section id="colors">
+      <h2 class="page-title">Colors</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:color">@color: #D71920 @name: @uno_red
+@color: #840C2C @name: @omaha_steaks_red
+@color: #3E863D @name: @node_green_dark
+@color: #6BBF47 @name: @node_green_light
+@color: #F0DB4F @name: @js_yellow
+@color: #D6BA32 @name: @js_yellow_dark
+@color: #333333 @name: @dark_gray
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="structure">
+      <h2 class="page-title">Structure</h2>
+
+      <div class="markdown-body">
+        <p>Styles for elements such as <code>&lt;section&gt;</code> could go in this section.</p>
+
+        
+      </div>
+    </section>
+    
+    <section id="headers">
+      <h2 class="page-title">Headers</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;h1&gt;Sample h1 Header&lt;/h1&gt;
+&lt;h2&gt;Sample h2 Header&lt;/h2&gt;
+&lt;h3&gt;Sample h3 Header&lt;/h3&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="links">
+      <h2 class="page-title">Links</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;a href=&quot;#&quot;&gt;This is a sample link&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;This is another sample link&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;This is a third sample link&lt;/a&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="input-controls">
+      <h1 class="page-title">Input Controls</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="buttons">
+      <h2 class="page-title">Buttons</h2>
+
+      <div class="markdown-body">
+        <p>The default button style is pictured below.</p>
+<pre><code class="lang-example:html">&lt;button&gt;Hello World&lt;/button&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+        </main>
+      </div>
+      <footer class="footer">
+        Last modified Friday, 2 September 2016 0:49
+      </footer>
+    </div>
+    <script src="prism.js?871234"></script>
+    <script src="examples.js?873428"></script>
+    <script src="script.js?02359872"></script>
+    <script src="anchor.min.js?225234"></script>
+    <script src="interact.min.js?8552934"></script>
+    <script>
+     anchors.options = {
+         placement: 'left',
+         visible: 'hover',
+         class: 'anchor-link'
+     };
+     anchors.add('h2, h3');
+
+     /* interact('.docs-resize')
+      *   .resizable({
+      *     edges: {
+      *       left: '.c-resize--left',
+      *       right: '.c-resize--right',
+      *       bottom: false,
+      *       top: false
+      *     },
+      *     onmove: function (e) {
+      *       var width = e.rect.width,
+      *         windowWidth = $(window).width();
+
+      *       if (width < 160) {
+      *         width = 160;
+      *       } else if ((width * 2) + 100 > windowWidth) {
+      *         width = (windowWidth - 100) / 2;
+      *       }
+
+      *       $('.docs-example').find('docs-resize').addClass('resize-overlay');
+      *       $('.docs-resize').style.width = (width * 2) + 'px';
+      *     },
+      *     onend: function () {
+      *       $('.docs-example').find('docs-resize').removeClass('resize-overlay');
+      *     }
+      *   })
+      *   .on('resizemove', function (event) {
+      *     var target = event.target,
+      *         x = (parseFloat(target.getAttribute('data-x')) || 0);
+
+      *     // update the element's style
+      *     target.style.width  = event.rect.width + 'px';
+
+      *     // translate when resizing from top or left edges
+      *     x += event.deltaRect.left;
+
+      *     target.style.webkitTransform = target.style.transform =
+      *       'translateX(' + x + 'px)';
+
+      *     target.setAttribute('data-x', x);
+      *     target.textContent = Math.round(event.rect.width);
+      *   });*/
+    </script>
+    
+  
+  </body>
+</html>
+
+
