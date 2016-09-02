@@ -86,8 +86,10 @@
         "predemo": "npm run build",
         "demo": "grunt open:demo express:demo",
         "start": "grunt serve",
-        "predeploy": "git push origin --delete master && rm -frd dist && git rm -r dist && git add dist -f && git commit -m 'Deployment'",
-        "deploy": "npm run build && git subtree push --prefix dist origin master",
+        "delete:remote": "git push origin --delete master && git fetch --all --prune",
+        "delete:dist": "git rm -r --cached dist",
+        "predeploy": "npm run build && git add dist -f && git commit -m 'Deployment'",
+        "deploy": "git subtree push --prefix dist origin master",
         "prestart": "nohup npm run rest-api &"
     }
 }
