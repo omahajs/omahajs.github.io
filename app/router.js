@@ -1,9 +1,9 @@
 /**
- * @file Application Router and Controller
+ * @file Application Router
  * @author Jason Wohlgemuth
  * @module router
 **/
-define(function(require, exports) {
+define(function(require, exports, module) {
     'use strict';
 
     var Marionette = require('backbone.marionette');
@@ -16,24 +16,23 @@ define(function(require, exports) {
      */
     var RouterController = Marionette.Object.extend({
         foo: function() {
-            console.log('bar');
+            //console.log('bar');
         }
     });
     /**
-     * @name ExampleAppRouter
-     * @description Example application router
+     * @name AppRouter
+     * @description Application router
      * @constructor
      * @extends Marionette.AppRouter
      * @prop {object} appRoutes
      * @prop {string} appRoutes.foo
     **/
-    var ExampleAppRouter = Marionette.AppRouter.extend({
+    var AppRouter = Marionette.AppRouter.extend({
         appRoutes: {
             'foo': 'foo'
         },
         controller: new RouterController()
     });
 
-    exports.controller = RouterController;
-    exports.router     = ExampleAppRouter;
+    module.exports = AppRouter;
 });

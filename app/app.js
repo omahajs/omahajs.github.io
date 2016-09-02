@@ -1,5 +1,5 @@
 /**
- * @file Application Core
+ * @file The Heart of OMAHA JS
  * @author Jason Wohlgemuth
  * @version 1.0.0
  * @license MIT
@@ -9,8 +9,10 @@
 define(function(require, exports, module) {
     'use strict';
 
+    var _          = require('underscore');
     var Backbone   = require('backbone');
     var Marionette = require('backbone.marionette');
+    var logging    = require('./plugins/radio.logging');
 
     require('./shims/marionette.radio.shim');
     require('./helpers/handlebars.helpers');
@@ -25,7 +27,7 @@ define(function(require, exports, module) {
     **/
     var ApplicationModel = Backbone.Model.extend({
         defaults: {
-            name: 'tech-project'
+            name: 'OMAHA JS'
         }
     });
     /**
@@ -39,5 +41,8 @@ define(function(require, exports, module) {
         model: new ApplicationModel()
     });
 
-    module.exports = new Application();
+    var omahajs = new Application();
+    _.extend(omahajs, logging);
+
+    module.exports = omahajs;
 });

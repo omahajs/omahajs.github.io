@@ -30,7 +30,7 @@ Folder Structure
     |   \- karma.conf.js
     +- tasks
     |   |- main.js
-    |   \- webapp.js
+    |   \- omahajs.js
     +- test
     |   +- data
     |   +- jasmine

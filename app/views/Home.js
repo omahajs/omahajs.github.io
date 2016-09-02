@@ -9,19 +9,19 @@ define(function(require, exports, module) {
 
     var Marionette = require('backbone.marionette');
     var JST        = require('templates');
-    var Example    = require('models/example');
+    var Data       = require('models/Data');
 
     /**
-     * @name ExampleView
-     * @description Example view
+     * @name HomeView
+     * @description View for home page
      * @constructor
      * @extends Marionette.View
     **/
-    var ExampleView = Marionette.View.extend({
+    var HomeView = Marionette.View.extend({
         //view code goes here
-        template: JST.example,
-        model: new Example.model()
+        template: JST.home,
+        model: new Data.Model()
     });
 
-    module.exports = ExampleView;
+    module.exports = HomeView;
 });

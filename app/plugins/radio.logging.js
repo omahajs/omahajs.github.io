@@ -1,4 +1,5 @@
 /* eslint strict: 0 */
+/* eslint no-console: 0 */
 /**
  * @file Logging module that leverages Backbone.Radio
  * @module plugins/logging
@@ -46,9 +47,9 @@ define(function(require, exports) {
     var _     = require('underscore');
     var Radio = require('backbone.radio');
 
-    Radio.DEBUG     = false; //Show & Hide Backbone.Radio debug messages
+    Radio.DEBUG = false; //Show & Hide Backbone.Radio debug messages
     var APP_LOGGING = true;  //Show & Hide Application console messages
-    var MSG_PREFIX  = '%c APP ❱❱ %c';
+    var MSG_PREFIX  = '%c OMAHA JS ❱❱ %c';
     var MSG_TYPES   = ['error', 'warn', 'info', 'log', 'trace'];
     var MSG_DICT    = _.object(MSG_TYPES, MSG_TYPES.map(function(type, i) {return i;}));
 

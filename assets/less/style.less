@@ -34,29 +34,6 @@ footer {
 }
 
 /*---
-title:   Headers
-section: Base CSS
----
-
-```example:html
-<h1>Sample h1 Header</h1>
-<h2>Sample h2 Header</h2>
-<h3>Sample h3 Header</h3>
-```
-
-*/
-h1 {
-    font-size: 150%;
-    font-variant: small-caps;
-}
-h2 {
-    font-size: 125%;
-}
-h3 {
-    font-size: 100%;
-}
-
-/*---
 title:   Links
 section: Base CSS
 ---
@@ -73,33 +50,11 @@ a {
     text-decoration: none;
     text-transform: uppercase;
 }
+a:link,
+a:visited {
+    color: @dark_gray;
+}
 a:hover {
-    background-color: blue;
+    background-color: @uno_red;
     color: white;
-}
-
-
-/*---
-title:   Buttons
-section: Input Controls
----
-
-The default button style is pictured below.
-
-```example:html
-<button>Hello World</button>
-```
-*/
-button {
-    background-color: blue;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    padding: 1em;
-    transition: all 100ms;
-    text-transform: uppercase;
-}
-button:hover {
-    background-color: lighten(blue, 10);
-    cursor: pointer;
 }
