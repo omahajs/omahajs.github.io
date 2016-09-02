@@ -7,7 +7,7 @@
         },
         "folders": {
             "config": "config",
-            "client": "client",
+            "client": "",
             "dist": "dist",
             "app": "./app",
             "assets": "./assets",
