@@ -1,14 +1,14 @@
 {
-    "name": "tech-project",
+    "name": "omahajs-github-io",
     "version": "1.0.0",
     "author": "Jason Wohlgemuth",
     "license": "MIT",
-    "description": "Slightly opinionated boilerplate and workflow for creating web applications",
+    "description": "Homepage for Omaha JS",
     "main": "./app/main.js",
     "keywords": [],
     "repository": {
         "type": "git",
-        "url": "https://github.com/some-user/tech-project.git"
+        "url": "https://github.com/omahajs/omahajs.github.io.git"
     },
     "engines": {
         "node": "*"
@@ -81,13 +81,13 @@
         "preversion": "npm test",
         "postversion": "git push && git push --tags",
         "rest-api": "json-server --port 8080 --watch test/data/db.json",
-        "deploy": "cp -a dist/. dist/.",
         "inspect": "grunt jsinspect:app",
         "build": "grunt build",
         "predemo": "npm run build",
         "demo": "grunt open:demo express:demo",
         "start": "grunt serve",
-        "predeploy": "npm run build",
+        "predeploy": "git push origin --delete master && rm -frd dist && git rm -r dist && git add dist -f && git commit -m 'Deployment'",
+        "deploy": "npm run build && git subtree push --prefix dist origin master",
         "prestart": "nohup npm run rest-api &"
     }
 }
