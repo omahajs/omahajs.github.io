@@ -37,7 +37,7 @@ define(function(require, exports, module) {
      * @prop {ApplicationModel} model
     **/
     var Application = Marionette.Application.extend({
-        region: 'body',
+        region: '.main',
         model: new ApplicationModel()
     });
 

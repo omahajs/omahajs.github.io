@@ -8,10 +8,11 @@
 define(function(require) {
     'use strict';
 
-    var Backbone = require('backbone');
-    var omahajs  = require('app');
-    var Router   = require('router');
-    var View     = require('views/Home');
+    var Backbone   = require('backbone');
+    var Marionette = require('backbone.marionette');
+    var omahajs    = require('app');
+    var Router     = require('router');
+    var Home       = require('views/Home');
 
     omahajs.on('before:start', function() {
         omahajs.info('Starting...');
@@ -20,7 +21,7 @@ define(function(require) {
     omahajs.on('start', function() {
         Backbone.history.start();
         omahajs.info('Started!');
-        omahajs.getRegion().show(new View());
+        omahajs.getRegion().show(new Home());
     });
     if (typeof (define) === 'undefined') {
         //Not AMD ==> Bundled with Browserify
