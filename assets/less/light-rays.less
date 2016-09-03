@@ -1,0 +1,50 @@
+@yellow: lighten(@js_yellow, 10);
+@yellow_dark: lighten(@js_yellow_dark, 10);
+
+.light-rays {
+  background-color: @yellow;
+  overflow: hidden;
+  height: unit(@banner_height, @banner_height_units);
+  min-height: unit(@banner_min_height, px);
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 50vw;
+  & .ray {
+    border: none;
+    bottom: -20px;
+    position: absolute;
+    height: 1000vh;
+    width: 1000vw;
+  }
+}
+.left .ray {
+  right: 0;
+  background-color: @yellow_dark;
+  &:nth-of-type(2n) {
+    background-color: @yellow;
+  }
+}
+.right .ray {
+  left: 0;
+  background-color: @yellow_dark;
+  &:nth-of-type(2n) {
+    background-color: @yellow;
+  }
+}
+.generate-light-rays-left(@n, @i: 1) when (@i =< @n) {
+  .left .ray:nth-of-type(@{i}) {
+    transform-origin: bottom right;
+    transform: rotateZ(unit(-10 * @i, deg));
+  }
+  .generate-light-rays-left(@n, (@i + 1));
+}
+.generate-light-rays-right(@n, @i: 1) when (@i =< @n) {
+  .right .ray:nth-of-type(@{i}) {
+    transform-origin: bottom left;
+    transform: rotateZ(unit(-10 * @i, deg));
+  }
+  .generate-light-rays-right(@n, (@i + 1));
+}
+.generate-light-rays-left(8);
+.generate-light-rays-right(8);
