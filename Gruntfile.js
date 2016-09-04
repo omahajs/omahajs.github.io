@@ -55,6 +55,10 @@ module.exports = function (grunt) {
                         dest: '<%= folders.dist %>/<%= deployed.assets %>/library',
                         filter: 'isFile'
                     }]
+            },
+            cname: {
+                src: 'CNAME',
+                dest: '<%= folders.dist %>/'
             }
         },
         /**
