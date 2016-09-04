@@ -63,7 +63,8 @@ module.exports = function(grunt) {
         'htmlmin',
         'imagemin:build',
         'copy:fonts',
-        'copy:library'
+        'copy:library',
+        'copy:cname'
     ]);
     grunt.registerTask('docs', 'Generate documentation with JSDoc3 and styleguide with mdcss', [
         'clean:docs',
