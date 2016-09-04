@@ -1,0 +1,22 @@
+/*---
+title:   Logo
+section: Branding
+---
+
+```example:html
+<div class="logo">
+    <img src="../assets/images/logo.png" alt="OMAHA JS">
+</div>
+```
+
+*/
+.logo {
+  padding: unit(@logo_padding, px) 0;
+  position: relative;
+  text-align: center;
+  &>img {
+    height: unit(@banner_height - 2, @banner_height_units);
+    min-height: unit(@banner_min_height - ((3/2) * @logo_padding), px);
+    user-select: none;
+  }
+}

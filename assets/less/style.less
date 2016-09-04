@@ -1,43 +1,17 @@
 @import "reset";
 @import "variables";
 @import "colors";
+@import "logo";
+@import "banner";
 @import "links";
 @import "light-rays";
 
 body {
   overflow-x: hidden;
 }
-
 i {
     font-weight: bold;
     font-style: italic;
-}
-
-.banner {
-  background-color: @yellow;
-  height: unit(@banner_height, @banner_height_units);
-  min-height: unit(@banner_min_height, px);
-  min-width: unit(@banner_min_width, px);
-  width: 100vw;
-  display: block;
-  position: relative;
-  top: 0;
-  & .left {
-    left: 0;
-  }
-  & .right {
-    left: 50%;
-  }
-}
-.logo {
-  padding: unit(@logo_padding, px) 0;
-  position: relative;
-  text-align: center;
-  &>img {
-    height: unit(@banner_height - 2, @banner_height_units);
-    min-height: unit(@banner_min_height - ((3/2) * @logo_padding), px);
-    user-select: none;
-  }
 }
 .main {
   background-color: @node_green_dark;

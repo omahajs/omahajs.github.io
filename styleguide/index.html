@@ -33,24 +33,26 @@
         <a class="menu-item" href="#variables"><span>Variables</span></a>
         
         
-        <a class="menu-item" href="#colors"><span>Colors</span></a>
-        
-        
-        <a class="menu-item" href="#structure"><span>Structure</span></a>
-        
-        
-        <a class="menu-item" href="#headers"><span>Headers</span></a>
-        
-        
         <a class="menu-item" href="#links"><span>Links</span></a>
         
         
   
         
-        <a class="menu-heading" href="#input-controls"><span>Input Controls</span></a>
+        <a class="menu-heading" href="#branding"><span>Branding</span></a>
         
     
-        <a class="menu-item" href="#buttons"><span>Buttons</span></a>
+        <a class="menu-item" href="#color-palette"><span>Color Palette</span></a>
+        
+        
+        <a class="menu-item" href="#logo"><span>Logo</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#homepage"><span>Homepage</span></a>
+        
+    
+        <a class="menu-item" href="#banner"><span>Banner</span></a>
         
         
   
@@ -77,46 +79,6 @@
       </div>
     </section>
     
-    <section id="colors">
-      <h2 class="page-title">Colors</h2>
-
-      <div class="markdown-body">
-        <pre><code class="lang-example:color">@color: #D71920 @name: @uno_red
-@color: #840C2C @name: @omaha_steaks_red
-@color: #3E863D @name: @node_green_dark
-@color: #6BBF47 @name: @node_green_light
-@color: #F0DB4F @name: @js_yellow
-@color: #D6BA32 @name: @js_yellow_dark
-@color: #333333 @name: @dark_gray
-</code></pre>
-
-        
-      </div>
-    </section>
-    
-    <section id="structure">
-      <h2 class="page-title">Structure</h2>
-
-      <div class="markdown-body">
-        <p>Styles for elements such as <code>&lt;section&gt;</code> could go in this section.</p>
-
-        
-      </div>
-    </section>
-    
-    <section id="headers">
-      <h2 class="page-title">Headers</h2>
-
-      <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;h1&gt;Sample h1 Header&lt;/h1&gt;
-&lt;h2&gt;Sample h2 Header&lt;/h2&gt;
-&lt;h3&gt;Sample h3 Header&lt;/h3&gt;
-</code></pre>
-
-        
-      </div>
-    </section>
-    
     <section id="links">
       <h2 class="page-title">Links</h2>
 
@@ -133,18 +95,78 @@
       </div>
     </section>
     
-    <section id="input-controls">
-      <h1 class="page-title">Input Controls</h1>
+    <section id="branding">
+      <h1 class="page-title">Branding</h1>
 
       <div class="markdown-body">
         
         
-    <section id="buttons">
-      <h2 class="page-title">Buttons</h2>
+    <section id="color-palette">
+      <h2 class="page-title">Color Palette</h2>
 
       <div class="markdown-body">
-        <p>The default button style is pictured below.</p>
-<pre><code class="lang-example:html">&lt;button&gt;Hello World&lt;/button&gt;
+        <pre><code class="lang-example:color">@color: #D71920 @name: @uno_red
+@color: #840C2C @name: @omaha_steaks_red
+@color: #3E863D @name: @node_green_dark
+@color: #6BBF47 @name: @node_green_light
+@color: #F0DB4F @name: @js_yellow
+@color: #D6BA32 @name: @js_yellow_dark
+@color: #333333 @name: @dark_gray
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="logo">
+      <h2 class="page-title">Logo</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;div class=&quot;logo&quot;&gt;
+    &lt;img src=&quot;../assets/images/logo.png&quot; alt=&quot;OMAHA JS&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="homepage">
+      <h1 class="page-title">Homepage</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="banner">
+      <h2 class="page-title">Banner</h2>
+
+      <div class="markdown-body">
+        <p>The &quot;light rays&quot; are completely CSS styled empty div elements.</p>
+<pre><code class="lang-example:html">&lt;section class=&quot;banner&quot; role=&quot;banner&quot;&gt;
+    &lt;div class=&quot;left light-rays&quot;&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;right light-rays&quot;&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ray&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
 </code></pre>
 
         
@@ -157,7 +179,7 @@
         </main>
       </div>
       <footer class="footer">
-        Last modified Friday, 2 September 2016 0:49
+        Last modified Sunday, 4 September 2016 12:36
       </footer>
     </div>
     <script src="prism.js?871234"></script>
