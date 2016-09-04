@@ -10,7 +10,7 @@ define(function(require) {
 
     var Backbone   = require('backbone');
     var Marionette = require('backbone.marionette');
-    var omaha    = require('app');
+    var omaha      = require('app');
     var Router     = require('router');
     var Home       = require('views/Home');
 
