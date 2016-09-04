@@ -10,26 +10,26 @@ define(function(require) {
 
     var Backbone   = require('backbone');
     var Marionette = require('backbone.marionette');
-    var omahajs    = require('app');
+    var omaha    = require('app');
     var Router     = require('router');
     var Home       = require('views/Home');
 
-    omahajs.on('before:start', function() {
-        omahajs.info('Starting...');
-        omahajs.router = new Router();
+    omaha.on('before:start', function() {
+        omaha.info('Starting...');
+        omaha.router = new Router();
     });
-    omahajs.on('start', function() {
+    omaha.on('start', function() {
         Backbone.history.start();
-        omahajs.info('Started!');
-        omahajs.getRegion().show(new Home());
+        omaha.info('Started!');
+        omaha.getRegion().show(new Home());
     });
     if (typeof (define) === 'undefined') {
         //Not AMD ==> Bundled with Browserify
         document.addEventListener('DOMContentLoaded', function() {
-            omahajs.start();
+            omaha.start();
         });
     } else {
         //AMD == > Bundled with r.js
-        omahajs.start();
+        omaha.start();
     }
 });
