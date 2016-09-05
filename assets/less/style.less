@@ -5,10 +5,12 @@
 @import "banner";
 @import "links";
 @import "light-rays";
+@import "corn-stalk";
 
 body {
     background-color: @even_color_day;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 i {
     font-weight: bold;
@@ -21,6 +23,8 @@ footer {
     position: relative;
     bottom: 0;
     justify-content: center;
+    margin-top: -1px; //fix for high resolution displays
+    padding-top: 2px;
     padding-bottom: 1em;
     text-align: center;
     .component {
@@ -36,8 +40,8 @@ footer {
 }
 .main {
     background-color: @node_green_dark;
-    height: 200vh;
-    position: relative;
+    height: 300vh;
+    position: relative;;
     width: 100vw;
 }
 .post {
@@ -56,6 +60,4 @@ footer {
     margin: 0 auto;
     text-align: center;
     width: 60vw;
-}
-footer {
 }
