@@ -7,17 +7,38 @@
 @import "light-rays";
 
 body {
-  overflow-x: hidden;
+    background-color: @even_color_day;
+    overflow-x: hidden;
 }
 i {
     font-weight: bold;
     font-style: italic;
 }
+footer {
+    background-color: @node_green_dark;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 0;
+    justify-content: center;
+    padding-bottom: 1em;
+    text-align: center;
+    .component {
+        & > .title {
+            color: white;
+            cursor: default;
+            font-family: sans-serif;
+            font-size: 0.8em;
+            font-variant: small-caps;
+            padding: 0.25em 0.5em 1em 0.5em;
+        }
+    }
+}
 .main {
-  background-color: @node_green_dark;
-  height: 4000vh;
-  position: absolute;
-  width: 100vw;
+    background-color: @node_green_dark;
+    height: 200vh;
+    position: relative;
+    width: 100vw;
 }
 .post {
     color: white;
@@ -35,4 +56,6 @@ i {
     margin: 0 auto;
     text-align: center;
     width: 60vw;
+}
+footer {
 }
