@@ -1,6 +1,6 @@
 OMAHA JS
 ========
-> Home page for Omaha JS
+> Website for OMAHA JS
 
 Folder Structure
 ----------------
@@ -21,8 +21,6 @@ Folder Structure
     |   +- images
     |   +- templates
     |   +- less
-    |       |- reset.less
-    |       \- style.less
     +- config
     |   |- .csslintrc
     |   |- .eslintrc.js

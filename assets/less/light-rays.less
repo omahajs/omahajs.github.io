@@ -1,8 +1,13 @@
-@yellow: lighten(@js_yellow, 10);
-@yellow_dark: lighten(@js_yellow_dark, 10);
-
 .light-rays {
-  background-color: @yellow;
+  background-color: @even_color_day;
+  & .ray {
+    background-color: @odd_color_day;
+    &:nth-of-type(2n) {
+      background-color: @even_color_day;
+    }
+  }
+}
+.light-rays {
   overflow: hidden;
   height: unit(@banner_height, @banner_height_units);
   min-height: unit(@banner_min_height, px);
@@ -13,24 +18,16 @@
   & .ray {
     border: none;
     bottom: -20px;
-    position: absolute;
     height: 1000vh;
+    position: absolute;
     width: 1000vw;
   }
 }
 .left .ray {
   right: 0;
-  background-color: @yellow_dark;
-  &:nth-of-type(2n) {
-    background-color: @yellow;
-  }
 }
 .right .ray {
   left: 0;
-  background-color: @yellow_dark;
-  &:nth-of-type(2n) {
-    background-color: @yellow;
-  }
 }
 .generate-light-rays-left(@n, @i: 1) when (@i =< @n) {
   .left .ray:nth-of-type(@{i}) {

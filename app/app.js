@@ -41,8 +41,8 @@ define(function(require, exports, module) {
         model: new ApplicationModel()
     });
 
-    var omahajs = new Application();
-    _.extend(omahajs, logging);
+    var omaha = new Application();
+    _.extend(omaha, logging);
 
-    module.exports = omahajs;
+    module.exports = omaha;
 });

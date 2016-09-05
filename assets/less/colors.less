@@ -1,6 +1,6 @@
 /*---
-title:   Colors
-section: Base CSS
+title:   Color Palette
+section: Branding
 ---
 
 ```example:color
@@ -21,3 +21,12 @@ section: Base CSS
 @js_yellow: #F0DB4F;
 @js_yellow_dark: #D6BA32;
 @dark_gray: #333333;
+@bb_blue: #042C44;
+@bb_blue_light: #0473B3;
+@mn_red: #CB2324;
+
+// Banner light-ray colors
+@even_color_day: lighten(@js_yellow, 10);
+@odd_color_day: lighten(@js_yellow_dark, 10);
+@even_color_night: lighten(@bb_blue_light, 0);
+@odd_color_night: lighten(@bb_blue, 0);

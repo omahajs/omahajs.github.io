@@ -8,7 +8,7 @@ define(function(require, exports) {
     'use strict';
 
     var Backbone = require('backbone');
-    var omahajs  = require('app');
+    var omaha  = require('app');
 
     /**
      * @name DataModel
@@ -20,7 +20,7 @@ define(function(require, exports) {
     **/
     var DataModel = Backbone.Model.extend({
         defaults: {
-            name: omahajs.model.get('name')
+            name: omaha.model.get('name')
         }
     });
     /**

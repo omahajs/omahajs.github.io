@@ -9,7 +9,7 @@ define(function(require, exports, module) {
     'use strict';
 
     var Marionette = require('backbone.marionette');
-    var omahajs    = require('app');
+    var omaha    = require('app');
     var JST        = require('templates');
     var Data       = require('models/Data');
 
@@ -34,8 +34,8 @@ define(function(require, exports, module) {
         template: JST.main,
         model: new Data.Model(),
         onRender: function() {
-            omahajs.banner = new BannerView();
-            omahajs.banner.render();
+            omaha.banner = new BannerView();
+            omaha.banner.render();
         }
     });
 
