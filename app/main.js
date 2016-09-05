@@ -8,11 +8,10 @@
 define(function(require) {
     'use strict';
 
-    var Backbone   = require('backbone');
-    var Marionette = require('backbone.marionette');
-    var omaha      = require('app');
-    var Router     = require('router');
-    var Home       = require('views/Home');
+    var Backbone = require('backbone');
+    var omaha    = require('app');
+    var Router   = require('router');
+    var Home     = require('views/Home');
 
     omaha.on('before:start', function() {
         omaha.info('Starting...');

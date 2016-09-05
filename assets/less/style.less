@@ -1,11 +1,11 @@
 @import "reset";
 @import "variables";
 @import "colors";
+@import "links";
 @import "logo";
 @import "banner";
-@import "links";
 @import "light-rays";
-@import "corn-stalk";
+@import "post";
 
 body {
     background-color: @even_color_day;
@@ -23,7 +23,7 @@ footer {
     position: relative;
     bottom: 0;
     justify-content: center;
-    margin-top: -1px; //fix for high resolution displays
+    margin-top: -1px;
     padding-top: 2px;
     padding-bottom: 1em;
     text-align: center;
@@ -40,24 +40,7 @@ footer {
 }
 .main {
     background-color: @node_green_dark;
-    height: 300vh;
-    position: relative;;
+    height: 100vh;
+    position: relative;
     width: 100vw;
-}
-.post {
-    color: white;
-}
-.post header {
-    font-family: sans-serif;
-    font-size: 2em;
-    font-weight: bold;
-    padding: 1em 0 0.5em 0;
-    text-align: center;
-}
-.post div {
-    font-family: sans-serif;
-    line-height: 1.3em;
-    margin: 0 auto;
-    text-align: center;
-    width: 60vw;
 }

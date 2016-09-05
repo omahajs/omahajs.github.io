@@ -9,7 +9,7 @@ define(function(require, exports, module) {
     'use strict';
 
     var Marionette = require('backbone.marionette');
-    var omaha    = require('app');
+    var omaha      = require('app');
     var JST        = require('templates');
     var Data       = require('models/Data');
 
