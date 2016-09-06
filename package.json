@@ -92,6 +92,8 @@
         "delete": "npm run delete:dist",
         "predeploy": "npm run build && git add dist -f && git commit -m 'Deployment'",
         "deploy": "git subtree push --prefix dist origin master",
+        "preredeploy": "npm run delete",
+        "redeploy": "npm run deploy",
         "prestart": "nohup npm run rest-api &"
     }
 }
