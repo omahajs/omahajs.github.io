@@ -90,10 +90,10 @@
         "delete:dist": "git rm -r --cached dist",
         "predelete": "npm run delete:remote",
         "delete": "npm run delete:dist",
-        "predeploy": "npm run build && git add dist -f && git commit -m 'Deployment'",
-        "deploy": "git subtree push --prefix dist origin master",
-        "preredeploy": "npm run delete",
-        "redeploy": "npm run deploy",
+        "prepublish": "npm run build && git add dist -f && git commit -m Deployment",
+        "publish": "git subtree push --prefix dist origin master",
+        "predeploy": "npm run delete",
+        "deploy": "npm run deploy",
         "prestart": "nohup npm run rest-api &"
     }
 }
