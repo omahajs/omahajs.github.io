@@ -1,6 +1,6 @@
 OMAHA JS
 ========
-> Website for OMAHA JS
+[![Dependency Status](https://www.versioneye.com/user/projects/57d0cd0ec07f2e0042bf9b89/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57d0cd0ec07f2e0042bf9b89)
 
 Folder Structure
 ----------------
