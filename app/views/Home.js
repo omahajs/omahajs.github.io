@@ -19,7 +19,7 @@ define(function(require, exports, module) {
      * @extends Marionette.View
     **/
     var BannerView = Marionette.View.extend({
-        el: '.banner',
+        el: '.sunshine.banner',
         template: JST.banner,
         model: new Data.Model()
     });
