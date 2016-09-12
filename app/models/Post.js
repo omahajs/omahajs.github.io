@@ -17,7 +17,7 @@ define(function(require, exports) {
         defaults: {
             title: 'New Post',
             date: null,
-            body: '',
+            content: '',
             tags: []
         }
     });
