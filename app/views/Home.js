@@ -33,9 +33,9 @@ define(function(require, exports, module) {
      * @constructor
      * @extends module:views/Static
     **/
-    var NavigationMenu = StaticView.extend({
-        el: 'nav'
-        // template: JST.navigation
+    var NavigationMenu = Mn.View.extend({
+        model: (new Data.Model()),
+        template: JST.navigation
     });
 
     /**
@@ -45,23 +45,40 @@ define(function(require, exports, module) {
      * @extends Marionette.View
     **/
     var HomeView = Mn.View.extend({
-        className: 'sections-container',
         template: JST.main,
         model: new Data.Model(),
         regions: {
-            news:      '.news-section-wrapper',
-            about:     '.about-section-wrapper',
-            projects:  '.projects-section-wrapper',
-            resources: '.resources-section-wrapper'
+            navigation: {
+                el: 'nav'
+            },
+            news: {
+                el: '.news-section-wrapper',
+                type: 'section'
+            },
+            about: {
+                el: '.about-section-wrapper',
+                type: 'section'
+            },
+            projects:  {
+                el: '.projects-section-wrapper',
+                type: 'section'
+            },
+            resources: {
+                el: '.resources-section-wrapper',
+                type: 'section'
+            }
         },
         initialize: function() {
-            omaha.model.set('sections', Object.keys(this.regions));
-            omaha.log(content.news[0]);
-        },
-        onRender: function() {
             var home = this;
             omaha.banner = new BannerView();
             omaha.navigation = new NavigationMenu();
+            omaha.model.set('sections', Object.keys(home.regions).filter(function(region) {
+                return region !== 'navigation';
+            }));
+        },
+        onRender: function() {
+            var home = this;
+            home.showChildView('navigation', omaha.navigation);
             omaha.model.get('sections').forEach(function(section) {
                 home.showChildView(section, new Section({
                     title: section,
