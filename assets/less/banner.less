@@ -6,7 +6,7 @@ section: Homepage
 The "light rays" are completely CSS styled empty div elements.
 
 ```example:html
-<section class="banner" role="banner">
+<section class="sunshine banner" role="banner">
     <div class="left light-rays">
         <div class="ray"></div>
         <div class="ray"></div>
@@ -32,12 +32,14 @@ The "light rays" are completely CSS styled empty div elements.
 
 */
 .banner {
+  position: relative;
+  width: 100vw;
+}
+.sunshine {
   background-color: @even_color_day;
   height: unit(@banner_height, @banner_height_units);
   min-height: unit(@banner_min_height, px);
   min-width: unit(@banner_min_width, px);
-  width: 100vw;
-  position: relative;
   top: 0;
   & .left {
     left: 0;
