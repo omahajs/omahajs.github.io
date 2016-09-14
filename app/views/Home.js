@@ -18,6 +18,13 @@ define(function(require, exports, module) {
     var Section     = require('views/Section');
     var Data        = require('models/Data');
 
+    function regionObject(selector) {
+        return {
+            el: selector,
+            replaceElement: true
+        };
+    }
+
     /**
      * @name BannerView
      * @constructor
@@ -51,10 +58,10 @@ define(function(require, exports, module) {
         model: new Data.Model(),
         regions: {
             navigation: 'nav',
-            news:       '.news-section-wrapper',
-            about:      '.about-section-wrapper',
-            projects:   '.projects-section-wrapper',
-            resources:  '.resources-section-wrapper'
+            news:      regionObject('#first-section'),
+            about:     regionObject('#second-section'),
+            projects:  regionObject('#third-section'),
+            resources: regionObject('#last-section')
         },
         initialize: function() {
             var home = this;
