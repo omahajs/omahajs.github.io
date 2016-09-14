@@ -14,6 +14,7 @@
     "port" : 4444,
     "cli_args" : {
       "webdriver.chrome.driver" : "./bin/chromedriver",
+      "webdriver.phantomjs.driver" : "./bin/phantomjs",
       "webdriver.ie.driver" : ""
     }
   },
@@ -37,6 +38,14 @@
     "chrome" : {
       "desiredCapabilities": {
         "browserName": "chrome",
+        "javascriptEnabled": true,
+        "webStorageEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+    "headless" : {
+      "desiredCapabilities": {
+        "browserName": "phantomjs",
         "javascriptEnabled": true,
         "webStorageEnabled": true,
         "acceptSslCerts": true

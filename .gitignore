@@ -2,6 +2,8 @@ nohup.out
 node_modules/
 .yo-rc.json
 selenium-debug.log
+phantomjsdriver.log
+
 
 #Grunt template files
 .grunt/
