@@ -45,28 +45,16 @@ define(function(require, exports, module) {
      * @extends Marionette.View
     **/
     var HomeView = Mn.View.extend({
+        tagName: 'section',
+        className: 'omaha-home',
         template: JST.main,
         model: new Data.Model(),
         regions: {
-            navigation: {
-                el: 'nav'
-            },
-            news: {
-                el: '.news-section-wrapper',
-                type: 'section'
-            },
-            about: {
-                el: '.about-section-wrapper',
-                type: 'section'
-            },
-            projects:  {
-                el: '.projects-section-wrapper',
-                type: 'section'
-            },
-            resources: {
-                el: '.resources-section-wrapper',
-                type: 'section'
-            }
+            navigation: 'nav',
+            news:       '.news-section-wrapper',
+            about:      '.about-section-wrapper',
+            projects:   '.projects-section-wrapper',
+            resources:  '.resources-section-wrapper'
         },
         initialize: function() {
             var home = this;

@@ -20,7 +20,7 @@ define(function(require) {
     omaha.on('start', function() {
         Backbone.history.start();
         omaha.info('Started!');
-        omaha.getRegion().show(new Home());
+        omaha.showView(new Home(), {replaceElement: true});
     });
     if (typeof (define) === 'undefined') {
         //Not AMD ==> Bundled with Browserify
