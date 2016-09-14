@@ -1,6 +1,7 @@
 nohup.out
 node_modules/
 .yo-rc.json
+selenium-debug.log
 
 #Grunt template files
 .grunt/
