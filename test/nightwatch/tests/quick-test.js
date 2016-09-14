@@ -1,9 +1,11 @@
 module.exports = {
-    'Demo test Google' : function (browser) {
+    'Quick Check' : function (browser) {
       browser
         .url(browser.launch_url)
-        .waitForElementVisible('body', 1000)
-        .pause(1000)
+        .waitForElementVisible('.omaha-home', 1000)
+        .getTitle(function(title) {
+            this.assert.equal(title, 'Good Life. Great Code.');
+        })
         .end();
     }
 };
