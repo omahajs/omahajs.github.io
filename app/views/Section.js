@@ -37,7 +37,9 @@ define(function(require, exports, module) {
         initialize: function(options) {
             var section = this;
             var title  = (options && options.title) ? options.title : {name: 'New Section'};
-            section.$el.attr('class', title);
+            section.$el
+                .attr('class', title)
+                .addClass('content-section');
             section.model.set('title', title);
         },
         onRender: function() {

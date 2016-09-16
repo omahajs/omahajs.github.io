@@ -60,9 +60,9 @@ define(function(require, exports, module) {
         regions: {
             navigation: 'nav',
             news:      regionObject('#first-section'),
-            about:     regionObject('#second-section'),
-            projects:  regionObject('#third-section'),
-            resources: regionObject('#last-section')
+            projects:  regionObject('#second-section'),
+            resources: regionObject('#third-section'),
+            about:     regionObject('#last-section')
         },
         initialize: function() {
             var home = this;

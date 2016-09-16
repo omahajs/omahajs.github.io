@@ -17,18 +17,41 @@ sections: Structure
 */
 nav {
     background-color: @node_green_dark;
-    padding: 16px 0;
-    height: 30vh;
-    width: 100vw;
     .menu-container {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
+        margin: 0 auto;
+        height: 30vh;
+        width: 75vw;
         .menu-item {
-            background-color: white;
-            height: 10vh;
+            background-color: @node_green_dark;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 20vh;
+            max-height: 100px;
+            margin: 0 5px;
             min-height: 45px;
-            width: 100px;
+            width: 15vw;
+            min-width: 150px;
+            a:hover {
+                text-decoration: none;
+            }
+            .title {
+                font-family: sans-serif;
+                font-size: 1.5em;
+                font-variant: small-caps;
+                text-align: center;
+                text-transform: capitalize;
+            }
+        }
+        .menu-item:hover {
+            background-color: white;
+            color: @node_green_dark;
+            cursor: pointer;
         }
     }
 }
