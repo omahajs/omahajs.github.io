@@ -1,8 +1,8 @@
 module.exports = {
     src_folders: ['./test/nightwatch/tests'],
     output_folder: './test/nightwatch/reports',
-    custom_commands_path: '',
-    custom_assertions_path: '',
+    custom_commands_path: './test/nightwatch/commands',
+    custom_assertions_path: './test/nightwatch/assertions',
     page_objects_path: './test/nightwatch/pages',
     globals_path: './test/nightwatch/globals.js',
     selenium: {
