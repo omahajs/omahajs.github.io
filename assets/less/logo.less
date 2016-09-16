@@ -10,13 +10,18 @@ section: Branding
 ```
 
 */
-.logo {
+.hero .logo {
   padding: unit(@logo_padding, px) 0;
   position: relative;
   text-align: center;
-  &>img {
-    height: unit(@banner_height - 2, @banner_height_units);
-    min-height: unit(@banner_min_height - ((3/2) * @logo_padding), px);
+  & > img {
+    height: unit(@hero_banner_height - 2, @banner_height_units);
+    min-height: unit(@hero_banner_min_height - ((3/2) * @logo_padding), px);
     user-select: none;
   }
+}
+@media (max-width: 375px) {
+    .hero .logo {
+        left: calc( (320px / 2) - (370px / 2) );//-25px;
+    }
 }
