@@ -15,13 +15,22 @@ section: Branding
   position: relative;
   text-align: center;
   & > img {
-    height: unit(@hero_banner_height - 2, @banner_height_units);
-    min-height: unit(@hero_banner_min_height - ((3/2) * @logo_padding), px);
+    height: unit((@hero_banner_height - 3), @banner_height_units);
+    min-height: 234px;
+    width: auto;
     user-select: none;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: unit(@iphone6_width_portrait, px)) {
     .hero .logo {
-        left: calc( (320px / 2) - (370px / 2) );//-25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 77vh;
+        img {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
     }
 }

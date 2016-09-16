@@ -17,6 +17,18 @@ sections: Structure
 */
 nav {
     background-color: @node_green_dark;
+    padding: 16px 0;
     height: 30vh;
     width: 100vw;
+    .menu-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .menu-item {
+            background-color: white;
+            height: 10vh;
+            min-height: 45px;
+            width: 100px;
+        }
+    }
 }

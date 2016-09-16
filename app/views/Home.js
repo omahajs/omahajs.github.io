@@ -41,6 +41,7 @@ define(function(require, exports, module) {
      * @extends module:views/Static
     **/
     var NavigationMenu = Mn.View.extend({
+        className: 'menu-container',
         model: (new Data.Model()),
         template: JST.navigation
     });
