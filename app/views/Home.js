@@ -61,7 +61,7 @@ define(function(require, exports, module) {
             navigation: 'nav',
             news:      regionObject('#first-section'),
             projects:  regionObject('#second-section'),
-            resources: regionObject('#third-section'),
+            assets: regionObject('#third-section'),
             about:     regionObject('#last-section')
         },
         initialize: function() {
