@@ -21,6 +21,12 @@ define(function(require) {
         Backbone.history.start();
         omaha.info('Started!');
         omaha.showView(new Home(), {replaceElement: true});
+        $(window).scroll(function() {
+            $('.scroll-to-top').toggle((this.scrollY > 100));
+        });
+        $('.scroll-to-top').click(function() {
+            $('html, body').animate({scrollTop: 0}, 100);
+        });
     });
     if (typeof (define) === 'undefined') {
         //Not AMD ==> Bundled with Browserify
