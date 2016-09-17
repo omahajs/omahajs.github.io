@@ -91,15 +91,15 @@
     "build": "grunt build",
     "predemo": "npm run build",
     "demo": "grunt open:demo express:demo",
+    "prestart": "nohup npm run rest-api &",
     "start": "grunt serve",
     "delete:remote": "git push origin --delete master && git fetch --all --prune",
     "delete:dist": "git rm -r --cached dist",
     "predelete": "npm run delete:remote",
     "delete": "npm run delete:dist",
-    "prepublish": "npm run build && git add dist -f && git commit -m Deployment",
-    "publish": "git subtree push --prefix dist origin master",
-    "predeploy": "npm run delete",
-    "deploy": "npm run deploy",
-    "prestart": "nohup npm run rest-api &"
+    "predeploy": "npm run build && git add dist -f && git commit -m Deployment",
+    "deploy": "git subtree push --prefix dist origin master",
+    "predeploy:full": "npm run delete",
+    "deploy:full": "npm run deploy"
   }
 }
