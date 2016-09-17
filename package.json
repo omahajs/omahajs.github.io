@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
+    "chai": "^3.5.0",
+    "chalk": "^1.1.3",
     "config": "^1.14.0",
     "cssnano": "^3.7.4",
     "eslint-config-omaha-prime-grade": "^1.0.0",
@@ -80,8 +82,7 @@
     "test": "grunt test",
     "test:ci": "npm test",
     "test:suite": "npm test && npm run nightwatch",
-    "nightwatch": "nightwatch --config ./config/nightwatch.conf.js",
-    "nightwatch:chrome": "nightwatch --config ./config/nightwatch.conf.js --env chrome",
+    "nightwatch": "nightwatch --config ./config/nightwatch.conf.js --env default,chrome",
     "nightwatch:headless": "nightwatch --config ./config/nightwatch.conf.js --env headless",
     "preversion": "npm test",
     "postversion": "git push && git push --tags",

@@ -1,4 +1,5 @@
 module.exports = {
+    disabled: false,
     tags: ['sanity', 'deploy'],
     'Deployment Check': function(client) {
         'use strict';
@@ -7,7 +8,8 @@ module.exports = {
 
         omahajs.navigate()
             .assert.title('Good Life. Great Code.')
-            .assert.visible('.omaha-home');
+            .waitForElementVisible('.omaha-home', 3000)
+            .assert.visible('@main');
 
         client.end();
     }
