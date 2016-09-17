@@ -7,7 +7,7 @@ module.exports = {
             selector: 'nav'
         },
         main: {
-            selector: 'omaha-home'
+            selector: '.omaha-home'
         }
     }
 };

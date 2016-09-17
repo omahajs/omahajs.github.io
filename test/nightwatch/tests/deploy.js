@@ -8,7 +8,7 @@ module.exports = {
 
         omahajs.navigate()
             .assert.title('Good Life. Great Code.')
-            .assert.visible('.omaha-home');
+            .assert.visible('@main');
 
         client.end();
     }
