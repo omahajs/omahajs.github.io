@@ -16,6 +16,10 @@ module.exports = {
             'webdriver.ie.driver': ''
         }
     },
+    test_workers: {
+        enabled: true,
+        workers: 'auto'
+    },
     test_settings: {
         default: {
             launch_url: 'http://localhost:1337/app',

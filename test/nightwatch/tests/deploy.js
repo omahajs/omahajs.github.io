@@ -1,5 +1,5 @@
 module.exports = {
-    disabled: true,
+    disabled: false,
     tags: ['sanity', 'deploy'],
     'Deployment Check': function(client) {
         'use strict';

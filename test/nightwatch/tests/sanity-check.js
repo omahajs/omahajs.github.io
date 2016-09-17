@@ -12,8 +12,11 @@ module.exports = {
             .waitForElementVisible('.omaha-home', 1000)
             .assert.title('Good Life. Great Code.')
             .getLocation('footer', function(result) {
-                assert.equal(1, 1);
-            })
-            .end();
+                assert(result.value.y > 1000, 'Footer should not be visible');
+            });
+
+    },
+    'End': function(browser) {
+        browser.end();
     }
 };
