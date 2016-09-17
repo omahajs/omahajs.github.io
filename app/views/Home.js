@@ -61,7 +61,7 @@ define(function(require, exports, module) {
             navigation: 'nav',
             news:      regionObject('#first-section'),
             projects:  regionObject('#second-section'),
-            assets: regionObject('#third-section'),
+            assets:    regionObject('#third-section'),
             about:     regionObject('#last-section')
         },
         initialize: function() {
@@ -71,6 +71,12 @@ define(function(require, exports, module) {
             omaha.model.set('sections', Object.keys(home.regions).filter(function(region) {
                 return region !== 'navigation';
             }));
+            $(window).scroll(function() {
+                $('.scroll-to-top').toggle((this.scrollY > 100));
+            });
+            $('.scroll-to-top').click(function() {
+                $('html, body').animate({scrollTop: 0}, 100);
+            });
         },
         onRender: function() {
             var home = this;
