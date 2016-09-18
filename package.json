@@ -95,11 +95,10 @@
     "start": "grunt serve",
     "delete:remote": "git push origin --delete master && git fetch --all --prune",
     "delete:dist": "git rm -r --cached dist",
-    "postdelete:dist": "git add -A && git commit -am dist clean-up && git push origin site",
     "predelete": "npm run delete:remote",
     "delete": "npm run delete:dist",
     "predeploy": "npm run build && git add dist -f && git commit -m Deployment",
-    "deploy": "git push origin `git subtree split --prefix dist master`:master --force",
+    "deploy": "git subtree push --prefix dist origin master",
     "predeploy:full": "npm run delete",
     "deploy:full": "npm run deploy"
   }
