@@ -10,13 +10,13 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var Mn          = require('backbone.marionette');
-    var omaha       = require('app');
-    var content     = require('content');
-    var JST         = require('templates');
-    var StaticView  = require('views/Static');
-    var Section     = require('views/Section');
-    var Data        = require('models/Data');
+    var Mn         = require('backbone.marionette');
+    var omaha      = require('app');
+    var content    = require('content');
+    var JST        = require('templates');
+    var StaticView = require('views/Static');
+    var Section    = require('views/Section');
+    var Data       = require('models/Data');
 
     function regionObject(selector) {
         return {
@@ -43,7 +43,18 @@ define(function(require, exports, module) {
     var NavigationMenu = Mn.View.extend({
         className: 'menu-container',
         model: (new Data.Model()),
-        template: JST.navigation
+        template: JST.navigation,
+        events: {
+            'click .menu-item': 'onClickItem'
+        },
+        onClickItem: function(e) {
+            var $e = $(e.currentTarget);
+            var name = $e.find('.title').text();
+            this.scrollToSection(name);
+        },
+        scrollToSection: function(name) {
+            omaha.log(name);
+        }
     });
 
     /**
@@ -59,10 +70,10 @@ define(function(require, exports, module) {
         model: new Data.Model(),
         regions: {
             navigation: 'nav',
-            news:      regionObject('#first-section'),
-            projects:  regionObject('#second-section'),
-            assets:    regionObject('#third-section'),
-            about:     regionObject('#last-section')
+            news:   regionObject('#first-section'),
+            code:   regionObject('#second-section'),
+            assets: regionObject('#third-section'),
+            about:  regionObject('#last-section')
         },
         ui: {
             scrollButton: 'button.scroll-to-top'
@@ -75,6 +86,26 @@ define(function(require, exports, module) {
                 return region !== 'navigation';
             }));
         },
+        onRender: function() {
+            this
+                .initNavigationMenu()
+                .initSectionViews()
+                .initScrollButton();
+        },
+        initNavigationMenu: function() {
+            this.showChildView('navigation', omaha.navigation);
+            return this;
+        },
+        initSectionViews: function() {
+            var home = this;
+            omaha.model.get('sections').forEach(function(section) {
+                home.showChildView(section, new Section({
+                    title: section,
+                    collection: new Data.Collection(content[section])
+                }));
+            });
+            return home;
+        },
         initScrollButton: function() {
             var scrollButton = this.ui.scrollButton.toggleClass('hidden', (window.scrollY < 100));
             $(window).scroll(function() {
@@ -83,17 +114,7 @@ define(function(require, exports, module) {
             scrollButton.click(function() {
                 $('html, body').animate({scrollTop: 0}, 100);
             });
-        },
-        onRender: function() {
-            var home = this;
-            home.showChildView('navigation', omaha.navigation);
-            omaha.model.get('sections').forEach(function(section) {
-                home.showChildView(section, new Section({
-                    title: section,
-                    collection: new Data.Collection(content[section])
-                }));
-            });
-            home.initScrollButton();
+            return this;
         }
     });
 
