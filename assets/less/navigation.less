@@ -17,6 +17,7 @@ sections: Structure
 */
 nav {
     background-color: @node_green_dark;
+    user-select: none;
     .menu-container {
         display: flex;
         flex-direction: row;
@@ -56,19 +57,30 @@ nav {
     }
 }
 .scroll-to-top {
-    background: none;
-    border: solid white 2px;
-    border-radius: 5px;
-    color: white;
-    display: none;
-    padding: 5px;
+    background: white;
+    border: none;
+    color: @node_green_dark;
+    height: 60px;
+    padding: 0;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    padding-bottom: 15px;
+    bottom: -10px;
+    right: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    font-variant: small-caps;
+    transition: all 100ms;
+    user-select: none;
+    width: 50px;
     z-index: 2;
 }
 .scroll-to-top:hover {
     background-color: white;
+    bottom: 0;
     color: @node_green_dark;
     cursor: pointer;
+}
+.hidden.scroll-to-top {
+    bottom: -65px;
 }

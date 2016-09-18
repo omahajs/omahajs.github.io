@@ -64,6 +64,9 @@ define(function(require, exports, module) {
             assets:    regionObject('#third-section'),
             about:     regionObject('#last-section')
         },
+        ui: {
+            scrollButton: 'button.scroll-to-top'
+        },
         initialize: function() {
             var home = this;
             omaha.banner = new BannerView();
@@ -71,10 +74,13 @@ define(function(require, exports, module) {
             omaha.model.set('sections', Object.keys(home.regions).filter(function(region) {
                 return region !== 'navigation';
             }));
+        },
+        initScrollButton: function() {
+            var scrollButton = this.ui.scrollButton.toggleClass('hidden', (window.scrollY < 100));
             $(window).scroll(function() {
-                $('.scroll-to-top').toggle((this.scrollY > 100));
+                scrollButton.toggleClass('hidden', (window.scrollY < 100));
             });
-            $('.scroll-to-top').click(function() {
+            scrollButton.click(function() {
                 $('html, body').animate({scrollTop: 0}, 100);
             });
         },
@@ -87,6 +93,7 @@ define(function(require, exports, module) {
                     collection: new Data.Collection(content[section])
                 }));
             });
+            home.initScrollButton();
         }
     });
 

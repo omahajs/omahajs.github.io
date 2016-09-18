@@ -11,6 +11,8 @@ _SpecRunner.html
 
 # Dynamically generated files and folders
 reports/
+test/nightwatch/screenshots/*
+!test/nightwatch/screenshots/.gitkeep
 dist
 app/templates.js
 app/style.css
