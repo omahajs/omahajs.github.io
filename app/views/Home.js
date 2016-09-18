@@ -18,18 +18,14 @@ define(function(require, exports, module) {
     var Section    = require('views/Section');
     var Data       = require('models/Data');
 
+    var SCROLL_DURATION = 300;
+
     function regionObject(selector) {
         return {
             el: selector,
             replaceElement: true
         };
     }
-    function scrollToTop() {
-        var top = 0;
-        var duration = 100;
-        $('html, body').animate({scrollTop: top}, duration);
-    }
-
 
     /**
      * @name BannerView
@@ -51,13 +47,14 @@ define(function(require, exports, module) {
         model: (new Data.Model()),
         template: JST.navigation,
         events: {
-            'click .menu-item': 'onClickItem'
+            'click .menu-item': 'onClickItem',
+            'touchend': 'onClickItem'
         },
         onClickItem: function(e) {
             var $e = $(e.currentTarget);
             var name = $e.find('.title').text();
             omaha.router.navigate(name, {trigger: true});
-        },
+        }
     });
 
     /**
@@ -116,8 +113,8 @@ define(function(require, exports, module) {
                 scrollButton.toggleClass('hidden', (window.scrollY < 100));
             });
             scrollButton.click(function() {
-                omaha.router.navigate('welcome', true);
-                scrollToTop();
+                omaha.router.navigate('welcome');
+                $('html, body').animate({scrollTop: 0}, SCROLL_DURATION);
             });
             return this;
         }

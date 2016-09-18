@@ -6,7 +6,8 @@
 @import "banner";
 @import "light-rays";
 @import "navigation";
-@import "post";
+@import "content/empty";
+@import "content/section";
 
 body {
     background-color: @even_color_day;
@@ -26,7 +27,7 @@ footer {
     bottom: 0;
     justify-content: center;
     margin-top: -1px;
-    padding-top: 2px;
+    padding-top: 20px;
     padding-bottom: 1em;
     text-align: center;
     z-index: 1;
@@ -51,11 +52,6 @@ footer {
 .omaha-home {
     background-color: @node_green_dark;
     position: relative;
-    width: 100vw;
-}
-.content-section {
-    background-color: @node_green_dark;
-    height: 500px;
-    position: relative;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 100vw;
 }

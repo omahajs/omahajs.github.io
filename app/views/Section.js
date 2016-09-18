@@ -18,15 +18,22 @@ define(function(require, exports, module) {
         }
     });
 
+    var EmptyView = Mn.View.extend({
+        className: 'no-items',
+        // template: JST['content/empty']
+        template: JST.empty
+    });
+
     var SectionItems = Mn.CollectionView.extend({
         tagName: 'div',
         className: 'items-container',
-        childView: Item
+        childView: Item,
+        emptyView: EmptyView
     });
 
     var SectionView = Mn.View.extend({
         tagName: 'section',
-        template: JST.section,
+        template: JST['content/section'],
         model: new SectionModel(),
         regions: {
             items: {
