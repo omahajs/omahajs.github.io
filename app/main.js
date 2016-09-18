@@ -18,9 +18,9 @@ define(function(require) {
         omaha.router = new Router();
     });
     omaha.on('start', function() {
+        omaha.showView(new Home(), {replaceElement: true});
         Backbone.history.start();
         omaha.info('Started!');
-        omaha.showView(new Home(), {replaceElement: true});
     });
     if (typeof (define) === 'undefined') {
         //Not AMD ==> Bundled with Browserify

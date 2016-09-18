@@ -24,6 +24,12 @@ define(function(require, exports, module) {
             replaceElement: true
         };
     }
+    function scrollToTop() {
+        var top = 0;
+        var duration = 100;
+        $('html, body').animate({scrollTop: top}, duration);
+    }
+
 
     /**
      * @name BannerView
@@ -50,11 +56,8 @@ define(function(require, exports, module) {
         onClickItem: function(e) {
             var $e = $(e.currentTarget);
             var name = $e.find('.title').text();
-            this.scrollToSection(name);
+            omaha.router.navigate(name, {trigger: true});
         },
-        scrollToSection: function(name) {
-            omaha.log(name);
-        }
     });
 
     /**
@@ -91,6 +94,7 @@ define(function(require, exports, module) {
                 .initNavigationMenu()
                 .initSectionViews()
                 .initScrollButton();
+            $('footer').css('display', 'flex');
         },
         initNavigationMenu: function() {
             this.showChildView('navigation', omaha.navigation);
@@ -112,7 +116,8 @@ define(function(require, exports, module) {
                 scrollButton.toggleClass('hidden', (window.scrollY < 100));
             });
             scrollButton.click(function() {
-                $('html, body').animate({scrollTop: 0}, 100);
+                omaha.router.navigate('welcome', true);
+                scrollToTop();
             });
             return this;
         }

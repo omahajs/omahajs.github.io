@@ -6,17 +6,31 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var Marionette = require('backbone.marionette');
+    var $     = require('jquery');
+    var Mn    = require('backbone.marionette');
+    var omaha = require('app');
 
     /**
      * @name RouterController
      * @constructor
      * @extends Marionette.Object
      * @prop {function} foo Example callback function to be called by ExampleAppRouter
-     */
-    var RouterController = Marionette.Object.extend({
-        foo: function() {
-            //console.log('bar');
+    **/
+    var RouterController = Mn.Object.extend({
+        scrollTo: function(name) {
+            var top;
+            var duration;
+            console.log(name);
+            if (name && typeof(name) === 'string') {
+                var $section = $('.content-section.' + name);
+                var offset = $section.offset();
+                top = offset.top;
+                duration = 200;
+            } else {
+                top = 0;
+                duration = 100;
+            }
+            $('html, body').animate({scrollTop: top}, duration);
         }
     });
     /**
@@ -27,9 +41,10 @@ define(function(require, exports, module) {
      * @prop {object} appRoutes
      * @prop {string} appRoutes.foo
     **/
-    var AppRouter = Marionette.AppRouter.extend({
+    var AppRouter = Mn.AppRouter.extend({
         appRoutes: {
-            'foo': 'foo'
+            'welcome': 'scrollTo',
+            ':name':   'scrollTo'
         },
         controller: new RouterController()
     });
