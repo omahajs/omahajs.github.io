@@ -87,13 +87,13 @@ define(function(require, exports, module) {
         onRender: function() {
             var home = this;
             home.showChildView('navigation', omaha.navigation);
-            home.initScrollButton();
             omaha.model.get('sections').forEach(function(section) {
                 home.showChildView(section, new Section({
                     title: section,
                     collection: new Data.Collection(content[section])
                 }));
             });
+            home.initScrollButton();
         }
     });
 
