@@ -1,27 +1,33 @@
 .content-section {
-    height: 500px;
+    height: 100vh;
     margin: 0 auto;
     margin-top: 20px;
     position: relative;
-    width: 78vw;
+    width: 100vw;
+    &.about {
+        height: 80vh;
+    }
 }
 .content-section-container {
     padding-top: 20px;
     & > header {
-        border-bottom: solid 4px white;
         display: flex;
-        margin-bottom: 1em;
+        margin-bottom: 0;
         padding: 0;
+        &:before {
+            content: "";
+            position: relative;
+            background-color: white;
+            height: 32px;
+            margin: 8px 8px 8px 0;
+            width: 80px;
+        }
         .section-title {
             color: white;
             font-family: sans-serif;
             font-size: 48px;
             font-variant: small-caps;
-            padding-left: 0px;
-            position: relative;
-            text-align: center;
             text-transform: lowercase;
-            bottom: -5px;
         }
     }
     .items-container {

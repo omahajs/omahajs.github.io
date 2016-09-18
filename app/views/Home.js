@@ -70,10 +70,9 @@ define(function(require, exports, module) {
         model: new Data.Model(),
         regions: {
             navigation: 'nav',
-            news:   regionObject('#first-section'),
-            code:   regionObject('#second-section'),
-            assets: regionObject('#third-section'),
-            about:  regionObject('#last-section')
+            news:  regionObject('#first-section'),
+            code:  regionObject('#second-section'),
+            about: regionObject('#last-section')
         },
         ui: {
             scrollButton: 'button.scroll-to-top'
@@ -91,6 +90,8 @@ define(function(require, exports, module) {
                 .initNavigationMenu()
                 .initSectionViews()
                 .initScrollButton();
+
+            // Footer is hidden untli after render to avoid jitter during scroll
             $('footer').css('display', 'flex');
         },
         initNavigationMenu: function() {
