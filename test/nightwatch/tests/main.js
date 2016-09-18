@@ -2,7 +2,7 @@ var chai = require('chai');
 var assert = chai.assert;
 
 module.exports = {
-    tags: ['sanity'],
+    tags: ['sanity', 'navigation'],
     'Sanity Check': function(browser) {
         browser
             .url(browser.launch_url)
@@ -15,11 +15,11 @@ module.exports = {
     },
     'Scroll to Top': function(browser) {
         browser
-            .assert.hidden('.scroll-to-top')
+            .assert.cssClassPresent('.scroll-to-top', 'hidden')
             .execute('scrollTo(0, 3000)')
-            .assert.visible('.scroll-to-top')
+            .assert.cssClassNotPresent('.scroll-to-top', 'hidden')
             .execute('scrollTo(0, 0)')
-            .assert.hidden('.scroll-to-top');
+            .assert.cssClassPresent('.scroll-to-top', 'hidden');
     },
     'End': function(browser) {
         browser.end();
