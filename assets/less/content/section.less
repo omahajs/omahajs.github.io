@@ -1,7 +1,6 @@
 .content-section {
     height: 100vh;
     margin: 0 auto;
-    margin-top: 20px;
     position: relative;
     width: 100vw;
     &.about {
@@ -9,9 +8,14 @@
     }
 }
 .content-section-container {
-    padding-top: 20px;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 100px;
     & > header {
         display: flex;
+        height: 48px;
         margin-bottom: 0;
         padding: 0;
         &:before {
@@ -32,6 +36,8 @@
         }
     }
     .items-container {
+        flex-grow: 1;
         position: relative;
+        width: 100%;
     }
 }
