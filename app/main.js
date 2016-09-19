@@ -19,7 +19,7 @@ define(function(require) {
     });
     omaha.on('start', function() {
         omaha.showView(new Home(), {replaceElement: true});
-        Backbone.history.start({pushState: true});
+        Backbone.history.start();
         omaha.info('Started!');
     });
     if (typeof (define) === 'undefined') {
