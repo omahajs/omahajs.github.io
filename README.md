@@ -1,5 +1,8 @@
 OMAHA JS
 ========
+
+[ ![Codeship Status for omahajs/omahajs.github.io](https://codeship.com/projects/f66a7670-6100-0134-e357-1e1ec2b80fe8/status?branch=site)](https://codeship.com/projects/174703)
+
 [![Dependency Status](https://www.versioneye.com/user/projects/57d0cd0ec07f2e0042bf9b89/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57d0cd0ec07f2e0042bf9b89)
 
 [![bitHound Overall Score](https://www.bithound.io/github/omahajs/omahajs.github.io/badges/score.svg)](https://www.bithound.io/github/omahajs/omahajs.github.io)
