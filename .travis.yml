@@ -1,0 +1,6 @@
+sudo: false
+language: node_js
+script: npm test && npm run nightwatch:headless
+node_js:
+  - 'node'
+  - '4.2'
