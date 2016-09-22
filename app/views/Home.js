@@ -16,6 +16,7 @@ define(function(require, exports, module) {
     var JST        = require('templates');
     var StaticView = require('views/Static');
     var Section    = require('views/Section');
+    var Item       = require('models/Item');
     var Data       = require('models/Data');
 
     var SCROLL_DURATION = 300;
@@ -91,7 +92,7 @@ define(function(require, exports, module) {
                 .initSectionViews()
                 .initScrollButton();
 
-            // Footer is hidden untli after render to avoid jitter during scroll
+            // Footer is hidden until after render to avoid jitter during scroll
             $('footer').css('display', 'flex');
         },
         initNavigationMenu: function() {
@@ -103,7 +104,7 @@ define(function(require, exports, module) {
             omaha.model.get('sections').forEach(function(section) {
                 home.showChildView(section, new Section({
                     title: section,
-                    collection: new Data.Collection(content[section])
+                    collection: new Item.Collection(content[section])
                 }));
             });
             return home;

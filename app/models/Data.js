@@ -28,7 +28,7 @@ define(function(require, exports) {
      * @description Generic data collection
      * @constructor
      * @extends Backbone.Collection
-     * @prop {ExampleModel} model
+     * @prop {DataModel} model
     **/
     var DataCollection = Backbone.Collection.extend({
         model: DataModel

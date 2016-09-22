@@ -20,7 +20,6 @@ define(function(require, exports, module) {
 
     var EmptyView = Mn.View.extend({
         className: 'no-items',
-        // template: JST['content/empty']
         template: JST.empty
     });
 
@@ -43,10 +42,12 @@ define(function(require, exports, module) {
         },
         initialize: function(options) {
             var section = this;
-            var title  = (options && options.title) ? options.title : {name: 'New Section'};
+            var title  = (options && options.title) ? options.title : 'New Section';
             section.$el
                 .addClass(title)
                 .addClass('content-section');
+            (title === 'news') && section.$el.attr('data-layout', 'list');
+            (title === 'code') && section.$el.attr('data-layout', 'card');
             section.model.set('title', title);
         },
         onRender: function() {

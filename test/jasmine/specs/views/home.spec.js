@@ -4,6 +4,7 @@ define(function(require, exports, module) {
     var $        = require('jquery');
     var Mn       = require('backbone.marionette');
     var omaha    = require('app');
+    var Router   = require('router');
     var HomeView = require('views/Home');
     var Data     = require('models/Data');
 
@@ -29,6 +30,7 @@ define(function(require, exports, module) {
             });
             testLayout = new TestLayoutView();
             testLayout.render();
+            omaha.router = new Router();
             view = new HomeView();
         });
         afterEach(function() {
@@ -55,6 +57,23 @@ define(function(require, exports, module) {
         });
         xit('can execute router routes when navigation menu items are clicked', function() {
             testLayout.showChildView('test', view);
+        });
+        it('can initialize a scroll-to-top button with scroll and click listeners', function() {
+            function scrollTo(y) {
+                window.scrollY = y;
+                $(window).scroll();
+            }
+            spyOn(omaha.router, 'navigate');
+            view.render();
+            var $scrollButton = view.$(view.ui.scrollButton);
+            expect($scrollButton.hasClass('hidden')).toBeTruthy();
+            scrollTo(101);
+            expect($scrollButton.hasClass('hidden')).not.toBeTruthy();
+            scrollTo(99);
+            expect($scrollButton.hasClass('hidden')).toBeTruthy();
+            scrollTo(101);
+            $scrollButton.click();
+            expect(omaha.router.navigate).toHaveBeenCalledWith('welcome');
         });
     });
 })
