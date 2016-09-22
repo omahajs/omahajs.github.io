@@ -42,7 +42,7 @@ define(function(require, exports, module) {
         },
         initialize: function(options) {
             var section = this;
-            var title  = (options && options.title) ? options.title : 'New Section';
+            var title  = (options && options.title) ? options.title : section.model.get('title');
             section.$el
                 .addClass(title)
                 .addClass('content-section');

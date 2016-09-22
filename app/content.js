@@ -19,7 +19,7 @@ define({
             date: '',
             title: 'Omaha Generator',
             subtitle: '',
-            image: '',
+            image: 'http://placehold.it/100x100',
             desciption: 'Yeoman generator designed to help you craft sustainable code for the modern web'
         },
         {
