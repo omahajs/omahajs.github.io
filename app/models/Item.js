@@ -8,7 +8,7 @@
 define(function(require, exports) {
     'use strict';
 
-    var Data = require('models/Data')
+    var Data = require('models/Data');
 
     /**
      * @name ItemModel
