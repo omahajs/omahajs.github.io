@@ -7,11 +7,10 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var Mn    = require('backbone.marionette');
-    var JST   = require('templates');
-    var omaha = require('app');
-    var Item  = require('views/Item');
-    var Data  = require('models/Data');
+    var Mn   = require('backbone.marionette');
+    var JST  = require('templates');
+    var Item = require('views/Item');
+    var Data = require('models/Data');
 
     var SectionModel = Data.Model.extend({
         defaults: {
