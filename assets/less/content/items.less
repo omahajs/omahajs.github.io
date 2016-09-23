@@ -20,21 +20,92 @@
         width: 70vw;
     }
 }
+@yeoman-logo: data-uri('../assets/images/logo/yeoman.svg');
+@eslint-logo: data-uri('../assets/images/logo/eslint.svg');
+@javascript-logo: data-uri('../assets/images/logo/javascript.svg');
 [data-layout="card"] {
     .items-container {
+        // background-color: blue;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: stretch;
         flex-wrap: wrap;
         margin: 0 auto;
         overflow: hidden;
+        padding-top: 20px;
+        padding-left: 10px;
         width: 70vw;
     }
     .item-container {
-        background-color: orange;
-        height: 25vh;
+        background-color: white;
         flex-grow: 1;
-        margin: 10px;
-        min-width: 300px;
+        margin: 20px;
+        margin-top: 0;
+        margin-left: 0;
+        overflow: hidden;
+        .item-content {
+            background-color: @node_green_dark;
+            display: flex;
+            flex-direction: row;
+            margin: 5px;
+            header {
+                align-items: stretch;
+                display: flex;
+                flex-direction: row;
+                min-height: 100px;
+                .item-content-icon {
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 100%;
+                    min-height: 100px;
+                    width: 100px;
+                    &.yeoman {
+                        background-image: @yeoman-logo;
+                        background-size: 95%;
+                    }
+                    &.javascript {
+                        background-image: @javascript-logo;
+                    }
+                    &.eslint {
+                        background-image: @eslint-logo;
+                        background-size: 75%;
+                    }
+                }
+                .item-title {
+                    align-items: stretch;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 2rem;
+                    padding-left: 10px;
+                    padding-bottom: 10px;
+                    padding-right: 10px;
+                    .title {
+                        padding: 8px 0;
+                    }
+                    .subtitle {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        &:not(:hover) {
+            background-color: white;
+            color: white;
+            cursor: pointer;
+            .item-content-icon {
+                background-color: white;
+                color: white;
+            }
+        }
+        &:hover {
+            background-color: @even_color_day;
+            color: @even_color_day;
+            cursor: pointer;
+            .item-content-icon {
+                background-color: @even_color_day;
+                color: @even_color_day;
+            }
+        }
     }
 }

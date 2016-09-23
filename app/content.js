@@ -1,24 +1,9 @@
 define({
     news: [
         {
-            order: null,
-            type: '',
-            tags: [],
-            date: '',
-            title: '',
-            subtitle: '',
-            image: '',
-            desciption: ''
-        },
-        {
-            order: null,
-            type: '',
-            tags: [],
-            date: '',
-            title: '',
-            subtitle: '',
-            image: '',
-            desciption: ''
+            title: 'Omaha',
+            subtitle: 'Good Life. Great Code.',
+            technology: 'javascript'
         }
     ],
     code: [
@@ -26,21 +11,25 @@ define({
             order: 1,
             type: 'project',
             tags: ['yeoman', 'node', 'cli', 'scaffold'],
+            technology: 'yeoman',
             date: '',
-            title: 'Omaha Generator',
-            subtitle: '',
-            image: 'http://placehold.it/100x100',
-            desciption: 'Yeoman generator designed to help you craft sustainable code for the modern web'
+            name: 'generator-omaha',
+            url: 'https://github.com/omahajs/generator-omaha',
+            title: 'Project Creator',
+            subtitle: 'Yeoman generator for projects, web apps, and servers',
+            desciption: ''
         },
         {
             order: 2,
             type: 'project',
-            tags: ['eslint', 'rules', 'quality'],
+            tags: ['eslint', 'rules', 'quality', 'lint'],
+            technology: 'eslint',
             date: '',
-            title: 'Omaha Prime Grade',
-            subtitle: 'ESLint Shareable Config',
-            image: '',
-            desciption: 'Shareable ESLint config to make "Prime Grade" quality code'
+            name: 'eslint-config-omaha-prime-grade',
+            url: 'https://github.com/omahajs/eslint-config-omaha-prime-grade',
+            title: 'Code Quality Rules',
+            subtitle: 'OMAHA JS "Prime Grade" ESLint Shareable Config',
+            desciption: ''
         }
     ]
 });

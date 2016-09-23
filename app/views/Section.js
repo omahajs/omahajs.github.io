@@ -40,13 +40,16 @@ define(function(require, exports, module) {
                 replaceElement: true
             }
         },
+        events: {
+            'click .item-container': 'onClickItem'
+        },
         initialize: function(options) {
             var section = this;
             var title  = (options && options.title) ? options.title : section.model.get('title');
             section.$el
                 .addClass(title)
                 .addClass('content-section');
-            (title === 'news') && section.$el.attr('data-layout', 'list');
+            (title === 'news') && section.$el.attr('data-layout', 'card');
             (title === 'code') && section.$el.attr('data-layout', 'card');
             section.model.set('title', title);
         },
@@ -55,6 +58,9 @@ define(function(require, exports, module) {
             section.showChildView('items', new SectionItems({
                 collection: section.collection
             }));
+        },
+        onClickItem: function() {
+            alert('boom');
         }
     });
 
