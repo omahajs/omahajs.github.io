@@ -1,11 +1,5 @@
 define({
-    news: [
-        {
-            title: 'Omaha',
-            subtitle: 'Good Life. Great Code.',
-            technology: 'javascript'
-        }
-    ],
+    news: [],
     code: [
         {
             order: 1,
