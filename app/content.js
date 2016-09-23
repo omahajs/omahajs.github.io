@@ -9,6 +9,16 @@ define({
             subtitle: '',
             image: '',
             desciption: ''
+        },
+        {
+            order: null,
+            type: '',
+            tags: [],
+            date: '',
+            title: '',
+            subtitle: '',
+            image: '',
+            desciption: ''
         }
     ],
     code: [

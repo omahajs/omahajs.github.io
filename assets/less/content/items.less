@@ -1,10 +1,23 @@
 .items-container {
     flex-grow: 1;
+    overflow-y: scroll;
     position: relative;
     width: 100%;
     .item-container {
+    }
+}
+[data-layout="list"] {
+    .item-container {
+        background-color: coral;
         height: 100px;
+        margin: 20px auto;
+        width: 70vw;
+    }
+}
+[data-layout="card"] {
+    .item-container {
         background-color: orange;
+        height: 100px;
         margin: 20px auto;
         width: 70vw;
     }
