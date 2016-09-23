@@ -7,10 +7,11 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var Mn   = require('backbone.marionette');
-    var JST  = require('templates');
-    var Item = require('views/Item');
-    var Data = require('models/Data');
+    var Mn    = require('backbone.marionette');
+    var JST   = require('templates');
+    var omaha = require('app');
+    var Item  = require('views/Item');
+    var Data  = require('models/Data');
 
     var SectionModel = Data.Model.extend({
         defaults: {
@@ -59,8 +60,9 @@ define(function(require, exports, module) {
                 collection: section.collection
             }));
         },
-        onClickItem: function() {
-            alert('boom');
+        onClickItem: function(e) {
+            var url = $(e.currentTarget).find('.item-content').attr('data-url');
+            window.open(url);
         }
     });
 
