@@ -22,7 +22,7 @@ define({
             name: 'eslint-config-omaha-prime-grade',
             url: 'https://github.com/omahajs/eslint-config-omaha-prime-grade',
             title: 'Code Quality Rules',
-            subtitle: 'OMAHA JS "Prime Grade" ESLint Shareable Config',
+            subtitle: '"Prime Grade" ESLint Shareable Config',
             desciption: ''
         }
     ]
