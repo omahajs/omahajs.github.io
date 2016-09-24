@@ -13,34 +13,58 @@
         flex-direction: column;
     }
     .item-container {
-        // background-color: coral;
+        background-color: coral;
         height: 10vh;
         min-height: 100px;
         margin: 10px auto;
         width: 70vw;
     }
 }
-@yeoman-logo: data-uri('image/svg+xml;charset=UTF-8', './assets/images/logo/yeoman.svg');
-@eslint-logo: data-uri('image/svg+xml;charset=UTF-8', './assets/images/logo/eslint.svg');
-@javascript-logo: data-uri('image/svg+xml;charset=UTF-8', './assets/images/logo/javascript.svg');
 .news {
     color: white;
     .items-container {
-        background-color: orange;
-        margin-top: 20px;
+        background-color: darken(@node_green_dark, 2);
     }
-    .item-container:first-of-type {
-        background-color: purple;
+    .item-container:nth-of-type(2n + 1) {
+        background-color: @node_green_dark;
         .item-content {
 
         }
     }
     .item-container {
         margin: 0 auto;
-        width: 80vw;
-        background-color: blue;
+        width: 100%;
+        // background-color: blue;
+        padding: 40px 0;
         .item-content {
-
+            margin: 0 auto;
+            width: 70vw;
+            header {
+                margin-bottom: 10px;
+                .item-title {
+                    display: flex;
+                    flex-direction: column;
+                    .title {
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        padding-bottom: 5px;
+                    }
+                    .subtitle {
+                        border-left: solid white 2px;
+                        margin-left: 1em;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        padding: 10px 0;
+                        padding-left: 10px;
+                    }
+                }
+            }
+            p {
+                line-height: 1.1em;
+                padding-bottom: 20px;
+                text-indent: 2em;
+                max-width: 500px;
+            }
         }
     }
 }
