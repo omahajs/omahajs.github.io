@@ -23,7 +23,28 @@
 @yeoman-logo: data-uri('image/svg+xml;charset=UTF-8', './assets/images/logo/yeoman.svg');
 @eslint-logo: data-uri('image/svg+xml;charset=UTF-8', './assets/images/logo/eslint.svg');
 @javascript-logo: data-uri('image/svg+xml;charset=UTF-8', './assets/images/logo/javascript.svg');
-[data-layout="card"] {
+.news {
+    color: white;
+    .items-container {
+        background-color: orange;
+        margin-top: 20px;
+    }
+    .item-container:first-of-type {
+        background-color: purple;
+        .item-content {
+
+        }
+    }
+    .item-container {
+        margin: 0 auto;
+        width: 80vw;
+        background-color: blue;
+        .item-content {
+
+        }
+    }
+}
+.code {
     .items-container {
         // background-color: blue;
         display: flex;

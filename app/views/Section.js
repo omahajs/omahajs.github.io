@@ -67,8 +67,12 @@ define(function(require, exports, module) {
             }));
         },
         onClickItem: function(e) {
-            var url = $(e.currentTarget).attr('data-url');
-            window.open(url);
+            var $e = $(e.currentTarget);
+            var type = $e.attr('data-type');
+            if (type === 'project') {
+                var url = $e.attr('data-url');
+                window.open(url);
+            }
         }
     });
 
