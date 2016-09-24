@@ -6,6 +6,7 @@
 define(function(require, exports, module) {
     'use strict';
 
+    var _    = require('underscore');
     var Mn   = require('backbone.marionette');
     var JST  = require('templates');
     var Item = require('models/Item');
@@ -14,7 +15,7 @@ define(function(require, exports, module) {
         className: 'item-container',
         template: JST['content/item'],
         model: (new Item.Model()),
-        onRender: function(options) {
+        onRender: function() {
             var view = this;
             var parent = view._parent;
             if (parent && parent.collection) {
