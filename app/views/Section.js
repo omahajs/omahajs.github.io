@@ -27,7 +27,14 @@ define(function(require, exports, module) {
         tagName: 'div',
         className: 'items-container',
         childView: Item,
-        emptyView: EmptyView
+        emptyView: EmptyView,
+        childViewEvents: function() {
+            return {
+                render: function(view) {
+                    view.$el.attr('data-url', view.model.get('url'));
+                }
+            };
+        }
     });
 
     var SectionView = Mn.View.extend({
@@ -60,7 +67,7 @@ define(function(require, exports, module) {
             }));
         },
         onClickItem: function(e) {
-            var url = $(e.currentTarget).find('.item-content').attr('data-url');
+            var url = $(e.currentTarget).attr('data-url');
             window.open(url);
         }
     });
