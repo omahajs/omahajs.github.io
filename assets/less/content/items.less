@@ -23,7 +23,7 @@
 .news {
     color: white;
     .items-container {
-        background-color: darken(@node_green_dark, 2);
+        // background-color: darken(@node_green_dark, 2);
     }
     .item-container:nth-of-type(2n + 1) {
         background-color: @node_green_dark;
@@ -33,6 +33,7 @@
     }
     .item-container {
         // background-color: blue;
+        border-bottom: dashed 2px darken(@node_green_dark, 5);
         margin: 0 auto;
         width: 100%;
         padding: 40px 0;
@@ -50,6 +51,8 @@
                         padding-bottom: 5px;
                     }
                     .subtitle {
+                        @list: darken(@node_green_dark, 5), @node_green_dark;
+                        background-image: svg-gradient(to right, @list);
                         border-left: solid white 2px;
                         margin-left: 1em;
                         margin-top: 5px;
