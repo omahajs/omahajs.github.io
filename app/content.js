@@ -2,7 +2,7 @@ define({
     feed: [
         {
             type: 'post',
-            date: 3333,
+            date: '2016-09-25T17:43:29-05:00',
             title: 'Test Announcement #1',
             subtitle: 'This is a test of the news section',
             share: {
