@@ -1,6 +1,8 @@
 <div class="item-content">
     <header>
-        <div class="item-content-icon{{#if technology}} {{ technology }}{{/if}}"></div>
+    {{#if_eq type "project"}}
+        <div class="item-content-icon {{ technology }}"></div>
+    {{/if_eq}}
         <div class="item-title">
             <span class="title">{{ title }}</span>
             <span class="subtitle">{{ subtitle }}</span>
@@ -9,7 +11,7 @@
     {{#if_eq type "post"}}
         <div class="item-details">
         {{#each body}}
-            <p>{{ this }}</p>
+            <p>{{{ this }}}</p>
         {{/each}}
             <div class="share-button-container">
                 <button class="social" data-social="twitter" data-balloon="tweet on Twitter">twitter</button>
