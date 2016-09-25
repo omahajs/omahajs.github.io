@@ -16,6 +16,9 @@ module.exports = function(karmaConfig) {
             {pattern: 'node_modules/sinon/pkg/sinon.js',                             included: false},//SinonJS
             {pattern: 'node_modules/jquery/dist/jquery.js',                          included: false},//jQuery
             {pattern: 'node_modules/handlebars/dist/handlebars.js',                  included: false},//Handlebars
+            {pattern: 'node/_modules/bluebird/js/browser/bluebird.min.js',           included: false},//Bluebird
+            {pattern: 'node_modules/moment/min/moment-with-locales.min.js',          included: false},//Moment
+            {pattern: 'node_modules/lodash/lodash.min.js',                           included: false},//Lodash
             {pattern: 'node_modules/underscore/underscore.js',                       included: false},//Underscore
             {pattern: 'node_modules/backbone/backbone.js',                           included: false},//Backbone
             {pattern: 'node_modules/backbone.radio/build/backbone.radio.js',         included: false},//Backbone.Radio

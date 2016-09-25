@@ -11,9 +11,12 @@ requirejs.config({
     deps: ['main'],
     paths: {
         //Project Dependencies
+        bluebird:   '../node/_modules/bluebird/js/browser/bluebird.min',
         handlebars: '../node_modules/handlebars/dist/handlebars',
+        moment:     '../node_modules/moment/min/moment-with-locales.min',
         //Backbone Libraries, Frameworks and Dependencies
         jquery:                '../node_modules/jquery/dist/jquery',
+        lodash:                '../node_modules/lodash/lodash.min',
         underscore:            '../node_modules/underscore/underscore',
         'backbone':            '../node_modules/backbone/backbone',
         'backbone.radio':      '../node_modules/backbone.radio/build/backbone.radio',
