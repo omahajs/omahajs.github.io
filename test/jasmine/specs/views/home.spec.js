@@ -41,7 +41,7 @@ define(function(require, exports, module) {
             expect(view.model instanceof Data.Model).toBeTruthy();
             expect(Object.keys(view.regions)).toEqual([
                 'navigation',
-                'news',
+                'feed',
                 'code',
                 'about'
             ]);

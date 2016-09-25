@@ -71,7 +71,7 @@ define(function(require, exports, module) {
         model: new Data.Model(),
         regions: {
             navigation: 'nav',
-            news:  regionObject('#first-section'),
+            feed:  regionObject('#first-section'),
             code:  regionObject('#second-section'),
             about: regionObject('#last-section')
         },

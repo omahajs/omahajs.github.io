@@ -56,7 +56,7 @@ define(function(require, exports, module) {
             section.$el
                 .addClass(title)
                 .addClass('content-section');
-            (title === 'news') && section.$el.attr('data-layout', 'card');
+            (title === 'feed') && section.$el.attr('data-layout', 'card');
             (title === 'code') && section.$el.attr('data-layout', 'card');
             section.model.set('title', title);
         },
