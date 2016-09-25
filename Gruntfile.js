@@ -329,10 +329,10 @@ module.exports = function (grunt) {
             build: {
                 files: [{
                         expand: true,
-                        flatten: true,
+                        flatten: false,
                         cwd: './',
                         src: ['<%= folders.assets %>/<%= files.images %>'],
-                        dest: '<%= folders.dist %>/<%= deployed.assets %>/<%= deployed.images %>'
+                        dest: '<%= folders.dist %>'
                     }]
             }
         },
