@@ -46,17 +46,16 @@
                     display: flex;
                     flex-direction: column;
                     .title {
-                        font-size: 1.5rem;
-                        font-weight: bold;
+                        font-size: 1.6rem;
                         padding-bottom: 5px;
                     }
                     .subtitle {
                         @list: darken(@node_green_dark, 5), @node_green_dark 100%;
                         background-image: svg-gradient(to right, @list);
                         background-size: 100%;
-                        border-left: solid white 2px;
+                        border-left: solid @even_color_day 2px;
                         margin-left: 1em;
-                        margin-top: 5px;
+                        margin-top: 10px;
                         margin-bottom: 5px;
                         padding: 10px 0;
                         padding-left: 10px;
