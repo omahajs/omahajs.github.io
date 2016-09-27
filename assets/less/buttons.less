@@ -1,18 +1,56 @@
 .share-button-container {
-    padding: 0 20px;
     text-align: center;
-    button {
-        background: none;
-        border: solid 2px white;
-        border-radius: 3px;
-        color: white;
-        margin: 0 3px;
-        padding: 8px 10px;
-        transition: all 100ms;
+    & > div {
+        display: inline-block;
+        & > button:before {
+            bottom: -1px;
+            color: white;
+            font-family: "icomoon";
+            font-size: 1.1em;
+            padding-right: 5px;
+            position: relative;
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        & > button {
+            background: none;
+            border: solid 2px white;
+            border-radius: 3px;
+            color: white;
+            font-size: 1.1rem;
+            margin: 0 0px;
+            padding: 8px 10px;
+            transition: all 100ms;
+        }
+        & > button:hover {
+            background: white;
+            color: @node_green_dark;
+            cursor: pointer;
+        }
     }
-    button:hover {
-        background: white;
-        color: @node_green_dark;
-        cursor: pointer;
+    button[data-network=twitter] {
+        &:before {
+            content: @icon-twitter;
+        }
+        &:hover:before {
+            color: @twitter_blue;
+        }
+    }
+    button[data-network=facebook] {
+        &:before {
+            content: @icon-facebook2;
+        }
+        &:hover:before {
+            color: @facebook_blue;
+        }
+    }
+    button[data-network=linkedin] {
+        &:before {
+            content: @icon-linkedin;
+        }
+        &:hover:before {
+            color: @linkedin_blue;
+        }
     }
 }

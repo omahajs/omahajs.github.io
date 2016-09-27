@@ -13,7 +13,7 @@ define(function(require, exports, module) {
         share: function(e) {
             var view = this.view;
             var $e = $(e.currentTarget);
-            var name = $e.attr('data-social');
+            var name = $e.attr('data-network');
             var sn_root = {
                 facebook: 'http://www.facebook.com/sharer/sharer.php',
                 linkedin: 'https://www.linkedin.com/shareArticle',

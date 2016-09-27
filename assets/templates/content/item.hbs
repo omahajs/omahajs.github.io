@@ -14,9 +14,15 @@
             <p>{{{ this }}}</p>
         {{/each}}
             <div class="share-button-container">
-                <button class="social" data-social="twitter" data-balloon="tweet on Twitter">twitter</button>
-                <button class="social" data-social="linkedin" data-balloon="share on LinkedIn">linkedin</button>
-                <button class="social" data-social="facebook" data-balloon="post on Facebook">facebook</button>
+                <div data-balloon="tweet">
+                    <button class="social" data-network="twitter">twitter</button>
+                </div>
+                <div data-balloon="share">
+                    <button class="social" data-network="linkedin">linkedin</button>
+                </div>
+                <div data-balloon="post">
+                    <button class="social" data-network="facebook">facebook</button>
+                </div>
             </div>
         </div>
     {{/if_eq}}
