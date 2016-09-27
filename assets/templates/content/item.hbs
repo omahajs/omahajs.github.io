@@ -5,7 +5,13 @@
     {{/if_eq}}
         <div class="item-title">
             <span class="title">{{ title }}</span>
-            <span class="subtitle">{{fromNow date }}</span>
+            <span class="subtitle">
+            {{#if_eq type "post"}}
+                {{fromNow date }}
+            {{else}}
+                {{ subtitle }}
+            {{/if_eq}}
+            </span>
         </div>
     </header>
     {{#if_eq type "post"}}
