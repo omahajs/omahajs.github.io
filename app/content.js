@@ -2,8 +2,8 @@ define({
     feed: [
         {
             type: 'post',
-            date: '2016-09-25T17:43:29-05:00',
-            title: 'Test Announcement #1',
+            date: '20160925',
+            title: 'Really Long Test Announcement #1',
             subtitle: 'This is a test of the news section',
             share: {
                 linkedin: 'Professional article for LinkedIn',
@@ -16,7 +16,7 @@ define({
         },
         {
             type: 'post',
-            date: 2222,
+            date: '20160924',
             title: 'Test Announcement #2',
             subtitle: 'This is a test of the news section',
             body: [
@@ -27,7 +27,7 @@ define({
         },
         {
             type: 'post',
-            date: 1111,
+            date: '20160923',
             title: 'Test Announcement #3',
             subtitle: 'This is a test of the news section',
             body: [

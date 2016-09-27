@@ -6,11 +6,12 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var _     = require('underscore');
-    var Mn    = require('backbone.marionette');
-    var Share = require('plugins/mn.share.behavior');
-    var JST   = require('templates');
-    var Item  = require('models/Item');
+    var _      = require('underscore');
+    var Mn     = require('backbone.marionette');
+    var Share  = require('plugins/mn.share.behavior');
+    var moment = require('moment');
+    var JST    = require('templates');
+    var Item   = require('models/Item');
 
     var ItemView = Mn.View.extend({
         className: 'item-container',
@@ -19,6 +20,9 @@ define(function(require, exports, module) {
         behaviors: [Share],
         templateContext: function() {
             return {
+                fromNow: function(str) {
+                    return moment(str).fromNow();
+                },
                 uriEncode: function(str) {
                     return encodeURIComponent(str);
                 }
