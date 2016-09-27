@@ -57,12 +57,26 @@ nav {
                 font-variant: small-caps;
                 text-align: center;
                 text-transform: capitalize;
+                &.show-badge:before {
+                    background-color: @uno_red;
+                    border-radius: 5px;
+                    border-bottom: solid darken(@uno_red, 15) 1px;
+                    content: attr(data-unread-posts);
+                    font-size: 1rem;
+                    padding: 3px 6px;
+                    position: absolute;
+                    margin-left: -1.8em;
+                    margin-top: 0.3em;
+                }
             }
         }
         .menu-item:hover {
             background-color: white;
             color: @node_green_dark;
             cursor: pointer;
+            .title:before {
+                color: white;
+            }
         }
     }
 }

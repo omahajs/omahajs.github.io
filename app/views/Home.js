@@ -55,6 +55,14 @@ define(function(require, exports, module) {
             var $e = $(e.currentTarget);
             var name = $e.find('.title').text();
             omaha.router.navigate(name, {trigger: true});
+        },
+        updateUnreadPosts: function(num) {
+            var $title = this.$('.menu-item').first().find('.title');
+            var hasUnreadPosts = (_.isNumber(num) && num > 0);
+            if (hasUnreadPosts) {
+                $title.attr('data-unread-posts', num);
+            }
+            $title.toggleClass('show-badge', hasUnreadPosts);
         }
     });
 
@@ -91,7 +99,6 @@ define(function(require, exports, module) {
                 .initNavigationMenu()
                 .initSectionViews()
                 .initScrollButton();
-
             // Footer is hidden until after render to avoid jitter during scroll
             $('footer').css('display', 'flex');
         },
@@ -107,6 +114,7 @@ define(function(require, exports, module) {
                     collection: new Item.Collection(content[section])
                 }));
             });
+            omaha.navigation.updateUnreadPosts(/*count unread posts*/);
             return home;
         },
         initScrollButton: function() {
