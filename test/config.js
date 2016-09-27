@@ -14,7 +14,9 @@ requirejs.config({
     deps: tests,
     paths: {
         //Project Dependencies
+        bluebird:   '../node_modules/bluebird/js/browser/bluebird.min',
         handlebars: '../node_modules/handlebars/dist/handlebars',
+        moment:     '../node_modules/moment/min/moment-with-locales.min',
         //Backbone Libraries, Frameworks and Dependencies
         jquery:                '../node_modules/jquery/dist/jquery',
         underscore:            '../node_modules/underscore/underscore',

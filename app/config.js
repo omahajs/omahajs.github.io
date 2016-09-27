@@ -11,7 +11,7 @@ requirejs.config({
     deps: ['main'],
     paths: {
         //Project Dependencies
-        bluebird:   '../node/_modules/bluebird/js/browser/bluebird.min',
+        bluebird:   '../node_modules/bluebird/js/browser/bluebird.min',
         handlebars: '../node_modules/handlebars/dist/handlebars',
         moment:     '../node_modules/moment/min/moment-with-locales.min',
         //Backbone Libraries, Frameworks and Dependencies
