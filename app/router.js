@@ -19,7 +19,7 @@ define(function(require, exports, module) {
      * @prop {function} scrollToSection
     **/
     var RouterController = Mn.Object.extend({
-        initialize: function(options) {
+        initialize: function() {
             this.navigate = (new Mn.AppRouter).__proto__.__proto__.navigate;
         },
         scrollToPost: function(id) {

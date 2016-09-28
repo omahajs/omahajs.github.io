@@ -1,16 +1,19 @@
 /**
  * @file Container view for each section of the homepage
  * @module views/Section
+ * @requires app
  * @requires views/Item
  * @requires models/Data
 **/
 define(function(require, exports, module) {
     'use strict';
 
-    var Mn   = require('backbone.marionette');
-    var JST  = require('templates');
-    var Item = require('views/Item');
-    var Data = require('models/Data');
+    var _     = require('lodash');
+    var Mn    = require('backbone.marionette');
+    var omaha = require('app');
+    var JST   = require('templates');
+    var Item  = require('views/Item');
+    var Data  = require('models/Data');
 
     var SectionModel = Data.Model.extend({
         defaults: {
@@ -28,6 +31,9 @@ define(function(require, exports, module) {
         className: 'items-container',
         childView: Item,
         emptyView: EmptyView,
+        viewComparator: function(model) {
+            return -model.get('postId');
+        },
         childViewEvents: function() {
             return {
                 render: function(view) {
@@ -48,6 +54,7 @@ define(function(require, exports, module) {
             }
         },
         events: {
+            'click .section-title': 'onClickTitle',
             'click .item-container': 'onClickItem'
         },
         initialize: function(options) {
@@ -65,6 +72,13 @@ define(function(require, exports, module) {
             section.showChildView('items', new SectionItems({
                 collection: section.collection
             }));
+        },
+        onClickTitle: function() {
+            var view = this;
+            var section = view.$el.attr('class').toString().split(' ')[0];
+            if (_.includes(omaha.model.get('sections'), section)) {
+                omaha.router.navigate(section, {trigger: true});
+            }
         },
         onClickItem: function(e) {
             var $e = $(e.currentTarget);

@@ -1,6 +1,7 @@
 /**
  * @file View for items that are shown in a section on the homepage
  * @module views/Item
+ * @requires app
  * @requires models/Item
 **/
 define(function(require, exports, module) {
@@ -8,6 +9,7 @@ define(function(require, exports, module) {
 
     var _      = require('underscore');
     var Mn     = require('backbone.marionette');
+    var omaha  = require('app');
     var Share  = require('plugins/mn.share.behavior');
     var moment = require('moment');
     var JST    = require('templates');
@@ -18,6 +20,9 @@ define(function(require, exports, module) {
         template: JST['content/item'],
         model: (new Item.Model()),
         behaviors: [Share],
+        events: {
+            'click .item-title': 'onClickTitle'
+        },
         templateContext: function() {
             return {
                 fromNow: function(str) {
@@ -35,6 +40,14 @@ define(function(require, exports, module) {
                     .value();
                 view.$el.attr('data-type', type);
                 view.$el.attr('data-post-id', view.model.get('postId'));
+            }
+        },
+        onClickTitle: function() {
+            var view = this;
+            var type = view.$el.attr('data-type');
+            if (type === 'post') {
+                var id = view.$el.attr('data-post-id');
+                omaha.router.navigate('feed/' + id, {trigger: true});
             }
         }
     });

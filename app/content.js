@@ -18,7 +18,7 @@ define({
         {
             type: 'post',
             postId: '2',
-            date: '20160924',
+            date: '20160926',
             title: 'Test Announcement #2',
             subtitle: 'This is a test of the news section',
             body: [
@@ -30,7 +30,7 @@ define({
         {
             type: 'post',
             postId: '3',
-            date: '20160923',
+            date: '20160927',
             title: 'Test Announcement #3',
             subtitle: 'This is a test of the news section',
             body: [
