@@ -10,6 +10,7 @@
 define(function(require, exports, module) {
     'use strict';
 
+    var _          = require('lodash');
     var Mn         = require('backbone.marionette');
     var omaha      = require('app');
     var content    = require('content');
