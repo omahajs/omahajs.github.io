@@ -12,6 +12,13 @@
                 {{ subtitle }}
             {{/if_eq}}
             </span>
+            {{#if_eq type "project"}}
+            <div class="tags">
+            {{#each tags}}
+                <span class="tag">{{ this }}</span>
+            {{/each}}
+            </div>
+            {{/if_eq}}
         </div>
     </header>
     {{#if_eq type "post"}}
