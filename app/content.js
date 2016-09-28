@@ -2,6 +2,7 @@ define({
     feed: [
         {
             type: 'post',
+            postId: '1',
             date: '20160925',
             title: 'Really Long Test Announcement #1',
             subtitle: 'This is a test of the news section',
@@ -16,6 +17,7 @@ define({
         },
         {
             type: 'post',
+            postId: '2',
             date: '20160924',
             title: 'Test Announcement #2',
             subtitle: 'This is a test of the news section',
@@ -27,6 +29,7 @@ define({
         },
         {
             type: 'post',
+            postId: '3',
             date: '20160923',
             title: 'Test Announcement #3',
             subtitle: 'This is a test of the news section',

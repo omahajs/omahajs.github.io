@@ -22,9 +22,6 @@ define(function(require, exports, module) {
             return {
                 fromNow: function(str) {
                     return moment(str).fromNow();
-                },
-                uriEncode: function(str) {
-                    return encodeURIComponent(str);
                 }
             };
         },
@@ -37,6 +34,7 @@ define(function(require, exports, module) {
                     .first()
                     .value();
                 view.$el.attr('data-type', type);
+                view.$el.attr('data-post-id', view.model.get('postId'));
             }
         }
     });

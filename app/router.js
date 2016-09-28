@@ -9,17 +9,34 @@ define(function(require, exports, module) {
     var $  = require('jquery');
     var Mn = require('backbone.marionette');
 
+    var SCROLL_DURATION = 300;
+
     /**
      * @name RouterController
      * @constructor
      * @extends Marionette.Object
-     * @prop {function} foo Example callback function to be called by ExampleAppRouter
+     * @prop {function} scrollToPost
+     * @prop {function} scrollToSection
     **/
     var RouterController = Mn.Object.extend({
-        scrollTo: function(name) {
+        initialize: function(options) {
+            this.navigate = (new Mn.AppRouter).__proto__.__proto__.navigate;
+        },
+        scrollToPost: function(id) {
+            var $feed = $('.feed');
+            var $post = $feed.find('[data-post-id=' + id + ']');
+            var top;
+            if ($post.length > 0) {
+                top = $post.offset().top;
+            } else {
+                this.navigate('feed');
+                top = $feed.offset().top;
+            }
+            $('html, body').animate({scrollTop: top}, SCROLL_DURATION);
+        },
+        scrollToSection: function(name) {
             var top = (name && typeof (name) === 'string') ? $('.content-section.' + name).offset().top : 0;
-            var duration = 300;
-            $('html, body').animate({scrollTop: top}, duration);
+            $('html, body').animate({scrollTop: top}, SCROLL_DURATION);
         }
     });
     /**
@@ -31,8 +48,9 @@ define(function(require, exports, module) {
     **/
     var AppRouter = Mn.AppRouter.extend({
         appRoutes: {
-            'welcome': 'scrollTo',
-            ':name':   'scrollTo'
+            'welcome':    'scrollToSection',
+            ':name':      'scrollToSection',
+            'feed/:post': 'scrollToPost'
         },
         controller: new RouterController()
     });
