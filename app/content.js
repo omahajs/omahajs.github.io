@@ -39,7 +39,7 @@ define({
         {
             order: 1,
             type: 'project',
-            tags: ['yeoman', 'node', 'cli', 'scaffold'],
+            tags: ['yeoman', 'node', 'CLI', 'scaffold'],
             technology: 'yeoman',
             date: '',
             name: 'generator-omaha',
@@ -50,7 +50,7 @@ define({
         {
             order: 2,
             type: 'project',
-            tags: ['eslint', 'rules', 'quality', 'lint'],
+            tags: ['eslint', 'linting', 'quality'],
             technology: 'eslint',
             date: '',
             name: 'eslint-config-omaha-prime-grade',
