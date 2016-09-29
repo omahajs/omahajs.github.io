@@ -44,7 +44,7 @@ define({
             date: '',
             name: 'generator-omaha',
             url: 'https://github.com/omahajs/generator-omaha',
-            title: 'Project Generator',
+            title: 'Omaha Generator',
             subtitle: 'Yeoman generator for projects, web apps, and servers'
         },
         {
