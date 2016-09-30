@@ -9,7 +9,7 @@ define(function(require, exports, module) {
     var $  = require('jquery');
     var Mn = require('backbone.marionette');
 
-    var SCROLL_DURATION = 300;
+    var SCROLL_DURATION = 600;
 
     /**
      * @name RouterController
