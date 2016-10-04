@@ -39,15 +39,17 @@ define(function(require, exports, module) {
                     .first()
                     .value();
                 view.$el.attr('data-type', type);
-                view.$el.attr('data-post-id', view.model.get('postId'));
+                view.$el
+                    .attr('data-post-id', view.model.get('postId'))
+                    .attr('data-post-name', view.model.get('name'));
             }
         },
         onClickTitle: function() {
             var view = this;
             var type = view.$el.attr('data-type');
             if (type === 'post') {
-                var id = view.$el.attr('data-post-id');
-                omaha.router.navigate('feed/' + id, {trigger: true});
+                var name = view.$el.attr('data-post-name');
+                omaha.router.navigate('feed/' + name, {trigger: true});
             }
         }
     });
