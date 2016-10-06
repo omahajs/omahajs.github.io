@@ -3,6 +3,7 @@ define({
         {
             type: 'post',
             postId: '1',
+            name: 'intro',
             date: '201609291800',
             title: 'Introducing Omaha JS',
             subtitle: 'Good Life. Great Code.',

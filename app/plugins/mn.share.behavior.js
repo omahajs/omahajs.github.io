@@ -24,7 +24,7 @@ define(function(require, exports, module) {
                 name: name,
                 title: encodeURIComponent(view.model.get('title')),
                 summary: encodeURIComponent(view.model.get('subtitle')),
-                url: encodeURIComponent(window.location.href + '/' + view.model.get('postId'))
+                url: encodeURIComponent(window.location.href + '/' + view.model.get('name'))
             };
             // twitter text must be less than 140 characters
             var uri = {

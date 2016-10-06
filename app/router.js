@@ -22,9 +22,9 @@ define(function(require, exports, module) {
         initialize: function() {
             this.navigate = (new Mn.AppRouter).__proto__.__proto__.navigate;
         },
-        scrollToPost: function(id) {
+        scrollToPost: function(name) {
             var $feed = $('.feed');
-            var $post = $feed.find('[data-post-id=' + id + ']');
+            var $post = $feed.find('[data-post-name=' + name + ']');
             var top;
             if ($post.length > 0) {
                 top = $post.offset().top;
