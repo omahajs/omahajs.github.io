@@ -5,19 +5,11 @@
     position: relative;
     width: 100%;
     .item-container {
-    }
-}
-[data-layout="list"] {
-    .items-container {
-        display: flex;
-        flex-direction: column;
-    }
-    .item-container {
-        // background-color: coral;
-        height: 10vh;
-        min-height: 100px;
-        margin: 10px auto;
-        width: 70vw;
+        overflow-x: hidden;
+        img {
+            margin-left: -15vw;
+            width: 100vw;
+        }
     }
 }
 .feed {
@@ -179,8 +171,13 @@
     }
 }
 @media (max-width: unit(@iphone6_width_portrait, px)) {
-    .feed .items-container .item-container .item-content {
-        width: 90vw;
+    .feed .items-container .item-container {
+        .item-content {
+            width: 90vw;
+        }
+        img {
+            margin-left: -5vw;
+        }
     }
     .code .items-container {
         width: 98vw;
