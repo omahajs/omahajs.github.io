@@ -55,7 +55,7 @@ define(function(require, exports) {
             title: 'Test Announcement #3',
             subtitle: 'This is a test of the news section',
             body: [
-                image('foo'),
+                image(),
                 quote('Watashi no namae wa, Jason desu.'),
                 list([
                     'foo',

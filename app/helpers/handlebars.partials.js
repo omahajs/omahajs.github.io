@@ -6,10 +6,12 @@ define(function(require) {
     'use strict';
 
     var $          = require('jquery');
+    var _          = require('lodash');
     var Handlebars = require('handlebars');
 
-    Handlebars.registerPartial('image', function(url) {
-        return '<img src="' + url + '" alt="test"></img>';
+    Handlebars.registerPartial('image', function(options) {
+        var imgSrc = _.get(options, 'url', '../assets/images/cornfield.jpg');
+        return '<img src="' + imgSrc + '" alt="test"></img>';
     });
     Handlebars.registerPartial('quote', function(txt) {
         return '<i>' + txt + '</i>';
