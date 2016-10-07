@@ -14,13 +14,13 @@ define(function(require, exports, module) {
             var view = this.view;
             var $e = $(e.currentTarget);
             var name = $e.attr('data-network');
-            var sn_root = {
+            var root = {
                 facebook: 'http://www.facebook.com/sharer/sharer.php',
                 linkedin: 'https://www.linkedin.com/shareArticle',
                 twitter: 'https://twitter.com/intent/tweet'
             };
             var sn = {
-                root: sn_root[name],
+                root: root[name],
                 name: name,
                 title: encodeURIComponent(view.model.get('title')),
                 summary: encodeURIComponent(view.model.get('subtitle')),

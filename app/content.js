@@ -1,4 +1,5 @@
-define(function(require, exports, module) {
+/* eslint max-len:0 */
+define(function(require, exports) {
     'use strict';
 
     var partial = require('handlebars').partials;

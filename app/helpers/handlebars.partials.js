@@ -8,11 +8,11 @@ define(function(require) {
     var $          = require('jquery');
     var Handlebars = require('handlebars');
 
-    Handlebars.registerPartial('image', function(ctx) {
-        return '<img src="" alt="test"></img>';
+    Handlebars.registerPartial('image', function(url) {
+        return '<img src="' + url + '" alt="test"></img>';
     });
     Handlebars.registerPartial('quote', function(txt) {
-        return '<i>'+ txt +'</i>';
+        return '<i>' + txt + '</i>';
     });
     Handlebars.registerPartial('list', function(items) {
         var $ul = $('<ul></ul>');
