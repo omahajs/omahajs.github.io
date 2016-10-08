@@ -63,7 +63,7 @@ define(function(require, exports, module) {
                 summary: encodeURIComponent(view.model.get('subtitle')),
                 url: encodeURIComponent(window.location.href + '/' + view.model.get('name'))
             };
-            var CUSTOM_SHARE_LINK = FORMAT_TYPE[name](data)
+            var CUSTOM_SHARE_LINK = FORMAT_TYPE[name](data);
             window.open(CUSTOM_SHARE_LINK);
         }
     });
