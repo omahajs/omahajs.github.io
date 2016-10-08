@@ -14,7 +14,19 @@ define(function(require) {
         return '<img src="' + imgSrc + '" alt="test"></img>';
     });
     Handlebars.registerPartial('quote', function(txt) {
-        return '<i>' + txt + '</i>';
+        var $div = $('<div></div>')
+            .addClass('item-quote')
+            .text(txt);
+        var $span = $('<span></span>')
+            .attr('data-network', 'twitter')
+            .addClass('social')
+            .text('tweet')
+            .appendTo($div);
+        $('<span></span>')
+            .addClass('icon')
+            .html('&#xEA96;')
+            .prependTo($span);
+        return $div[0].outerHTML;
     });
     Handlebars.registerPartial('list', function(items) {
         var $ul = $('<ul></ul>');

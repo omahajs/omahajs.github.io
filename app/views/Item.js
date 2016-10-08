@@ -10,7 +10,7 @@ define(function(require, exports, module) {
     var _      = require('underscore');
     var Mn     = require('backbone.marionette');
     var omaha  = require('app');
-    var Share  = require('plugins/mn.share.behavior');
+    var Share  = require('plugins/share.behavior');
     var moment = require('moment');
     var JST    = require('templates');
     var Item   = require('models/Item');

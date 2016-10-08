@@ -12,6 +12,32 @@
         }
     }
 }
+.feed .item-quote {
+    background-color: darken(@node_green_dark, 1);
+    border-left: solid 4px @odd_color_day;
+    color: white;
+    cursor: default;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding: 2em 2em 1em 2em;
+    .social {
+        bottom: -2px;
+        cursor: pointer;
+        display: block;
+        font-size: 1rem;
+        padding-left: 10px;
+        position: relative;
+        text-align: right;
+        .icon {
+            font-family: "icomoon";
+            padding-right: 5px;
+        }
+    }
+}
+.feed .tweet .item-quote {
+    border-left: solid 4px @twitter_blue;
+    transition: all 200ms;
+}
 .feed {
     color: white;
     .items-container {
@@ -61,6 +87,7 @@
                         background-image: svg-gradient(to right, @list);
                         background-size: 100%;
                         border-left: solid 4px darken(@node_green_dark, 6);
+                        font-size: 0.9rem;
                         margin-top: 10px;
                         margin-bottom: 5px;
                         padding: 10px 0;
