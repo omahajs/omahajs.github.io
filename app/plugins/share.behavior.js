@@ -39,10 +39,12 @@ define(function(require, exports, module) {
             .concat(['&via=omaha_js'])
             .join('');
     }
-
+    function share(url) {
+        window.open(url);
+    }
     var ShareBehavior = Marionette.Behavior.extend({
         events: {
-            'click .social': 'share'
+            'click .social': 'onClickShare'
         },
         onDomRefresh: function() {
             var view = this.view;
@@ -50,17 +52,39 @@ define(function(require, exports, module) {
                 .mouseenter(function(e) {$(e.currentTarget).parent().addClass('tweet');})
                 .mouseleave(function(e) {$(e.currentTarget).parent().removeClass('tweet');});
         },
-        share: function(e) {
+        onClickShare: function(e) {
             var view = this.view;
             var $e = $(e.currentTarget);
-            var name = $e.attr('data-network');
+            var network = $e.attr('data-network');
+            if (this.isQuote(e)) {
+                var txt = $e.parent('div').text();
+                var quote = txt.substr(0, txt.length - 6);
+                this.tweet(quote);
+            } else {
+                this.shareWith(network);
+            }
+        },
+        isQuote: function(e) {
+            var view = this.view;
+            var $e = $(e.currentTarget);
+            return $e.parent().hasClass('item-quote')
+        },
+        shareWith: function(network) {
+            var view = this.view;
             var data = {
                 title: encodeURIComponent(view.model.get('title')),
                 summary: encodeURIComponent(view.model.get('subtitle')),
                 url: encodeURIComponent(window.location.href + '/' + view.model.get('name'))
             };
-            var CUSTOM_SHARE_LINK = FORMAT_TYPE[name](data);
-            window.open(CUSTOM_SHARE_LINK);
+            var CUSTOM_SHARE_LINK = FORMAT_TYPE[network](data);
+            share(CUSTOM_SHARE_LINK);
+        },
+        tweet: function(txt) {
+            var data = {
+                title: encodeURIComponent(txt)
+            };
+            var CUSTOM_SHARE_LINK = FORMAT_TYPE.twitter(data);
+            share(CUSTOM_SHARE_LINK);
         }
     });
 
