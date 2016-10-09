@@ -1,15 +1,31 @@
 .items-container {
     // background-color: red;
     flex-grow: 1;
+    overflow-x: hidden;
     overflow-y: scroll;
     position: relative;
     width: 100%;
-    .item-container {
-        overflow-x: hidden;
-        img {
-            margin-left: -15vw;
-            width: 100vw;
-        }
+}
+// .feed .items-container .item-container {
+//     overflow-x: hidden;
+//
+//     img {
+//         margin-left: -15vw;
+//         width: 100vw;
+//     }
+// }
+.feed .item-element-container {
+    background-color: @odd_color_day;
+    background-size: cover;
+    background-image: url("../assets/images/cornfield.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-left: -15vw;
+    overflow-x: hidden;
+    width: 100vw;
+    img {
+        display: none;
+        width: 500px;
     }
 }
 .feed .item-quote {
@@ -233,13 +249,12 @@
     }
 }
 @media (max-width: unit(@iphone6_width_portrait, px)) {
-    .feed .items-container .item-container {
-        .item-content {
-            width: 90vw;
-        }
-        img {
-            margin-left: -5vw;
-        }
+    .feed .items-container .item-container .item-content {
+        width: 90vw;
+    }
+    .feed .item-element-container {
+        margin-left: -5vw;
+        width: 100vw;
     }
     .code .items-container {
         width: 98vw;

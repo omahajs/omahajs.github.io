@@ -14,8 +14,17 @@ define(function(require) {
         return $p[0].outerHTML;
     });
     Handlebars.registerPartial('image', function(options) {
+        var height = _.get(options, 'height', 300);
         var imgSrc = _.get(options, 'url', '../assets/images/cornfield.jpg');
-        return '<img src="' + imgSrc + '" alt="test"></img>';
+        var altMsg = _.get(options, 'alt', 'Feed Item Image Element');
+        var $div = $('<div></div>')
+            .addClass('item-element-container')
+            .height(height);
+        $('<img></img>')
+            .prop('src', imgSrc)
+            .prop('alt', altMsg)
+            .appendTo($div);
+        return $div[0].outerHTML;
     });
     Handlebars.registerPartial('quote', function(txt) {
         var $div = $('<div></div>')
