@@ -28,14 +28,19 @@ define(function(require) {
             .prependTo($span);
         return $div[0].outerHTML;
     });
-    Handlebars.registerPartial('list', function(items) {
-        var $ul = $('<ul></ul>');
+    Handlebars.registerPartial('list', function(title, items) {
+        var $ul = $('<ul></ul>')
+            .addClass('item-list');
+        $('<span></span>')
+            .addClass('item-list-title')
+            .text(title)
+            .appendTo($ul);
         var $li = $('<li></li>');
         Array.isArray(items) && items.forEach(function(item) {
             $li.clone()
                 .text(item)
                 .appendTo($ul);
         });
-        return $ul.html();
+        return $ul[0].outerHTML;
     });
 });

@@ -19,6 +19,7 @@
     cursor: default;
     font-size: 1.2rem;
     line-height: 1.5rem;
+    margin: 10px 0;
     padding: 2em 2em 1em 2em;
     .social {
         bottom: -2px;
@@ -37,6 +38,30 @@
 .feed .tweet .item-quote {
     border-left: solid 4px @twitter_blue;
     transition: all 200ms;
+}
+.feed .item-list {
+    line-height: 1.3rem;
+    margin: 10px 0;
+    .item-list-title {
+        @list: darken(@node_green_dark, 2), @node_green_dark 100%;
+        background-image: svg-gradient(to right, @list);
+        background-size: 100%;
+        border-left: solid 4px darken(@node_green_dark, 4);
+        display: block;
+        padding: 10px;
+    }
+    li {
+        margin: 0 1rem;
+        position: relative;
+    }
+    li:first-of-type {
+        margin-top: 3px;
+    }
+    li:before {
+        content: "\00BB";
+        font-weight: bold;
+        padding-right: 6px;
+    }
 }
 .feed {
     color: white;
@@ -93,14 +118,24 @@
                         padding: 10px 0;
                         padding-left: 1em;
                     }
+                    .subtitle:before {
+                        bottom: -1px;
+                        content: @icon-calendar;
+                        font-family: "icomoon";
+                        padding-right: 2px;
+                        position: relative;
+                    }
                 }
             }
             p {
                 line-height: 1.4em;
-                padding-bottom: 20px;
+                padding: 10px 0;
             }
             p:last-of-type {
                 padding-bottom: 40px;
+            }
+            p:empty {
+                display: none;
             }
         }
     }
