@@ -6,21 +6,12 @@
     position: relative;
     width: 100%;
 }
-// .feed .items-container .item-container {
-//     overflow-x: hidden;
-//
-//     img {
-//         margin-left: -15vw;
-//         width: 100vw;
-//     }
-// }
 .feed .item-element-container {
-    background-color: @odd_color_day;
-    background-size: cover;
-    background-image: url("../assets/images/cornfield.jpg");
-    background-position: center center;
+    background-color: @node_green_dark;
     background-repeat: no-repeat;
     margin-left: -15vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
     overflow-x: hidden;
     width: 100vw;
     img {
@@ -35,8 +26,12 @@
     cursor: default;
     font-size: 1.2rem;
     line-height: 1.5rem;
-    margin: 10px 0;
+    margin: 40px 0 20px 0;
     padding: 2em 2em 1em 2em;
+    &.tweet {
+        border-left: solid 4px @twitter_blue;
+        transition: all 200ms;
+    }
     .social {
         bottom: -2px;
         cursor: pointer;
@@ -51,13 +46,9 @@
         }
     }
 }
-.feed .tweet .item-quote {
-    border-left: solid 4px @twitter_blue;
-    transition: all 200ms;
-}
 .feed .item-list {
     line-height: 1.3rem;
-    margin: 10px 0;
+    margin: 40px 0;
     .item-list-title {
         @list: darken(@node_green_dark, 2), @node_green_dark 100%;
         background-image: svg-gradient(to right, @list);

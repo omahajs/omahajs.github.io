@@ -47,12 +47,8 @@ define(function(require, exports, module) {
         onDomRefresh: function() {
             var view = this.view;
             view.$('span.social')
-                .mouseenter(function() {
-                    view.$el.addClass('tweet');
-                })
-                .mouseleave(function() {
-                    view.$el.removeClass('tweet');
-                });
+                .mouseenter(function(e) {$(e.currentTarget).parent().addClass('tweet');})
+                .mouseleave(function(e) {$(e.currentTarget).parent().removeClass('tweet');});
         },
         share: function(e) {
             var view = this.view;

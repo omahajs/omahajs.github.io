@@ -43,7 +43,6 @@ define(function(require, exports, module) {
                     .attr('data-post-id', view.model.get('postId'))
                     .attr('data-post-name', view.model.get('name'));
             }
-            (type === 'post') && console.log(view.model.get('body'));
         },
         onClickTitle: function() {
             var view = this;
