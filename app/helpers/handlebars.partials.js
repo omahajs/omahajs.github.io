@@ -9,6 +9,10 @@ define(function(require) {
     var _          = require('lodash');
     var Handlebars = require('handlebars');
 
+    Handlebars.registerPartial('paragraph', function(txt) {
+        var $p = $('<p></p>').text(txt);
+        return $p[0].outerHTML;
+    });
     Handlebars.registerPartial('image', function(options) {
         var imgSrc = _.get(options, 'url', '../assets/images/cornfield.jpg');
         return '<img src="' + imgSrc + '" alt="test"></img>';
