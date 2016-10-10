@@ -20,8 +20,9 @@ define(function(require) {
         return $p[0].outerHTML;
     });
     Handlebars.registerPartial('image', function(options) {
+        var DEFAULT_BANNER_HEIGHT = 300;
         var size   = _.get(options, 'size', 'cover');
-        var height = _.get(options, 'height', 300);
+        var height = _.get(options, 'height', DEFAULT_BANNER_HEIGHT);
         var bgColor = _.get(options, 'bgColor', '#3E863D');
         var bgPosition = _.get(options, 'position', 'center 0');
         var imgSrc = _.get(options, 'url', '../assets/images/cornfield.jpg');

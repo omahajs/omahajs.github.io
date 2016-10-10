@@ -53,21 +53,19 @@ define(function(require, exports, module) {
                 .mouseleave(function(e) {$(e.currentTarget).parent().removeClass('tweet');});
         },
         onClickShare: function(e) {
-            var view = this.view;
             var $e = $(e.currentTarget);
             var network = $e.attr('data-network');
             if (this.isQuote(e)) {
                 var txt = $e.parent('div').text();
-                var quote = txt.substr(0, txt.length - 6);
+                var quote = txt.substr(0, txt.length - '#tweet'.length);
                 this.tweet(quote);
             } else {
                 this.shareWith(network);
             }
         },
         isQuote: function(e) {
-            var view = this.view;
             var $e = $(e.currentTarget);
-            return $e.parent().hasClass('item-quote')
+            return $e.parent().hasClass('item-quote');
         },
         shareWith: function(network) {
             var view = this.view;
