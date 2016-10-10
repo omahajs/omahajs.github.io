@@ -56,7 +56,7 @@ define(function(require, exports) {
             title: 'Test Announcement #3',
             subtitle: 'This is a test of the news section',
             body: [
-                quote('Watashi no namae wa, Jason desu.'),
+                quote('If you are not growing, you are dying.'),
                 paragraph('...that is some quote'),
                 image(),
                 list(
