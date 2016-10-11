@@ -65,6 +65,7 @@ define(function(require) {
             .text(title)
             .appendTo($ul);
         Array.isArray(items) && items.forEach(function(item) {
+            // URL check goes here
             $LI.clone()
                 .text(item)
                 .appendTo($ul);

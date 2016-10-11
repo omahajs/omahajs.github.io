@@ -62,7 +62,7 @@ define(function(require, exports) {
                 list(
                     'List Title',
                     [
-                        'foo',
+                        'https://google.com',
                         'bar',
                         'baz'
                     ]
