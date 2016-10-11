@@ -9,11 +9,12 @@ define(function(require) {
     var _          = require('lodash');
     var Handlebars = require('handlebars');
 
-    var $DIV = $('<div></div>');
+    var $DIV  = $('<div></div>');
     var $SPAN = $('<span></span>');
-    var $IMG = $('<img></img>');
-    var $UL = $('<ul></ul>');
-    var $LI = $('<li></li>');
+    var $IMG  = $('<img></img>');
+    var $UL   = $('<ul></ul>');
+    var $LI   = $('<li></li>');
+    var $A    = $('<a></a>');
 
     Handlebars.registerPartial('paragraph', function(txt) {
         var $p = $('<p></p>').text(txt);
@@ -58,6 +59,8 @@ define(function(require) {
         return $quote[0].outerHTML;
     });
     Handlebars.registerPartial('list', function(title, items) {
+        var markdownUrlPattern = new RegExp('\[[\w\s]*\]\(.*\)', 'i');
+        var protocolHostPattern = new RegExp('^https?:\/\/', 'i');
         var $ul = $UL.clone()
             .addClass('item-list');
         $SPAN.clone()
@@ -65,9 +68,20 @@ define(function(require) {
             .text(title)
             .appendTo($ul);
         Array.isArray(items) && items.forEach(function(item) {
-            // URL check goes here
+            var $item;
+            if (markdownUrlPattern.test(item)) {
+                $item = $A.clone()
+                    .attr('href', item.split('(')[1].replace(')', ''))
+                    .text(item.split('[')[1].split(']')[0]);
+            } else if (protocolHostPattern.test(item)) {
+                $item = $A.clone()
+                    .attr('href', item)
+                    .text(item);
+            } else {
+                $item = $SPAN.clone().text(item);
+            }
             $LI.clone()
-                .text(item)
+                .append($item)
                 .appendTo($ul);
         });
         return $ul[0].outerHTML;
