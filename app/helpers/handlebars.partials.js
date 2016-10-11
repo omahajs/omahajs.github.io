@@ -43,6 +43,29 @@ define(function(require) {
             .appendTo($div);
         return $div[0].outerHTML;
     });
+    Handlebars.registerPartial('banner', function(options) {
+        var DEFAULT_BANNER_HEIGHT = 300;
+        var size   = _.get(options, 'size', 'cover');
+        var height = _.get(options, 'height', DEFAULT_BANNER_HEIGHT);
+        var bgColor = _.get(options, 'bgColor', '#3E863D');
+        var bgPosition = _.get(options, 'position', 'center 0');
+        var imgSrc = _.get(options, 'url', '../assets/images/cornfield.jpg');
+        var altMsg = _.get(options, 'alt', 'Feed Item Image Element');
+        var $div = $DIV.clone()
+            .addClass('item-element-container')
+            .css({
+                'background-color': bgColor,
+                'background-image': 'url(' + imgSrc + ')',
+                'background-position': bgPosition,
+                'background-size': size
+            })
+            .height(height);
+        $IMG.clone()
+            .prop('src', imgSrc)
+            .prop('alt', altMsg)
+            .appendTo($div);
+        return $div[0].outerHTML;
+    });
     Handlebars.registerPartial('quote', function(txt) {
         var $quote = $DIV.clone()
             .addClass('item-quote')
@@ -72,10 +95,12 @@ define(function(require) {
             if (markdownUrlPattern.test(item)) {
                 $item = $A.clone()
                     .attr('href', item.split('(')[1].replace(')', ''))
+                    .prop('target', '_blank')
                     .text(item.split('[')[1].split(']')[0]);
             } else if (protocolHostPattern.test(item)) {
                 $item = $A.clone()
                     .attr('href', item)
+                    .prop('target', '_blank')
                     .text(item);
             } else {
                 $item = $SPAN.clone().text(item);
