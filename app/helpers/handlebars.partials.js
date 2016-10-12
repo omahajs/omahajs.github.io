@@ -16,55 +16,36 @@ define(function(require) {
     var $LI   = $('<li></li>');
     var $A    = $('<a></a>');
 
+    var $wrapper = $DIV.clone().addClass('item-element-container');
+
     Handlebars.registerPartial('paragraph', function(txt) {
         var $p = $('<p></p>').text(txt);
         return $p[0].outerHTML;
     });
-    Handlebars.registerPartial('image', function(options) {
-        var DEFAULT_BANNER_HEIGHT = 300;
-        var size   = _.get(options, 'size', 'cover');
-        var height = _.get(options, 'height', DEFAULT_BANNER_HEIGHT);
-        var bgColor = _.get(options, 'bgColor', '#3E863D');
-        var bgPosition = _.get(options, 'position', 'center 0');
-        var imgSrc = _.get(options, 'url', '../assets/images/cornfield.jpg');
-        var altMsg = _.get(options, 'alt', 'Feed Item Image Element');
-        var $div = $DIV.clone()
-            .addClass('item-element-container')
-            .css({
-                'background-color': bgColor,
-                'background-image': 'url(' + imgSrc + ')',
-                'background-position': bgPosition,
-                'background-size': size
-            })
-            .height(height);
+    Handlebars.registerPartial('image', function(imgSrc, options) {
+        var DEFAULT_IMAGE_HEIGHT = 500;
+        var src = imgSrc || '../assets/images/cornfield.jpg';
+        var alt = _.get(options, 'alt', 'Feed Item Image Element');
+        var $div = $wrapper.clone()
+            .height(_.get(options, 'height', DEFAULT_IMAGE_HEIGHT));
         $IMG.clone()
-            .prop('src', imgSrc)
-            .prop('alt', altMsg)
+            .prop('src', src)
+            .prop('alt', alt)
             .appendTo($div);
         return $div[0].outerHTML;
     });
-    Handlebars.registerPartial('banner', function(options) {
+    Handlebars.registerPartial('banner', function(imgSrc, options) {
         var DEFAULT_BANNER_HEIGHT = 300;
-        var size   = _.get(options, 'size', 'cover');
-        var height = _.get(options, 'height', DEFAULT_BANNER_HEIGHT);
-        var bgColor = _.get(options, 'bgColor', '#3E863D');
-        var bgPosition = _.get(options, 'position', 'center 0');
-        var imgSrc = _.get(options, 'url', '../assets/images/cornfield.jpg');
-        var altMsg = _.get(options, 'alt', 'Feed Item Image Element');
-        var $div = $DIV.clone()
-            .addClass('item-element-container')
+        var url = imgSrc || '../assets/images/cornfield.jpg';
+        var $banner = $wrapper.clone()
+            .height(_.get(options, 'height', DEFAULT_BANNER_HEIGHT))
             .css({
-                'background-color': bgColor,
-                'background-image': 'url(' + imgSrc + ')',
-                'background-position': bgPosition,
-                'background-size': size
-            })
-            .height(height);
-        $IMG.clone()
-            .prop('src', imgSrc)
-            .prop('alt', altMsg)
-            .appendTo($div);
-        return $div[0].outerHTML;
+                'background-image':   'url(' + url + ')',
+                'background-color':    _.get(options, 'bgColor', '#3E863D'),
+                'background-position': _.get(options, 'position', 'center 0'),
+                'background-size':     _.get(options, 'size', 'cover')
+            });
+        return $banner[0].outerHTML;
     });
     Handlebars.registerPartial('quote', function(txt) {
         var $quote = $DIV.clone()

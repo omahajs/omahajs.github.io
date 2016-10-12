@@ -5,6 +5,7 @@ define(function(require, exports) {
     var partial = require('handlebars').partials;
     var paragraph = partial.paragraph;
     var image     = partial.image;
+    var banner    = partial.banner;
     var quote     = partial.quote;
     var list      = partial.list;
 
@@ -58,7 +59,8 @@ define(function(require, exports) {
             body: [
                 quote('If you are not growing, you are dying.'),
                 paragraph('...that is some quote'),
-                // image(),
+                image(),
+                banner(),
                 list(
                     'List Title',
                     [
@@ -70,9 +72,7 @@ define(function(require, exports) {
                 paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                 paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                 quote('Watashi no namae wa, Jason desu.'),
-                // image({
-                //     position: 'center bottom'
-                // }),
+                image(null, {position: 'center bottom'}),
                 paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
             ]
         }
