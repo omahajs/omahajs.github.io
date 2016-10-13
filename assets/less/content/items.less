@@ -7,7 +7,6 @@
     width: 100%;
 }
 .feed .item-element-container {
-    background-repeat:  repeat;
     margin-left: -15vw;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -15,12 +14,21 @@
     width: 100vw;
     text-align: center;
     &.image-element {
-        background-color: @node_green_alt;
         background-image: url("../assets/images/patterns/curtain.svg");
+        background-color: @node_green_alt;
+        background-repeat:  repeat;
     }
     &.code-block {
-        background-color: @node_green_dark;
         background-image: url("../assets/images/patterns/circuit-board.svg");
+        background-color: @node_green_dark;
+        background-repeat:  repeat;
+    }
+    pre {
+        background-color: @even_color_day;
+        height: 500px;
+        margin: 0 auto;
+        overflow: auto;
+        width: 70vw;
     }
     img {
         height: 100%;
@@ -251,7 +259,8 @@
     }
 }
 @media (max-width: unit(@iphone6_width_portrait, px)) {
-    .feed .items-container .item-container .item-content {
+    .feed .items-container .item-container .item-content,
+    .feed .items-container .item-container .item-content pre {
         width: 90vw;
     }
     .feed .item-element-container {

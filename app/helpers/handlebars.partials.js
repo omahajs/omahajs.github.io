@@ -12,6 +12,8 @@ define(function(require) {
     var $DIV  = $('<div></div>');
     var $SPAN = $('<span></span>');
     var $IMG  = $('<img></img>');
+    var $PRE  = $('<pre></pre>');
+    var $CODE = $('<code></code>');
     var $UL   = $('<ul></ul>');
     var $LI   = $('<li></li>');
     var $A    = $('<a></a>');
@@ -21,6 +23,16 @@ define(function(require) {
     Handlebars.registerPartial('paragraph', function(txt) {
         var $p = $('<p></p>').text(txt);
         return $p[0].outerHTML;
+    });
+    Handlebars.registerPartial('code', function(code) {
+        var $pre = $PRE.clone();
+        var $code = $CODE.clone()
+            .text('boom goes the dynamite')
+            .appendTo($pre);
+        var $wrap = $wrapper.clone()
+            .addClass('code-block')
+            .append($pre);
+        return $wrap[0].outerHTML;
     });
     Handlebars.registerPartial('image', function(imgSrc, options) {
         var DEFAULT_IMAGE_HEIGHT = 500;

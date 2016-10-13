@@ -4,6 +4,7 @@ define(function(require, exports) {
 
     var partial = require('handlebars').partials;
     var paragraph = partial.paragraph;
+    var code      = partial.code;
     var image     = partial.image;
     var banner    = partial.banner;
     var quote     = partial.quote;
@@ -58,6 +59,7 @@ define(function(require, exports) {
             subtitle: 'This is a test of the news section',
             body: [
                 quote('If you are not growing, you are dying.'),
+                code(),
                 paragraph('...that is some quote'),
                 image(null, {height: 300}),
                 banner(),
