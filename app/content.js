@@ -59,7 +59,7 @@ define(function(require, exports) {
             body: [
                 quote('If you are not growing, you are dying.'),
                 paragraph('...that is some quote'),
-                image(),
+                image(null, {height: 300}),
                 banner(),
                 list(
                     'List Title',

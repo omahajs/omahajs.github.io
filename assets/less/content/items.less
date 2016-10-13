@@ -7,8 +7,6 @@
     width: 100%;
 }
 .feed .item-element-container {
-    background-color: @node_green_alt;
-    background-image: url("../assets/images/patterns/curtain.svg");
     background-repeat:  repeat;
     margin-left: -15vw;
     margin-top: 20px;
@@ -16,6 +14,14 @@
     overflow: hidden;
     width: 100vw;
     text-align: center;
+    &.image-element {
+        background-color: @node_green_alt;
+        background-image: url("../assets/images/patterns/curtain.svg");
+    }
+    &.code-block {
+        background-color: @node_green_dark;
+        background-image: url("../assets/images/patterns/circuit-board.svg");
+    }
     img {
         height: 100%;
         width: auto;

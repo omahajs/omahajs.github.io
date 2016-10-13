@@ -27,6 +27,7 @@ define(function(require) {
         var src = imgSrc || '../assets/images/cornfield.jpg';
         var alt = _.get(options, 'alt', 'Feed Item Image Element');
         var $div = $wrapper.clone()
+            .addClass('image-element')
             .height(_.get(options, 'height', DEFAULT_IMAGE_HEIGHT));
         $IMG.clone()
             .prop('src', src)
