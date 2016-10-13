@@ -26,8 +26,8 @@ define(function(require) {
     });
     Handlebars.registerPartial('code', function(code) {
         var $pre = $PRE.clone();
-        var $code = $CODE.clone()
-            .text('boom goes the dynamite')
+        $CODE.clone()
+            .text(code)
             .appendTo($pre);
         var $wrap = $wrapper.clone()
             .addClass('code-block')

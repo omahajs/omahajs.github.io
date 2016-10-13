@@ -20,7 +20,6 @@ requirejs.config({
         //Backbone Libraries, Frameworks and Dependencies
         jquery:                '../node_modules/jquery/dist/jquery',
         lodash:                '../node_modules/lodash/lodash.min',
-        underscore:            '../node_modules/underscore/underscore',
         'backbone':            '../node_modules/backbone/backbone',
         'backbone.radio':      '../node_modules/backbone.radio/build/backbone.radio',
         'backbone.marionette': '../node_modules/backbone.marionette/lib/backbone.marionette',
@@ -30,6 +29,11 @@ requirejs.config({
         'underscore.mixins':  './helpers/underscore.mixins',
         //Spies, Stubs, and fake servers (Jasmine is loaded by Karma plugin)
         sinon: '../node_modules/sinon/pkg/sinon'
+    },
+    map: {
+        '*': {
+            'underscore': 'lodash'
+        }
     },
     // start test run, once Require.js is done
     callback: window.__karma__.start
