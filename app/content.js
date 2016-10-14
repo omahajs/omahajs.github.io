@@ -2,7 +2,8 @@
 define(function(require, exports) {
     'use strict';
 
-    var partial = require('handlebars').partials;
+    var omaha     = require('app');
+    var partial   = require('handlebars').partials;
     var paragraph = partial.paragraph;
     var code      = partial.code;
     var image     = partial.image;
