@@ -62,7 +62,7 @@ define(function(require, exports) {
                 code(),
                 paragraph('...that is some quote'),
                 image(null, {height: 300}),
-                banner(),
+                banner('../assets/images/clouds.jpg'),
                 list(
                     'List Title',
                     [

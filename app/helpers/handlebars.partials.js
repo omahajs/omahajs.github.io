@@ -35,7 +35,7 @@ define(function(require) {
         return $wrap[0].outerHTML;
     });
     Handlebars.registerPartial('image', function(imgSrc, options) {
-        var DEFAULT_IMAGE_HEIGHT = 500;
+        var DEFAULT_IMAGE_HEIGHT = '500';
         var src = imgSrc || '../assets/images/cornfield.jpg';
         var alt = _.get(options, 'alt', 'Feed Item Image Element');
         var $div = $wrapper.clone()
@@ -48,16 +48,18 @@ define(function(require) {
         return $div[0].outerHTML;
     });
     Handlebars.registerPartial('banner', function(imgSrc, options) {
-        var DEFAULT_BANNER_HEIGHT = 300;
+        var DEFAULT_BANNER_HEIGHT = '30vh';
         var url = imgSrc || '../assets/images/cornfield.jpg';
         var $banner = $wrapper.clone()
             .height(_.get(options, 'height', DEFAULT_BANNER_HEIGHT))
             .css({
+                'min-height':         '200px',
                 'background-image':   'url(' + url + ')',
                 'background-color':    _.get(options, 'bgColor', '#3E863D'),
                 'background-position': _.get(options, 'position', 'center 0'),
                 'background-size':     _.get(options, 'size', 'cover')
             });
+        _.get(options, 'width') && $banner.css('background-size', options.width + 'px auto');
         return $banner[0].outerHTML;
     });
     Handlebars.registerPartial('quote', function(txt) {
