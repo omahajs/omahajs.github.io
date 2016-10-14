@@ -2,14 +2,14 @@
 define(function(require, exports) {
     'use strict';
 
-    var omaha     = require('app');
-    var partial   = require('handlebars').partials;
-    var paragraph = partial.paragraph;
-    var code      = partial.code;
-    var image     = partial.image;
-    var banner    = partial.banner;
-    var quote     = partial.quote;
-    var list      = partial.list;
+    var partials  = require('handlebars').partials;
+                    require('./helpers/handlebars.partials');
+    var paragraph = partials.paragraph;
+    var code      = partials.code;
+    var image     = partials.image;
+    var banner    = partials.banner;
+    var quote     = partials.quote;
+    var list      = partials.list;
 
     exports.xfeed = [
         {
