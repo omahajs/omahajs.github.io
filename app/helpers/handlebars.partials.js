@@ -27,6 +27,7 @@ define(function(require) {
     Handlebars.registerPartial('code', function(code) {
         var $pre = $PRE.clone();
         $CODE.clone()
+            .addClass('javascript')
             .text(code)
             .appendTo($pre);
         var $wrap = $wrapper.clone()

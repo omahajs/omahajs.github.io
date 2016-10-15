@@ -11,9 +11,10 @@ requirejs.config({
     deps: ['main'],
     paths: {
         //Project Dependencies
-        bluebird:   '../node_modules/bluebird/js/browser/bluebird.min',
-        handlebars: '../node_modules/handlebars/dist/handlebars',
-        moment:     '../node_modules/moment/min/moment-with-locales.min',
+        bluebird:    '../node_modules/bluebird/js/browser/bluebird.min',
+        handlebars:  '../node_modules/handlebars/dist/handlebars',
+        moment:      '../node_modules/moment/min/moment-with-locales.min',
+        highlightjs: '../node_modules/highlightjs/highlight.pack.min',
         //Backbone Libraries, Frameworks and Dependencies
         jquery:                '../node_modules/jquery/dist/jquery',
         lodash:                '../node_modules/lodash/lodash.min',
@@ -26,6 +27,9 @@ requirejs.config({
         'underscore.mixins':  './helpers/underscore.mixins',
         //Spies, Stubs, and fake servers (Jasmine is loaded by Karma plugin)
         sinon: '../node_modules/sinon/pkg/sinon'
+    },
+    shim: {
+        highlightjs: {exports: 'hljs'}
     },
     map: {
         '*': {

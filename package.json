@@ -19,6 +19,7 @@
     "backbone.radio": "^2.0.0",
     "bluebird": "^3.4.6",
     "handlebars": "^4.0.5",
+    "highlightjs": "^8.7.0",
     "jquery": "^3.1.0",
     "lodash": "^4.16.1",
     "moment": "^2.15.1",

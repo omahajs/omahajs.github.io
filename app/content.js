@@ -60,7 +60,7 @@ define(function(require, exports) {
             subtitle: 'This is a test of the news section',
             body: [
                 quote('If you are not growing, you are dying.'),
-                code(),
+                code('var foo = function() {};'),
                 paragraph('...that is some quote'),
                 image(null, {height: 300}),
                 banner('../assets/images/clouds.jpg'),

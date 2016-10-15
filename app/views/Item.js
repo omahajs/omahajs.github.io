@@ -8,6 +8,7 @@ define(function(require, exports, module) {
     'use strict';
 
     var _      = require('underscore');
+    var hljs   = require('highlightjs');
     var Mn     = require('backbone.marionette');
     var omaha  = require('app');
     var Share  = require('plugins/share.behavior');
@@ -43,6 +44,11 @@ define(function(require, exports, module) {
                     .attr('data-post-id', view.model.get('postId'))
                     .attr('data-post-name', view.model.get('name'));
             }
+        },
+        onDomRefresh: function() {
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
         },
         onClickTitle: function() {
             var view = this;
