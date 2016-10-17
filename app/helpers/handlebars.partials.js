@@ -20,21 +20,24 @@ define(function(require) {
 
     var $wrapper = $DIV.clone().addClass('item-element-container');
 
+    function getArguments() {
+        return Array.prototype.slice.apply(arguments);
+    }
+
     Handlebars.registerPartial('paragraph', function(txt) {
         var $p = $('<p></p>').text(txt);
         return $p[0].outerHTML;
     });
-    Handlebars.registerPartial('code', function(code) {
+    Handlebars.registerPartial('code', _.flow(getArguments, function(code) {
         var $pre = $PRE.clone();
         $CODE.clone()
-            .addClass('javascript')
-            .text(code)
+            .text(code.join('\n'))
             .appendTo($pre);
         var $wrap = $wrapper.clone()
             .addClass('code-block')
             .append($pre);
         return $wrap[0].outerHTML;
-    });
+    }));
     Handlebars.registerPartial('image', function(imgSrc, options) {
         var DEFAULT_IMAGE_HEIGHT = '500';
         var src = imgSrc || '../assets/images/cornfield.jpg';

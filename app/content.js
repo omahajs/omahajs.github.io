@@ -60,7 +60,14 @@ define(function(require, exports) {
             subtitle: 'This is a test of the news section',
             body: [
                 quote('If you are not growing, you are dying.'),
-                code('var foo = function() {};\nvar bar = "bar";'),
+                code(
+                    'function getArgs() {',
+                    '\treturn Array.prototype.slice.apply(arguments);',
+                    '}',
+                    'var printArgs = _.flow(getArgs, console.log);',
+                    '',
+                    'printArgs(1, 2, 3); // [1, 2, 3]'
+                ),
                 paragraph('...that is some quote'),
                 image(null, {height: 300}),
                 banner('../assets/images/clouds.jpg'),

@@ -31,6 +31,12 @@ define(function(require, exports, module) {
                 }
             };
         },
+        initialize: function() {
+            hljs.configure({
+                tabReplace: '    ',
+                languages: ['html', 'css', 'less', 'javascript']
+            });
+        },
         onRender: function() {
             var view = this;
             var parent = view._parent;
