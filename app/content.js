@@ -6,6 +6,7 @@ define(function(require, exports) {
                     require('./helpers/handlebars.partials');
     var paragraph = partials.paragraph;
     var code      = partials.code;
+    var gist      = partials.gist;
     var image     = partials.image;
     var banner    = partials.banner;
     var quote     = partials.quote;
@@ -59,6 +60,7 @@ define(function(require, exports) {
             title: 'Test Announcement #3',
             subtitle: 'This is a test of the news section',
             body: [
+                gist('80b30714c33b197df0b6'),
                 quote('If you are not growing, you are dying.'),
                 code(
                     'function getArgs() {',
