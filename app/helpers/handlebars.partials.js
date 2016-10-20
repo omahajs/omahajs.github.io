@@ -60,7 +60,7 @@ define(function(require) {
         $DIV.clone()
             .addClass('code-button-container')
             .append($BUTTON.clone()
-                .addClass('copy-to-clipboard')
+                .attr('data-action', 'copy-to-clipboard')
                 .text('copy to clipboard'))
             .appendTo($wrap);
         return $wrap[0].outerHTML;

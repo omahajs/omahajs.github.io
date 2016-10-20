@@ -61,6 +61,7 @@ define(function(require, exports) {
             subtitle: 'This is a test of the news section',
             body: [
                 gist('80b30714c33b197df0b6'),
+                code('var boom = \'dynamite\''),
                 quote('If you are not growing, you are dying.'),
                 code(
                     'function getArgs() {',

@@ -7,15 +7,16 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var $      = require('jquery');
-    var _      = require('underscore');
-    var hljs   = require('highlightjs');
-    var Mn     = require('backbone.marionette');
-    var omaha  = require('app');
-    var Share  = require('plugins/share.behavior');
-    var moment = require('moment');
-    var JST    = require('templates');
-    var Item   = require('models/Item');
+    var $         = require('jquery');
+    var _         = require('underscore');
+    var hljs      = require('highlightjs');
+    var Mn        = require('backbone.marionette');
+    var omaha     = require('app');
+    var Share     = require('plugins/share.behavior');
+    var Clipboard = require('plugins/clipboard.behavior');
+    var moment    = require('moment');
+    var JST       = require('templates');
+    var Item      = require('models/Item');
 
     var GITHUB_API_URL = 'https://api.github.com/gists/';
     function getGist(id) {
@@ -31,10 +32,10 @@ define(function(require, exports, module) {
         className: 'item-container',
         template: JST['content/item'],
         model: (new Item.Model()),
-        behaviors: [Share],
+        behaviors: [Share, Clipboard],
         events: {
             'click .item-title': 'onClickTitle',
-            'click .code-button-container>button': 'onClickCodeButton'
+            'click [data-network=github]': 'onClickGithubButton'
         },
         templateContext: function() {
             return {
@@ -77,7 +78,7 @@ define(function(require, exports, module) {
                 omaha.router.navigate('feed/' + name, {trigger: true});
             }
         },
-        onClickCodeButton: function(e) {
+        onClickGithubButton: function(e) {
             var url = e.currentTarget.getAttribute('data-gist-url');
             window.open(url);
         },
