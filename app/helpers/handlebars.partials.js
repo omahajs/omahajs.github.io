@@ -24,17 +24,6 @@ define(function(require) {
         return Array.prototype.slice.apply(arguments);
     }
 
-    var ID = '80b30714c33b197df0b6';
-    var GITHUB_API_URL = 'https://api.github.com/gists/';
-    function getGist(id) {
-        return $.ajax({
-            url: GITHUB_API_URL + id
-        }).then(function(data) {
-            var files = data.files;
-            return files[Object.keys(files)[0]].content;
-        });
-    }
-
     Handlebars.registerPartial('paragraph', function(txt) {
         var $p = $('<p></p>').text(txt);
         return $p[0].outerHTML;
@@ -43,12 +32,10 @@ define(function(require) {
         var $pre = $PRE.clone();
         var $wrap = $wrapper.clone()
             .addClass('code-block')
+            .attr('data-gist-id', id)
             .append($pre);
-        getGist(id).done(function(code) {
-            console.log(code);
-        });
         $CODE.clone()
-            .text('hello')
+            .text('https://gist.github.com/jhwohlgemuth/' + id + '.js')
             .appendTo($pre);
         return $wrap[0].outerHTML;
     });
