@@ -33,7 +33,8 @@ define(function(require, exports, module) {
         model: (new Item.Model()),
         behaviors: [Share],
         events: {
-            'click .item-title': 'onClickTitle'
+            'click .item-title': 'onClickTitle',
+            'click .code-button-container>button': 'onClickCodeButton'
         },
         templateContext: function() {
             return {
@@ -75,6 +76,10 @@ define(function(require, exports, module) {
                 var name = view.$el.attr('data-post-name');
                 omaha.router.navigate('feed/' + name, {trigger: true});
             }
+        },
+        onClickCodeButton: function(e) {
+            var url = e.currentTarget.getAttribute('data-gist-url');
+            window.open(url);
         },
         renderGists: function() {
             var view = this;

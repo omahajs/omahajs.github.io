@@ -9,14 +9,15 @@ define(function(require) {
     var _          = require('lodash');
     var Handlebars = require('handlebars');
 
-    var $DIV  = $('<div></div>');
-    var $SPAN = $('<span></span>');
-    var $IMG  = $('<img></img>');
-    var $PRE  = $('<pre></pre>');
-    var $CODE = $('<code></code>');
-    var $UL   = $('<ul></ul>');
-    var $LI   = $('<li></li>');
-    var $A    = $('<a></a>');
+    var $DIV    = $('<div></div>');
+    var $SPAN   = $('<span></span>');
+    var $IMG    = $('<img></img>');
+    var $BUTTON = $('<button></button>');
+    var $PRE    = $('<pre></pre>');
+    var $CODE   = $('<code></code>');
+    var $UL     = $('<ul></ul>');
+    var $LI     = $('<li></li>');
+    var $A      = $('<a></a>');
 
     var $wrapper = $DIV.clone().addClass('item-element-container');
 
@@ -29,14 +30,23 @@ define(function(require) {
         return $p[0].outerHTML;
     });
     Handlebars.registerPartial('gist', function(id) {
+        var GIST_URL = 'https://gist.github.com/jhwohlgemuth/' + id;
         var $pre = $PRE.clone();
         var $wrap = $wrapper.clone()
             .addClass('code-block')
             .attr('data-gist-id', id)
             .append($pre);
         $CODE.clone()
-            .text('https://gist.github.com/jhwohlgemuth/' + id + '.js')
+            .text(GIST_URL)
             .appendTo($pre);
+        $DIV.clone()
+            .addClass('code-button-container')
+            .append($BUTTON.clone()
+                .addClass('open-gist')
+                .attr('data-gist-url', GIST_URL)
+                .attr('data-network', 'github')
+                .text('view on github'))
+            .appendTo($wrap);
         return $wrap[0].outerHTML;
     });
     Handlebars.registerPartial('code', _.flow(getArguments, function(code) {
@@ -47,6 +57,12 @@ define(function(require) {
         $CODE.clone()
             .text(code.join('\n'))
             .appendTo($pre);
+        $DIV.clone()
+            .addClass('code-button-container')
+            .append($BUTTON.clone()
+                .addClass('copy-to-clipboard')
+                .text('copy to clipboard'))
+            .appendTo($wrap);
         return $wrap[0].outerHTML;
     }));
     Handlebars.registerPartial('image', function(imgSrc, options) {
@@ -63,7 +79,7 @@ define(function(require) {
         return $div[0].outerHTML;
     });
     Handlebars.registerPartial('banner', function(imgSrc, options) {
-        var DEFAULT_BANNER_HEIGHT = '30vh';
+        var DEFAULT_BANNER_HEIGHT = '15vh';
         var url = imgSrc || '../assets/images/cornfield.jpg';
         var $banner = $wrapper.clone()
             .height(_.get(options, 'height', DEFAULT_BANNER_HEIGHT))
