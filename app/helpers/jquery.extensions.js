@@ -46,6 +46,9 @@ define(function(require) {
             return this.each(function() {
                 this.checked = false;
             });
+        },
+        events: function() {
+            return $._data(this[0]).events;
         }
     });
 });
