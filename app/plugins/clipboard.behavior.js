@@ -12,7 +12,7 @@ define(function(require, exports, module) {
         },
         onCopy: function(e) {
             var $code = $(e.currentTarget).parent().siblings('pre');
-            var range = document.createRange()
+            var range = document.createRange();
             var selection = window.getSelection();
             // Clear selection from any previous data.
             selection.removeAllRanges();

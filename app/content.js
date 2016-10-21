@@ -3,7 +3,7 @@ define(function(require, exports) {
     'use strict';
 
     var partials  = require('handlebars').partials;
-                    require('./helpers/handlebars.partials');
+    require('./helpers/handlebars.partials');
     var paragraph = partials.paragraph;
     var code      = partials.code;
     var gist      = partials.gist;
