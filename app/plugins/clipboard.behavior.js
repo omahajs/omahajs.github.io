@@ -11,18 +11,20 @@ define(function(require, exports, module) {
             'click [data-action=copy-to-clipboard]': 'onCopy'
         },
         onCopy: function(e) {
+            var view = this.view;
             var $code = $(e.currentTarget).parent().siblings('pre');
             var range = document.createRange();
             var selection = window.getSelection();
-            // Clear selection from any previous data.
-            selection.removeAllRanges();
-            // Make the range select the entire content of the contentHolder paragraph.
+            view.$el.one('copy', function(e){
+                e.preventDefault();
+                var selection = window.getSelection().toString();
+                (selection === $code.text()) && alert('Code copied to clipboard');
+                e.originalEvent.clipboardData.setData('text/plain', selection);
+            });
+            selection.removeAllRanges();// Clear selection from any previous data
             range.selectNodeContents($code[0]);
-            // Add that range to the selection.
-            selection.addRange(range);
-            // Copy the selection to clipboard.
-            document.execCommand('copy');
-            // Clear selection if you want to.
+            selection.addRange(range);// Add that range to the selection
+            document.execCommand('copy');// Copy the selection to clipboard
             selection.removeAllRanges();
         }
     });
