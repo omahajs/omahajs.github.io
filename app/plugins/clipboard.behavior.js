@@ -15,7 +15,7 @@ define(function(require, exports, module) {
             var $code = $(e.currentTarget).parent().siblings('pre');
             var range = document.createRange();
             var selection = window.getSelection();
-            view.$el.one('copy', function(e){
+            view.$el.one('copy', function(e) {
                 e.preventDefault();
                 var selection = window.getSelection().toString();
                 (selection === $code.text()) && alert('Code copied to clipboard');
