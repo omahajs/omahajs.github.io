@@ -18,4 +18,15 @@ define(function(require) {
             return opts.inverse(this);
         }
     });
+    //"if not equal" conditional block helper
+    Handlebars.registerHelper('if_not_eq', function(a, b, opts) {
+        if (arguments.length < 3) {
+            throw new Error('Handlebars Helper \'if_not_eq\' needs 2 parameters');
+        }
+        if (a !== b) {
+            return opts.fn(this);
+        } else {
+            return opts.inverse(this);
+        }
+    });
 });

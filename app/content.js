@@ -60,7 +60,9 @@ define(function(require, exports) {
             title: 'Test Announcement #3',
             subtitle: 'This is a test of the news section',
             body: [
+                banner('../assets/images/banners/clouds.jpg'),
                 gist('80b30714c33b197df0b6'),
+                banner('../assets/images/banners/corn.jpg'),
                 code('var boom = \'dynamite\''),
                 quote('If you are not growing, you are dying.'),
                 code(
@@ -74,8 +76,7 @@ define(function(require, exports) {
                 paragraph('...that is some quote'),
                 image(null, {height: 300}),
                 banner('../assets/images/clouds.jpg'),
-                list(
-                    'List Title',
+                list('List Title',
                     [
                         '[Google](https://google.com)',
                         'https://google.com',
@@ -114,4 +115,19 @@ define(function(require, exports) {
             subtitle: '"Prime Grade" ESLint Shareable Config'
         }
     ];
+    exports.about = [
+        {
+            type: 'about',
+            body: [
+                banner('../assets/images/banners/clouds.jpg'),
+                list('Credits',
+                    [
+                        'Foo',
+                        'Bar'
+                    ]
+                ),
+                banner('../assets/images/banners/corn.jpg')
+            ]
+        }
+    ]
 });
