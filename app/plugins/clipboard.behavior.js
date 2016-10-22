@@ -30,7 +30,7 @@ define(function(require, exports, module) {
             var behavior = this;
             var view = behavior.view;
             var getContent = behavior.options.getContent;
-            var $content = (typeof(getContent) === 'function') ? getContent(e) : Backbone.$(e.currentTarget);
+            var $content = (typeof (getContent) === 'function') ? getContent(e) : Backbone.$(e.currentTarget);
             var range = document.createRange();
             var selection = window.getSelection();
             var success;

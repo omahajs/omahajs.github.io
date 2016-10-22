@@ -129,5 +129,5 @@ define(function(require, exports) {
                 banner('../assets/images/banners/corn.jpg')
             ]
         }
-    ]
+    ];
 });
