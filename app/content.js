@@ -119,14 +119,16 @@ define(function(require, exports) {
         {
             type: 'about',
             body: [
-                banner('../assets/images/banners/clouds.jpg'),
+                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                quote('Good Life. Great Code'),
+                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                 list('Credits',
                     [
-                        'Foo',
-                        'Bar'
+                        '[Nebraska Font by Daniel Heikkinen](http://www.dafont.com/nebraska.font)',
+                        '[SVG Hero Patterns](http://www.heropatterns.com/)'
                     ]
                 ),
-                banner('../assets/images/banners/corn.jpg')
+                image('../assets/images/cornjs.png', {height: 250})
             ]
         }
     ];
