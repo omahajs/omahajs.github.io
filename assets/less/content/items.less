@@ -23,6 +23,11 @@
         background-image: url("../assets/images/patterns/circuit-board.svg");
         background-color: @node_green_dark;
         background-repeat:  repeat;
+        &.demo, &.experiment {
+            &:hover {
+                background-image: url("../assets/images/patterns/circuit-board-energized.svg");
+            }
+        }
     }
     pre {
         background-color: @even_color_day;
