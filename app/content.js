@@ -119,12 +119,32 @@ define(function(require, exports) {
         {
             type: 'about',
             body: [
+                quote('Writing great code is a process that must be practiced.'),
                 paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                quote('Good Life. Great Code'),
+                quote('The process of writing great code must be sustainable in order to be viable in real-world situations.'),
+                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                quote('Web technologies are awesome.'),
+                code(
+                    '//Expressed using JavaScript',
+                    'let tech = [',
+                    '\t\'JavaScript\',',
+                    '\t\'Node\',',
+                    '\t\'HTML\',',
+                    '\t\'CSS\'',
+                    '];',
+                    'function isAwesome(thing) {',
+                    '\treturn tech.includes(thing);',
+                    '}',
+                    'var WEB_TECH_IS_AWESOME = tech',
+                    '\t.map(isAwesome)',
+                    '\t.every(x => (x === true));',
+                    'console.log(WEB_TECH_IS_AWESOME);// true'
+                ),
                 paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                 list('Credits',
                     [
                         '[Nebraska Font by Daniel Heikkinen](http://www.dafont.com/nebraska.font)',
+                        '[IcoMoon Icon font](http://www.icomoon.io)',
                         '[SVG Hero Patterns](http://www.heropatterns.com/)'
                     ]
                 ),
