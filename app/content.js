@@ -60,9 +60,9 @@ define(function(require, exports) {
             title: 'Test Announcement #3',
             subtitle: 'This is a test of the news section',
             body: [
-                banner('../assets/images/banners/clouds.jpg'),
+                // banner('../assets/images/banners/clouds.jpg'),
                 gist('80b30714c33b197df0b6'),
-                banner('../assets/images/banners/corn.jpg'),
+                // banner('../assets/images/banners/corn.jpg'),
                 code('var boom = \'dynamite\''),
                 quote('If you are not growing, you are dying.'),
                 code(
@@ -145,7 +145,8 @@ define(function(require, exports) {
                     [
                         '[Nebraska Font by Daniel Heikkinen](http://www.dafont.com/nebraska.font)',
                         '[IcoMoon Icon font](http://www.icomoon.io)',
-                        '[SVG Hero Patterns](http://www.heropatterns.com/)'
+                        '[SVG Hero Patterns](http://www.heropatterns.com/)',
+                        '[highlight.js (syntax highlighting for code blocks)](https://highlightjs.org/)'
                     ]
                 ),
                 image('../assets/images/cornjs.png', {height: 250})
