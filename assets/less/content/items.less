@@ -24,7 +24,8 @@
         background-color: @node_green_dark;
         background-repeat:  repeat;
         &.demo, &.experiment {
-            &:hover {
+            transition: all 500ms;
+            &:hover, &.active {
                 background-image: url("../assets/images/patterns/circuit-board-energized.svg");
             }
         }

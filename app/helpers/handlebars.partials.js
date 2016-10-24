@@ -65,6 +65,14 @@ define(function(require) {
             .appendTo($wrap);
         return $wrap[0].outerHTML;
     }));
+    Handlebars.registerPartial('demo', function(options) {
+        var $pre = $PRE.clone();
+        var $wrap = $wrapper.clone()
+            .addClass('code-block')
+            .addClass('demo')
+            .append($pre);
+        return $wrap[0].outerHTML;
+    });
     Handlebars.registerPartial('image', function(imgSrc, options) {
         var DEFAULT_IMAGE_HEIGHT = '500';
         var src = imgSrc || '../assets/images/cornfield.jpg';
