@@ -12,27 +12,12 @@ define(function(require, exports) {
     var quote     = partials.quote;
     var list      = partials.list;
 
-    exports.xfeed = [
-        {
-            type: 'post',
-            postId: '1',
-            name: 'intro',
-            date: '201609291800',
-            title: 'Introducing Omaha JS',
-            subtitle: 'Good Life. Great Code.',
-            body: [
-                paragraph('Omaha JS is about crafting sustainable, high-quality software with modern front-end technologies.'),
-                paragraph('In simple terms, Omaha JS seeks to make it easier to write tested, linted, functional code.'),
-                paragraph('Anyone can get started from scratch with our <a href="#code">Omaha Yeoman generator</a> or add static analysis rules to an existing project with our <a href="#code">shareable ESLint config</a>.')
-            ]
-        }
-    ];
     exports.feed = [
         {
             type: 'post',
             postId: '1',
             name: 'foo',
-            date: '20160925',
+            date: '201609291800',
             title: 'Really Long Test Announcement #1',
             subtitle: 'This is a test of the news section',
             body: [
@@ -119,7 +104,7 @@ define(function(require, exports) {
         {
             type: 'about',
             body: [
-                paragraph('Omaha JS seeks...'),
+                paragraph('Omaha JS is about crafting sustainable, high-quality software with modern front-end technologies.  In simple terms, Omaha JS seeks to make it easier to write tested, linted, functional code.  With this simple mission in mind, we have some key ideals driving us:'),
                 quote('Writing great code is a process that must be practiced.'),
                 paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                 quote('The process of writing great code must be sustainable in order to be viable in real-world situations.'),
