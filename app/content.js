@@ -7,6 +7,7 @@ define(function(require, exports) {
     var paragraph = partials.paragraph;
     var code      = partials.code;
     var gist      = partials.gist;
+    var demo      = partials.demo;
     var image     = partials.image;
     var banner    = partials.banner;
     var quote     = partials.quote;
@@ -46,6 +47,7 @@ define(function(require, exports) {
             subtitle: 'This is a test of the news section',
             body: [
                 // banner('../assets/images/banners/clouds.jpg'),
+                demo('boom'),
                 gist('80b30714c33b197df0b6'),
                 // banner('../assets/images/banners/corn.jpg'),
                 code('var boom = \'dynamite\''),
@@ -111,18 +113,19 @@ define(function(require, exports) {
                 paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                 quote('Writing great code is fun and rewarding.'),
                 code(
-                    'function isAwesome(thing) {',
-                    '\tvar technology = [',
-                    '\t\t\'JavaScript\',',
-                    '\t\t\'Node\',',
-                    '\t\t\'HTML\',',
-                    '\t\t\'CSS\'',
-                    '\t];',
-                    '\treturn technology.includes(thing);',
-                    '}',
-                    'var CODE_IS_FUN = technology',
+                    'const STUFF = [',
+                    '\t\'JavaScript\',',
+                    '\t\'Node\',',
+                    '\t\'HTML\',',
+                    '\t\'CSS\'',
+                    '];',
+                    'const CODE_IS_FUN = STUFF',
                     '\t.map(isAwesome)',
                     '\t.every(x => (x === true));',
+                    '',
+                    'function isAwesome(thing) {',
+                    '\treturn STUFF.includes(thing);',
+                    '}',
                     '',
                     'console.log(CODE_IS_FUN);// true'
                 ),

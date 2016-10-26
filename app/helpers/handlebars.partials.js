@@ -66,11 +66,17 @@ define(function(require) {
         return $wrap[0].outerHTML;
     }));
     Handlebars.registerPartial('demo', function(options) {
-        var $pre = $PRE.clone();
+        var $pre = $PRE.clone().height(200);
         var $wrap = $wrapper.clone()
             .addClass('code-block')
             .addClass('demo')
             .append($pre);
+        $DIV.clone()
+            .addClass('code-button-container')
+            .append($BUTTON.clone()
+                .attr('data-action', 'activate-demo')
+                .text('Activate Demo'))
+            .appendTo($wrap);
         return $wrap[0].outerHTML;
     });
     Handlebars.registerPartial('image', function(imgSrc, options) {
