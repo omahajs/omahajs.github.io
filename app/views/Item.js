@@ -33,9 +33,13 @@ define(function(require, exports, module) {
         template: JST['content/item'],
         model: (new Item.Model()),
         behaviors: [Share, Clipboard],
+        ui: {
+            element: '.item-element-container'
+        },
         events: {
             'click .item-title': 'onClickTitle',
-            'click [data-network=github]': 'onClickGithubButton'
+            'click [data-network=github]': 'onClickGithubButton',
+            'click [data-action=activate-demo]': 'onActivateDemo'
         },
         templateContext: function() {
             return {
@@ -69,6 +73,13 @@ define(function(require, exports, module) {
             $('pre code').each(function(i, block) {
                 hljs.highlightBlock(block);
             });
+        },
+        onActivateDemo: function(e) {
+            var view = this;
+            var $el = $(e.currentTarget);
+            var $pre = $el.closest(view.ui.element);
+            $pre.addClass('active');
+            $el.remove();
         },
         onClickTitle: function() {
             var view = this;

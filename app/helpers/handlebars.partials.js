@@ -66,13 +66,15 @@ define(function(require) {
         return $wrap[0].outerHTML;
     }));
     Handlebars.registerPartial('demo', function(options) {
-        var $pre = $PRE.clone().height(200);
+        var $pre = $PRE.clone()
+            .addClass('demo')
+            .height(_.get(options, 'height', 200));
         var $wrap = $wrapper.clone()
             .addClass('code-block')
             .addClass('demo')
             .append($pre);
         $DIV.clone()
-            .addClass('code-button-container')
+            .addClass('demo-button-container')
             .append($BUTTON.clone()
                 .attr('data-action', 'activate-demo')
                 .text('Activate Demo'))

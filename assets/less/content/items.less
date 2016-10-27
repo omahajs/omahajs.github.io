@@ -24,7 +24,7 @@
         background-color: @node_green_dark;
         background-repeat:  repeat;
         &.demo, &.experiment {
-            &:hover, &.active {
+            &.active {
                 background-image: url("../assets/images/patterns/circuit-board-energized.svg");
             }
         }
@@ -36,6 +36,9 @@
         overflow: auto;
         text-align: left;
         width: 70vw;
+        &.demo {
+            background-color: #3F3F3F;
+        }
         code {
             font-family: monospace;
             font-size: 1rem;
