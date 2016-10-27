@@ -42,6 +42,9 @@ button:before {
     -moz-osx-font-smoothing: grayscale;
 }
 .item-element-container {
+    &.demo button {
+        opacity: 1;
+    }
     button {
         background: none;
         border: solid 2px white;
@@ -59,24 +62,20 @@ button:before {
         color: @dark_gray;
         opacity: 1;
     }
-}
-.code-button-container {
-    bottom: 30px;
-    left: 15vw;
-    padding-left: 40px;
-    position: absolute;
-    text-align: left;
-    width: 70vw;
-}
-.demo-button-container {
-    left: 15vw;
-    margin-top: -16px;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    width: 70vw;
-    button {
-        opacity: 1;
+    .button-container {
+        left: 15vw;
+        position: absolute;
+        width: 70vw;
+        &.code-buttons {
+            bottom: 30px;
+            padding-left: 40px;
+            text-align: left;
+        }
+        &.demo-buttons {
+            margin-top: -16px;
+            text-align: center;
+            top: 50%;
+        }
     }
 }
 .share-button-container {

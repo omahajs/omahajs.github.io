@@ -40,7 +40,8 @@ define(function(require) {
             .text(GIST_URL)
             .appendTo($pre);
         $DIV.clone()
-            .addClass('code-button-container')
+            .addClass('button-container')
+            .addClass('code-buttons')
             .append($BUTTON.clone()
                 .addClass('open-gist')
                 .attr('data-gist-url', GIST_URL)
@@ -58,7 +59,8 @@ define(function(require) {
             .text(code.join('\n'))
             .appendTo($pre);
         $DIV.clone()
-            .addClass('code-button-container')
+            .addClass('button-container')
+            .addClass('code-buttons')
             .append($BUTTON.clone()
                 .attr('data-action', 'copy-to-clipboard')
                 .text('copy to clipboard'))
@@ -67,14 +69,14 @@ define(function(require) {
     }));
     Handlebars.registerPartial('demo', function(options) {
         var $pre = $PRE.clone()
-            .addClass('demo')
             .height(_.get(options, 'height', 200));
         var $wrap = $wrapper.clone()
             .addClass('code-block')
             .addClass('demo')
             .append($pre);
         $DIV.clone()
-            .addClass('demo-button-container')
+            .addClass('button-container')
+            .addClass('demo-buttons')
             .append($BUTTON.clone()
                 .attr('data-action', 'activate-demo')
                 .text('Activate Demo'))
