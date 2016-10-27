@@ -78,8 +78,9 @@ define(function(require, exports, module) {
         onActivateDemo: function(e) {
             var view = this;
             var $el = $(e.currentTarget);
-            var $pre = $el.closest(view.ui.element);
-            $pre.addClass('active');
+            var $element = $el
+                .closest(view.ui.element)
+                .addClass('active');
             $el.remove();
             var $btn = $('<button></button>')
                 .attr('data-action', 'activate-fullscreen')
@@ -88,13 +89,18 @@ define(function(require, exports, module) {
                 .addClass('button-container')
                 .addClass('active-demo-buttons')
                 .append($btn)
-                .appendTo($pre);
+                .appendTo($element);
         },
         onActivateFullscreen: function(e) {
             var view = this;
             var $el = $(e.currentTarget);
-            var $pre = $el.closest(view.ui.element);
-            alert('fullscreen');
+            var $element = $el.closest(view.ui.element);
+            $element.find('pre')
+                .width('100vw')
+                .height('100vh')
+                .css({
+                    'z-index': 999999999
+                });
         },
         onClickTitle: function() {
             var view = this;
