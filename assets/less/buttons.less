@@ -81,6 +81,20 @@ button:before {
             text-align: center;
             top: 50%;
         }
+        &.active-demo-buttons {
+            text-align: right;
+            top: 0;
+            button {
+                margin: 10px 10px 0 0;
+                opacity: 0.5;
+            }
+            button:hover {
+                background-color: white;
+                border-color: white;
+                color: @dark_gray;
+                opacity: 1;
+            }
+        }
     }
 }
 .share-button-container {

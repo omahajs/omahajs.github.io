@@ -39,7 +39,8 @@ define(function(require, exports, module) {
         events: {
             'click .item-title': 'onClickTitle',
             'click [data-network=github]': 'onClickGithubButton',
-            'click [data-action=activate-demo]': 'onActivateDemo'
+            'click [data-action=activate-demo]': 'onActivateDemo',
+            'click [data-action=activate-fullscreen]': 'onActivateFullscreen'
         },
         templateContext: function() {
             return {
@@ -80,6 +81,20 @@ define(function(require, exports, module) {
             var $pre = $el.closest(view.ui.element);
             $pre.addClass('active');
             $el.remove();
+            var $btn = $('<button></button>')
+                .attr('data-action', 'activate-fullscreen')
+                .text('fullscreen');
+            $('<div></div>')
+                .addClass('button-container')
+                .addClass('active-demo-buttons')
+                .append($btn)
+                .appendTo($pre);
+        },
+        onActivateFullscreen: function(e) {
+            var view = this;
+            var $el = $(e.currentTarget);
+            var $pre = $el.closest(view.ui.element);
+            alert('fullscreen');
         },
         onClickTitle: function() {
             var view = this;
