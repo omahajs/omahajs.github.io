@@ -68,12 +68,20 @@ define(function(require) {
         return $wrap[0].outerHTML;
     }));
     Handlebars.registerPartial('demo', function(options) {
+        var height = _.get(options, 'height', 300);
         var $pre = $PRE.clone()
-            .height(_.get(options, 'height', 200));
+            .height(height);
+        var $iframe = $('<iframe></iframe>')
+            .attr('allowfullscreen', true)
+            .css('z-index', 1e8)
+            .height('100%')
+            .hide();
         var $wrap = $wrapper.clone()
             .addClass('code-block')
             .addClass('demo')
-            .append($pre);
+            .height(height)
+            .append($pre)
+            .append($iframe);
         $DIV.clone()
             .addClass('button-container')
             .addClass('demo-buttons')
@@ -81,6 +89,14 @@ define(function(require) {
                 .attr('data-action', 'activate-demo')
                 .text('Activate Demo'))
             .appendTo($wrap);
+        $DIV.clone()
+            .addClass('button-container')
+            .addClass('active-demo-buttons')
+            .append($BUTTON.clone()
+                .attr('data-action', 'activate-fullscreen')
+                .text('fullscreen'))
+            .appendTo($wrap)
+            .hide();
         return $wrap[0].outerHTML;
     });
     Handlebars.registerPartial('image', function(imgSrc, options) {

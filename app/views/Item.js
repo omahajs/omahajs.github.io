@@ -7,16 +7,17 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var $         = require('jquery');
-    var _         = require('underscore');
-    var hljs      = require('highlightjs');
-    var Mn        = require('backbone.marionette');
-    var omaha     = require('app');
-    var Share     = require('plugins/share.behavior');
-    var Clipboard = require('plugins/clipboard.behavior');
-    var moment    = require('moment');
-    var JST       = require('templates');
-    var Item      = require('models/Item');
+    var $          = require('jquery');
+    var _          = require('lodash');
+    var hljs       = require('highlightjs');
+    var Mn         = require('backbone.marionette');
+    var omaha      = require('app');
+    var Share      = require('plugins/share.behavior');
+    var Clipboard  = require('plugins/clipboard.behavior');
+    var Fullscreen = require('plugins/fullscreen.behavior');
+    var moment     = require('moment');
+    var JST        = require('templates');
+    var Item       = require('models/Item');
 
     var GITHUB_API_URL = 'https://api.github.com/gists/';
     function getGist(id) {
@@ -32,15 +33,14 @@ define(function(require, exports, module) {
         className: 'item-container',
         template: JST['content/item'],
         model: (new Item.Model()),
-        behaviors: [Share, Clipboard],
+        behaviors: [Share, Clipboard, Fullscreen],
         ui: {
             element: '.item-element-container'
         },
         events: {
             'click .item-title': 'onClickTitle',
             'click [data-network=github]': 'onClickGithubButton',
-            'click [data-action=activate-demo]': 'onActivateDemo',
-            'click [data-action=activate-fullscreen]': 'onActivateFullscreen'
+            'click button[data-action=activate-demo]': 'onActivateDemo'
         },
         templateContext: function() {
             return {
@@ -82,24 +82,11 @@ define(function(require, exports, module) {
                 .closest(view.ui.element)
                 .addClass('active');
             $el.remove();
-            var $btn = $('<button></button>')
-                .attr('data-action', 'activate-fullscreen')
-                .text('fullscreen');
-            $('<div></div>')
-                .addClass('button-container')
-                .addClass('active-demo-buttons')
-                .append($btn)
-                .appendTo($element);
-        },
-        onActivateFullscreen: function(e) {
-            var view = this;
-            var $el = $(e.currentTarget);
-            var $element = $el.closest(view.ui.element);
-            $element.find('pre')
-                .width('100vw')
-                .height('100vh')
-                .css({
-                    'z-index': 999999999
+            $element.find('iframe')
+                .prop('src', 'https://jhwohlgemuth.github.io/resume')
+                .show(function() {
+                    $element.find('pre').hide();
+                    $element.find('.active-demo-buttons').show();
                 });
         },
         onClickTitle: function() {

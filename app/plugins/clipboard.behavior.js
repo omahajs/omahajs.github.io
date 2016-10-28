@@ -1,5 +1,5 @@
 /**
- * @file Marionette Behavior for adding functionality to share buttons
+ * @file Marionette Behavior for adding "copy to clipboard" functionality
 **/
 define(function(require, exports, module) {
     'use strict';
