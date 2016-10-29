@@ -81,11 +81,14 @@ define(function(require, exports, module) {
             var $element = $el
                 .closest(view.ui.element)
                 .addClass('active');
+            var $pre = $element.find('pre').addClass('animated');
+            $pre.width('100vw');
             $el.remove();
             $element.find('iframe')
-                .prop('src', 'https://jhwohlgemuth.github.io/resume')
-                .show(function() {
-                    $element.find('pre').hide();
+                .width('100vw')
+                .prop('src', 'http://www.example.com')
+                .fadeIn(function() {
+                    $pre.removeClass('animated').hide();
                     $element.find('.active-demo-buttons').show();
                 });
         },
