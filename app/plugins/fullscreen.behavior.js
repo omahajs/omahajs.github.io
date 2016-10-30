@@ -21,11 +21,11 @@ define(function(require, exports, module) {
         events: {
             'click button[data-action=activate-fullscreen]': 'onActivateFullscreen'
         },
-        onActivateFullscreen: function(e) {
+        onActivateFullscreen: function() {
             var view = this.view;
             var el = view.$('iframe')[0];
             var requestMethod = REQUEST_METHOD_NAMES.filter(function(method) {
-                return _.isFunction(el[method]);
+                return typeof (el[method]) === 'function';
             });
             if (requestMethod.length > 0) {
                 el[requestMethod[0]]();
