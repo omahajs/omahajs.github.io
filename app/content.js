@@ -106,7 +106,7 @@ define(function(require, exports) {
         {
             type: 'about',
             body: [
-                paragraph('Omaha JS is about crafting sustainable, high-quality software with modern front-end technologies.  In simple terms, Omaha JS seeks to make it easier to write tested, linted, functional code.  With this simple mission in mind, we have some key ideals driving us:'),
+                paragraph('Omaha JS is about crafting sustainable, high-quality software with modern front-end technologies.  In simple terms, software is sustainable when it can be maintained indefinitely and Omaha JS seeks to help make creating sustainable software more attainable in real-world settings.  With this mission in mind, we have some key ideals driving us:'),
                 quote('Writing great code is a process that must be practiced.'),
                 paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                 quote('The process of writing great code must be sustainable in order to be viable in real-world situations.'),
