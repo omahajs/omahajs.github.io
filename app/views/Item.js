@@ -84,9 +84,10 @@ define(function(require, exports, module) {
             var $pre = $element.find('pre').addClass('animated');
             $pre.width('100vw');
             $el.remove();
-            $element.find('iframe')
+            var $iframe = $element.find('iframe');
+            $iframe
                 .width('100vw')
-                .prop('src', 'http://www.example.com')
+                .prop('src', $iframe.attr('data-url'))
                 .fadeIn(function() {
                     $pre.removeClass('animated').hide();
                     $element.find('.active-demo-buttons').show();

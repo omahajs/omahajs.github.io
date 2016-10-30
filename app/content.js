@@ -47,7 +47,7 @@ define(function(require, exports) {
             subtitle: 'This is a test of the news section',
             body: [
                 // banner('../assets/images/banners/clouds.jpg'),
-                demo('boom'),
+                demo({url: 'http://www.example.com'}),
                 gist('80b30714c33b197df0b6'),
                 // banner('../assets/images/banners/corn.jpg'),
                 code('var boom = \'dynamite\''),
@@ -108,7 +108,7 @@ define(function(require, exports) {
             body: [
                 paragraph('Omaha JS is about crafting sustainable, high-quality software with modern front-end technologies.  In simple terms, software is sustainable when it can be maintained indefinitely and Omaha JS seeks to help make creating sustainable software more attainable in real-world settings.  With this mission in mind, we have some key ideals driving us:'),
                 quote('Writing great code is a process that must be practiced.'),
-                paragraph('Writing sustainable code is not always easy and like most things that are worth doing, practice is required. When it comes to crafting code, writing more of it usually helps.  However, just writing code is not enough! You must also read, research, experiment, download, install, configure, execute, upload, contribute, comment, clone, fork, discuss, persevere, review, and follow (for starters).'),
+                paragraph('Writing sustainable code is not always easy and like most things that are worth doing, practice is required. When it comes to crafting code, writing more of it usually helps.  However, just writing code is not enough! You must also read, research, experiment, download, install, configure, execute, upload, contribute, comment, clone, fork, discuss, persevere, review, follow, and grow.'),
                 quote('The process of writing great code must be sustainable in order to be viable in real-world situations.'),
                 paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                 quote('Writing great code is fun and rewarding.'),

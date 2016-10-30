@@ -73,6 +73,7 @@ define(function(require) {
             .height(height);
         var $iframe = $('<iframe></iframe>')
             .attr('allowfullscreen', true)
+            .attr('data-url', _.get(options, 'url', 'http://www.example.com'))
             .css('z-index', 1e8)
             .height('100%')
             .hide();
