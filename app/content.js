@@ -106,28 +106,14 @@ define(function(require, exports) {
         {
             type: 'about',
             body: [
-                paragraph('Omaha JS is about crafting sustainable, high-quality software with modern front-end technologies.  In simple terms, software is sustainable when it can be maintained indefinitely and Omaha JS seeks to help make creating sustainable software more attainable in real-world settings.  With this mission in mind, we have some key ideals driving us:'),
+                paragraph('Omaha JS is about crafting sustainable, high-quality software with modern front-end technologies.  In simple terms, software is sustainable when it can be maintained indefinitely and Omaha JS seeks to help make creating sustainable software more attainable in real-world settings.'),
+                paragraph('With this mission in mind, we have some key ideals driving us:'),
                 quote('Writing great code is a process that must be practiced.'),
                 paragraph('Writing sustainable code is not always easy and like most things that are worth doing, practice is required. When it comes to crafting code, writing more of it usually helps.  However, just writing code is not enough! You must also read, research, experiment, download, install, configure, execute, upload, contribute, comment, clone, fork, discuss, persevere, review, follow, and grow.'),
                 quote('The process of writing great code must be sustainable in order to be viable in real-world situations.'),
-                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                quote('Writing great code is fun and rewarding.'),
-                code(
-                    'const _ = require(\'lodash\');',
-                    'const STUFF = [',
-                    '\t\'JavaScript\',',
-                    '\t\'Node\',',
-                    '\t\'HTML\',',
-                    '\t\'CSS\'',
-                    '];',
-                    'let isAwesome = _.partial(_.includes, STUFF);',
-                    'const CODE_IS_FUN = STUFF',
-                    '\t.map(isAwesome)',
-                    '\t.every(x => (x === true));',
-                    '',
-                    'console.log(CODE_IS_FUN);// true'
-                ),
-                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                paragraph('"A developer went out to craft some code.  As he wrote his code, some of it was un-used and became dead code.  Other code was used right away.  But the code did not have tests and soon became impossible to change as requirements evolved.  Other code was added to old production code that was bloated, and not well-maintained.  The legacy code smothered the tender new code and it became un-used.  Still other code was added to a well-maintained code base with numerous well-written tests and quality metrics.  The code grew and was re-factored to be thirty, sixty, and even a hundred times more useful than when it was written."'),
+                quote('Practice patterns before plug-ins.'),
+                paragraph('Software developers encode the patterns of reality.  We should understand patterns to accomplish tasks and have the ability to choose the appropiate tool for any task.  As tools change, it is the skill and privilege of software developers to learn and adapt, as required.'),
                 list('Credits',
                     [
                         '[Nebraska Font by Daniel Heikkinen](http://www.dafont.com/nebraska.font)',
