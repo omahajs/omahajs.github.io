@@ -68,13 +68,15 @@ define(function(require) {
         return $wrap[0].outerHTML;
     }));
     Handlebars.registerPartial('demo', function(options) {
-        var height = _.get(options, 'height', 300);
+        var DEFAULT_HEIGHT = 300;
+        var BRING_TO_FRONT = 1e8;
+        var height = _.get(options, 'height', DEFAULT_HEIGHT);
         var $pre = $PRE.clone()
             .height(height);
         var $iframe = $('<iframe></iframe>')
             .attr('allowfullscreen', true)
             .attr('data-url', _.get(options, 'url', 'http://www.example.com'))
-            .css('z-index', 1e8)
+            .css('z-index', BRING_TO_FRONT)
             .height('100%')
             .hide();
         var $wrap = $wrapper.clone()

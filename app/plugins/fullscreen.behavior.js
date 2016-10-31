@@ -6,13 +6,6 @@ define(function(require, exports, module) {
 
     var Marionette = require('backbone.marionette');
 
-    var REQUEST_METHOD_NAMES = [
-        'requestFullScreen',
-        'webkitRequestFullScreen',
-        'mozRequestFullScreen',
-        'msRequestFullScreen'
-    ];
-
     /**
      * @name FullscreenBehavior
      * @constructor
@@ -21,14 +14,22 @@ define(function(require, exports, module) {
         events: {
             'click button[data-action=activate-fullscreen]': 'onActivateFullscreen'
         },
+        getRequestFullscreenMethodName: function() {
+            var REQUEST_METHOD_NAMES = [
+                'requestFullScreen',
+                'webkitRequestFullScreen',
+                'mozRequestFullScreen',
+                'msRequestFullScreen'
+            ];
+            return REQUEST_METHOD_NAMES.filter(function(method) {
+                return typeof (document.body[method]) === 'function';
+            })[0];
+        },
         onActivateFullscreen: function() {
-            var view = this.view;
-            var el = view.$('iframe')[0];
-            var requestMethod = REQUEST_METHOD_NAMES.filter(function(method) {
-                return typeof (el[method]) === 'function';
-            });
-            if (requestMethod.length > 0) {
-                el[requestMethod[0]]();
+            var el = this.view.$('iframe')[0];
+            var method = el[this.getRequestFullscreenMethodName()];
+            if (typeof (method) === 'function') {
+                method.call(el);
             } else {
                 alert('Fullscreen not supported');
             }
