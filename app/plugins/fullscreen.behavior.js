@@ -41,9 +41,6 @@ define(function(require, exports, module) {
                     .remove();
             }
         },
-        fullscreenSupported: function() {
-            return typeof(getRequestFullscreenMethodName()) !== 'undefined';
-        },
         onActivateFullscreen: function() {
             var view = this.view;
             var el = view.$(view.ui.element).find('[allowfullscreen]')[0];
@@ -53,6 +50,9 @@ define(function(require, exports, module) {
             } else {
                 alert('Fullscreen not supported');
             }
+        },
+        fullscreenSupported: function() {
+            return typeof(getRequestFullscreenMethodName()) !== 'undefined';
         }
     });
 
