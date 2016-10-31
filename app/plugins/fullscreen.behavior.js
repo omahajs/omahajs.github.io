@@ -6,28 +6,48 @@ define(function(require, exports, module) {
 
     var Marionette = require('backbone.marionette');
 
+    function getRequestFullscreenMethodName() {
+        var REQUEST_METHOD_NAMES = [
+            'requestFullScreen',
+            'webkitRequestFullScreen',
+            'mozRequestFullScreen',
+            'msRequestFullScreen'
+        ];
+        var methodArray = REQUEST_METHOD_NAMES.filter(function(method) {
+            return typeof (document.body[method]) === 'function';
+        });
+        return methodArray.length > 0 ? methodArray[0] : undefined;
+    }
+
     /**
      * @name FullscreenBehavior
      * @constructor
     **/
     var FullscreenBehavior = Marionette.Behavior.extend({
-        events: {
-            'click button[data-action=activate-fullscreen]': 'onActivateFullscreen'
+        ui: {
+            element: '.item-element-container',
+            fullscreenButton: 'button[data-action=activate-fullscreen]'
         },
-        getRequestFullscreenMethodName: function() {
-            var REQUEST_METHOD_NAMES = [
-                'requestFullScreen',
-                'webkitRequestFullScreen',
-                'mozRequestFullScreen',
-                'msRequestFullScreen'
-            ];
-            return REQUEST_METHOD_NAMES.filter(function(method) {
-                return typeof (document.body[method]) === 'function';
-            })[0];
+        events: {
+            'click @ui.fullscreenButton': 'onActivateFullscreen'
+        },
+        onDomRefresh: function() {
+            var behavior = this;
+            var view = behavior.view;
+            if (!this.fullscreenSupported()) {
+                view.$el
+                    .find(':hidden')
+                    .filter(behavior.ui.fullscreenButton)
+                    .remove();
+            }
+        },
+        fullscreenSupported: function() {
+            return typeof(getRequestFullscreenMethodName()) !== 'undefined';
         },
         onActivateFullscreen: function() {
-            var el = this.view.$('iframe')[0];
-            var method = el[this.getRequestFullscreenMethodName()];
+            var view = this.view;
+            var el = view.$(view.ui.element).find('[allowfullscreen]')[0];
+            var method = el[getRequestFullscreenMethodName()];
             if (typeof (method) === 'function') {
                 method.call(el);
             } else {
