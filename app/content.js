@@ -18,7 +18,7 @@ define(function(require, exports) {
             type: 'post',
             postId: '1',
             name: 'coming-soon',
-            date: '20161106',
+            date: '20161101',
             title: 'Coming Soon',
             subtitle: 'A source for quality content about code and quality code for making content',
             body: [
