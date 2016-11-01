@@ -217,7 +217,7 @@ module.exports = function (grunt) {
                     uglify2: {
                         output: {
                             comments: false,
-                            preamble: '/* <%= package.name %> - v<%= package.version %> - ' + '2016-02-07 */'
+                            preamble: '/* <%= package.name %> - v<%= package.version %> - ' + '2016-11-01 */'
                         },
                         compress: {
                             drop_console: true    //discard calls to console.* functions
