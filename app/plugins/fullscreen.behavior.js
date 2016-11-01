@@ -52,7 +52,7 @@ define(function(require, exports, module) {
             }
         },
         fullscreenSupported: function() {
-            return typeof(getRequestFullscreenMethodName()) !== 'undefined';
+            return typeof (getRequestFullscreenMethodName()) !== 'undefined';
         }
     });
 

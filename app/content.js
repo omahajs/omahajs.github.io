@@ -5,11 +5,7 @@ define(function(require, exports) {
     var partials  = require('handlebars').partials;
     require('./helpers/handlebars.partials');
     var paragraph = partials.paragraph;
-    var code      = partials.code;
-    var gist      = partials.gist;
-    var demo      = partials.demo;
     var image     = partials.image;
-    var banner    = partials.banner;
     var quote     = partials.quote;
     var list      = partials.list;
 
