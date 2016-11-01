@@ -20,8 +20,9 @@ define(function(require, exports) {
             name: 'coming-soon',
             date: '20161106',
             title: 'Coming Soon',
-            subtitle: '',
+            subtitle: 'A source for quality content about code and quality code for making content',
             body: [
+                quote('A source for quality content about code and quality code for making content'),
                 paragraph('We are working on meaningful content to make the world better.'),
                 paragraph('When we are ready to share, we will post it here in the Omaha JS Feed.  Keep us in mind, and check back soon.'),
                 paragraph('Before you leave, please check out our <a href="#code">code section</a>!'),
