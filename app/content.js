@@ -17,64 +17,15 @@ define(function(require, exports) {
         {
             type: 'post',
             postId: '1',
-            name: 'foo',
-            date: '201609291800',
-            title: 'Really Long Test Announcement #1',
-            subtitle: 'This is a test of the news section',
+            name: 'coming-soon',
+            date: '20161106',
+            title: 'Coming Soon',
+            subtitle: '',
             body: [
-                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
-            ]
-        },
-        {
-            type: 'post',
-            postId: '2',
-            name: 'bar',
-            date: '20160926',
-            title: 'Test Announcement #2',
-            subtitle: 'This is a test of the news section',
-            body: [
-                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
-            ]
-        },
-        {
-            type: 'post',
-            postId: '3',
-            name: 'baz',
-            date: '20160927',
-            title: 'Test Announcement #3',
-            subtitle: 'This is a test of the news section',
-            body: [
-                // banner('../assets/images/banners/clouds.jpg'),
-                demo({url: 'http://www.example.com'}),
-                gist('80b30714c33b197df0b6'),
-                // banner('../assets/images/banners/corn.jpg'),
-                code('var boom = \'dynamite\''),
-                quote('If you are not growing, you are dying.'),
-                code(
-                    'function getArgs() {',
-                    '\treturn Array.prototype.slice.apply(arguments);',
-                    '}',
-                    'var printArgs = _.flow(getArgs, console.log);',
-                    '',
-                    'printArgs(1, 2, 3); // [1, 2, 3]'
-                ),
-                paragraph('...that is some quote'),
-                image(null, {height: 300}),
-                banner('../assets/images/clouds.jpg'),
-                list('List Title',
-                    [
-                        '[Google](https://google.com)',
-                        'https://google.com',
-                        'My favorite color is Red'
-                    ]
-                ),
-                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                quote('Watashi no namae wa, Jason desu.'),
-                image(null, {position: 'center bottom'}),
-                paragraph('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+                paragraph('We are working on meaningful content to make the world better.'),
+                paragraph('When we are ready to share, we will post it here in the Omaha JS Feed.  Keep us in mind, and check back soon.'),
+                paragraph('Before you leave, please check out our <a href="#code">code section</a>!'),
+                image(null, {height: 300})
             ]
         }
     ];

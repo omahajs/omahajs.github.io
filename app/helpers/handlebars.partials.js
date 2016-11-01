@@ -26,7 +26,7 @@ define(function(require) {
     }
 
     Handlebars.registerPartial('paragraph', function(txt) {
-        var $p = $('<p></p>').text(txt);
+        var $p = $('<p></p>').html(txt);
         return $p[0].outerHTML;
     });
     Handlebars.registerPartial('gist', function(id) {
