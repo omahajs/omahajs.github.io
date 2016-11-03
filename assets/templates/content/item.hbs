@@ -35,13 +35,13 @@
                 {{ subtitle }}
             {{/if_eq}}
             </span>
-            {{#if_eq type "project"}}
+            {{#if_not_eq type "about"}}
             {{> tags}}
-            {{/if_eq}}
+            {{/if_not_eq}}
         </div>
     </header>
     {{/if_not_eq}}
-    {{#if_not_eq type "code"}}
+    {{#if_not_eq type "project"}}
         <div class="item-details">
         {{#each body}}
             {{{ this }}}

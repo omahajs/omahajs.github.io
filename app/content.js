@@ -2,12 +2,13 @@
 define(function(require, exports) {
     'use strict';
 
-    var partials  = require('handlebars').partials;
-    require('./helpers/handlebars.partials');
-    var paragraph = partials.paragraph;
-    var image     = partials.image;
-    var quote     = partials.quote;
-    var list      = partials.list;
+    var Builder   = require('./helpers/element.builder');
+    var element   = new Builder();
+    var paragraph = element.paragraph;
+    var quote     = element.quote;
+    var list      = element.list;
+    var code      = element.code;
+    var image     = element.image;
 
     exports.feed = [
         {
@@ -17,6 +18,7 @@ define(function(require, exports) {
             date: '20161101',
             title: 'Coming Soon',
             subtitle: 'A source for quality content about code and quality code for making content',
+            tags: ['hype', 'slogan'],
             body: [
                 quote('A source for quality content about code and quality code for making content'),
                 paragraph('We are working on meaningful content to make the world better.'),
@@ -36,7 +38,10 @@ define(function(require, exports) {
             name: 'generator-omaha',
             url: 'https://github.com/omahajs/generator-omaha',
             title: 'Omaha Generator',
-            subtitle: 'Yeoman generator for projects, web apps, and servers'
+            subtitle: 'Yeoman generator for projects, web apps, and servers',
+            example: code(
+                'var boom = "dynamite";'
+            )
         },
         {
             order: 2,
@@ -47,7 +52,10 @@ define(function(require, exports) {
             name: 'eslint-config-omaha-prime-grade',
             url: 'https://github.com/omahajs/eslint-config-omaha-prime-grade',
             title: 'Code Quality Rules',
-            subtitle: '"Prime Grade" ESLint Shareable Config'
+            subtitle: '"Prime Grade" ESLint Shareable Config',
+            example: code(
+                'var boom = "dynamite";'
+            )
         }
     ];
     exports.about = [
