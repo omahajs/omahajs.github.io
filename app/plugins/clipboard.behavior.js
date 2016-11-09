@@ -27,6 +27,7 @@ define(function(require, exports, module) {
             'click [data-action=copy-to-clipboard]': 'onCopy'
         },
         onCopy: function(e) {
+            console.log('Boot!');
             var behavior = this;
             var view = behavior.view;
             var getContent = behavior.options.getContent;

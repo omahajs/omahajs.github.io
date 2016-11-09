@@ -50,6 +50,7 @@ define(function(require, exports, module) {
             };
         },
         initialize: function() {
+            var view = this;
             hljs.configure({
                 tabReplace: '    ',
                 languages: ['javascript', 'html', 'css']
@@ -71,6 +72,11 @@ define(function(require, exports, module) {
             view.renderGists();
         },
         onDomRefresh: function() {
+            var view = this;
+            if (view.model.get('type') === 'project' && view.model.has('example')) {
+                view.$el.after(view.model.get('example'));
+                Mn.bindEvents(view);
+            }
             $('pre code').each(function(i, block) {
                 hljs.highlightBlock(block);
             });

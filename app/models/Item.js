@@ -37,7 +37,8 @@ define(function(require, exports) {
      * @prop {ItemModel} model
     **/
     var ItemCollection = Data.Collection.extend({
-        model: ItemModel
+        model: ItemModel,
+        comparator: 'order'
     });
 
     exports.Model = ItemModel;
