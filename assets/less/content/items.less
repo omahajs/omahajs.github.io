@@ -210,34 +210,40 @@
         flex-wrap: wrap;
         margin: 0 auto;
         overflow: hidden;
-        padding-top: 40px;
-        padding-left: 10px;
         width: 70vw;
     }
     .item-container {
-        background-color: white;
-        border-radius: 8px;
+        color: white;
+        cursor: pointer;
         flex-grow: 1;
-        margin: 20px;
-        margin-top: 0;
-        margin-left: 0;
-        overflow: hidden;
+        &:first-of-type {
+            margin-top: 50px;
+        }
         .item-content {
             background-color: @node_green_dark;
-            border-radius: 4px;
             display: flex;
             flex-direction: column;
-            margin: 5px;
             header {
                 align-items: stretch;
+                border: solid 5px white;
                 display: flex;
                 flex-direction: row;
                 min-height: 100px;
+                &:hover {
+                    border-color: @even_color_day;
+                    color: @even_color_day;
+                    cursor: pointer;
+                    .item-content-icon {
+                        background-color: @even_color_day;
+                        color: @even_color_day;
+                    }
+                }
                 .item-content-icon {
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: contain;
-                    // height: 100%;
+                    background-color: white;
+                    color: white;
                     min-height: 100px;
                     width: 100px;
                     &.yeoman {
@@ -267,24 +273,6 @@
                         font-size: 1rem;
                     }
                 }
-            }
-        }
-        &:not(:hover) {
-            background-color: white;
-            color: white;
-            cursor: pointer;
-            .item-content-icon {
-                background-color: white;
-                color: white;
-            }
-        }
-        &:hover {
-            background-color: @even_color_day;
-            color: @even_color_day;
-            cursor: pointer;
-            .item-content-icon {
-                background-color: @even_color_day;
-                color: @even_color_day;
             }
         }
     }
