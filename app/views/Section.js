@@ -55,7 +55,7 @@ define(function(require, exports, module) {
         },
         events: {
             'click .section-title': 'onClickTitle',
-            'click .item-container[data-type=project]': 'onClickProjectItem'
+            'click .item-container[data-type=project] header': 'onClickProject'
         },
         initialize: function(options) {
             var section = this;
@@ -78,9 +78,8 @@ define(function(require, exports, module) {
                 omaha.router.navigate(section, {trigger: true});
             }
         },
-        onClickProjectItem: function(e) {
-            var $e = $(e.currentTarget);
-            var type = $e.attr('data-type');
+        onClickProject: function(e) {
+            var $e = $(e.currentTarget).closest('.item-container');
             var url = $e.attr('data-url');
             window.open(url);
         }

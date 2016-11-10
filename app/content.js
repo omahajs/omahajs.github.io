@@ -20,9 +20,7 @@ define(function(require, exports) {
             title: 'Coming Soon',
             subtitle: 'A source for quality content about code and quality code for making content',
             tags: ['hype', 'slogan'],
-            body: [code(
-                'var boom = "dynamite";'
-            ),
+            body: [
                 quote('A source for quality content about code and quality code for making content'),
                 paragraph('We are working on meaningful content to make the world better.'),
                 paragraph('When we are ready to share, we will post it here in the Omaha JS Feed.  Keep us in mind, and check back soon.'),
