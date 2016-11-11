@@ -41,7 +41,10 @@ define(function(require, exports) {
             title: 'Omaha Generator',
             subtitle: 'Yeoman generator for projects, web apps, and servers',
             example: code(
-                'var boom = "dynamite";'
+                'npm install --global yo generator-omaha &&',
+                'mkdir my-project &&',
+                'cd my-project &&',
+                'yo omaha'
             )
         },
         {

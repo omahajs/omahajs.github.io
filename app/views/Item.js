@@ -53,7 +53,7 @@ define(function(require, exports, module) {
             var view = this;
             hljs.configure({
                 tabReplace: '    ',
-                languages: ['javascript', 'html', 'css']
+                languages: ['javascript', 'html', 'css', 'bash']
             });
         },
         onRender: function() {
