@@ -55,7 +55,10 @@ define(function(require, exports) {
             title: 'Code Quality Rules',
             subtitle: '"Prime Grade" ESLint Shareable Config',
             example: code(
-                'var boom = "dynamite";'
+                '//.eslintrc.js',
+                'module.exports = {',
+                '\textends: \'omaha-prime-grade\'',
+                '};'
             )
         }
     ];
