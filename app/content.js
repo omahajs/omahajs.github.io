@@ -58,6 +58,7 @@ define(function(require, exports) {
             title: 'Code Quality Rules',
             subtitle: '"Prime Grade" ESLint Shareable Config',
             example: code(
+                '//.eslintrc.js file in project root',
                 'module.exports = {',
                 '\textends: \'omaha-prime-grade\'',
                 '};'
