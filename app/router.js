@@ -9,7 +9,7 @@ define(function(require, exports, module) {
     var $  = require('jquery');
     var Mn = require('backbone.marionette');
 
-    var SCROLL_DURATION = 600;
+    var SCROLL_DURATION = 800;
 
     /**
      * @name RouterController
@@ -33,14 +33,15 @@ define(function(require, exports, module) {
                 top = $feed.offset().top;
             }
             $('html, body').animate({scrollTop: top}, {
-                duration: SCROLL_DURATION
+                duration: SCROLL_DURATION,
+                easing: 'easeInOutQuart'
             });
         },
         scrollToSection: function(name) {
             var top = (name && typeof (name) === 'string') ? $('.content-section.' + name).offset().top : 0;
             $('html, body').animate({scrollTop: top}, {
                 duration: SCROLL_DURATION,
-                easing: 'easeInOutCirc'
+                easing: 'easeInOutQuart'
             });
         }
     });
