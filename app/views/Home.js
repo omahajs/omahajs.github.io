@@ -89,7 +89,7 @@ define(function(require, exports, module) {
             var home = this;
             omaha.banner = new BannerView();
             omaha.navigation = new NavigationMenu();
-            omaha.model.set('sections', _(Object.keys(home.regions)).without('navigation'));
+            omaha.model.set('sections', _.without(Object.keys(home.regions), 'navigation'));
         },
         onRender: function() {
             this
