@@ -32,11 +32,16 @@ define(function(require, exports, module) {
                 this.navigate('feed');
                 top = $feed.offset().top;
             }
-            $('html, body').animate({scrollTop: top}, SCROLL_DURATION);
+            $('html, body').animate({scrollTop: top}, {
+                duration: SCROLL_DURATION
+            });
         },
         scrollToSection: function(name) {
             var top = (name && typeof (name) === 'string') ? $('.content-section.' + name).offset().top : 0;
-            $('html, body').animate({scrollTop: top}, SCROLL_DURATION);
+            $('html, body').animate({scrollTop: top}, {
+                duration: SCROLL_DURATION,
+                easing: 'easeInOutCirc'
+            });
         }
     });
     /**

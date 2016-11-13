@@ -17,6 +17,7 @@ define(function(require, exports, module) {
     require('./shims/marionette.radio.shim');
     require('./helpers/handlebars.helpers');
     require('./helpers/jquery.extensions');
+    require('./plugins/jquery.easing');
     require('./helpers/underscore.mixins');
 
     /**
