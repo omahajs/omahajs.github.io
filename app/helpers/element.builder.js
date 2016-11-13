@@ -42,7 +42,7 @@ define(function(require, exports, module) {
             var $span = $el.span.clone()
                 .attr('data-network', 'twitter')
                 .addClass('social')
-                .text('tweet')
+                .text('click to tweet')
                 .appendTo($quote);
             $el.span.clone()
                 .addClass('icon')

@@ -26,7 +26,13 @@ define(function(require, exports, module) {
     var WindowController = Mn.Object.extend({
         initialize: function() {
             var controller = this;
+            controller.listenTo(CHANNEL, 'window:open', controller.open);
             controller.listenTo(CHANNEL, 'window:scroll', controller.scrollTo);
+        },
+        open: function(options) {
+            if (_.get(options, 'url', false)) {
+                window.open(options.url);
+            }
         },
         scrollTo: function(options) {
             var top = _.get(options, 'top', 0);

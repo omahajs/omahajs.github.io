@@ -81,7 +81,7 @@ define(function(require, exports, module) {
         onClickProject: function(e) {
             var $e = $(e.currentTarget).closest('.item-container');
             var url = $e.attr('data-url');
-            window.open(url);
+            omaha.vent.trigger('window:open', {url: url});
         }
     });
 

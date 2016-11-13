@@ -44,28 +44,28 @@ define(function(require, exports, module) {
     }
     var ShareBehavior = Marionette.Behavior.extend({
         events: {
-            'click .social': 'onClickShare'
+            'click .item-quote': 'onClickShare',
+            'click button.social': 'onClickShare'
         },
         onDomRefresh: function() {
             var view = this.view;
-            view.$('span.social')
-                .mouseenter(function(e) {$(e.currentTarget).parent().addClass('tweet');})
-                .mouseleave(function(e) {$(e.currentTarget).parent().removeClass('tweet');});
+            view.$('.item-quote')
+                .mouseenter(function(e) {$(e.currentTarget).addClass('tweet');})
+                .mouseleave(function(e) {$(e.currentTarget).removeClass('tweet');});
         },
         onClickShare: function(e) {
-            var $e = $(e.currentTarget);
-            var network = $e.attr('data-network');
+            var $target = $(e.currentTarget);
             if (this.isQuote(e)) {
-                var txt = $e.parent('div').text();
-                var quote = txt.substr(0, txt.length - '#tweet'.length);
+                var txt = $target.text();
+                var quote = txt.substr(0, txt.length - '#click to tweet'.length);
                 this.tweet(quote);
             } else {
-                this.shareWith(network);
+                this.shareWith($target.attr('data-network'));
             }
         },
         isQuote: function(e) {
             var $e = $(e.currentTarget);
-            return $e.parent().hasClass('item-quote');
+            return $e.hasClass('item-quote');
         },
         shareWith: function(network) {
             var view = this.view;

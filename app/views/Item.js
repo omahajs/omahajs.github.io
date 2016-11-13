@@ -103,7 +103,7 @@ define(function(require, exports, module) {
         },
         onClickGithubButton: function(e) {
             var url = e.currentTarget.getAttribute('data-gist-url');
-            window.open(url);
+            omaha.vent.trigger('window:open', {url: url});
         },
         renderGists: function() {
             var view = this;
