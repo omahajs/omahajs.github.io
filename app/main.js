@@ -8,13 +8,17 @@
 define(function(require) {
     'use strict';
 
-    var Backbone = require('backbone');
-    var omaha    = require('app');
-    var Router   = require('router');
-    var Home     = require('views/Home');
+    var Backbone         = require('backbone');
+    var omaha            = require('app');
+    var Router           = require('router');
+    var WindowController = require('controllers/Window');
+    var Home             = require('views/Home');
 
     omaha.on('before:start', function() {
         omaha.info('Starting...');
+        omaha.control = {
+            window: new WindowController()
+        };
         omaha.router = new Router();
     });
     omaha.on('start', function() {
@@ -30,5 +34,6 @@ define(function(require) {
     } else {
         //AMD == > Bundled with r.js
         omaha.start();
+        omaha.vent.trigger('window:open');
     }
 });

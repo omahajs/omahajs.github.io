@@ -11,6 +11,7 @@ define(function(require, exports, module) {
 
     var _          = require('underscore');
     var Backbone   = require('backbone');
+    var Radio      = require('backbone.radio');
     var Marionette = require('backbone.marionette');
     var logging    = require('./plugins/radio.logging');
 
@@ -28,7 +29,7 @@ define(function(require, exports, module) {
     **/
     var ApplicationModel = Backbone.Model.extend({
         defaults: {
-            name: 'OMAHA JS'
+            name: 'OMAHAJS'
         }
     });
     /**
@@ -39,7 +40,10 @@ define(function(require, exports, module) {
     **/
     var Application = Marionette.Application.extend({
         region: '.main',
-        model: new ApplicationModel()
+        model: new ApplicationModel(),
+        initialize: function() {
+            this.vent = this.channel = Radio.channel(this.model.get('name'));
+        }
     });
 
     var omaha = new Application();

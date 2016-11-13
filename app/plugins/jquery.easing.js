@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
@@ -37,13 +38,12 @@
 
 // t: current time, b: begInnIng value, c: change In value, d: duration
 define(function(require, exports, module) {
-	'use strict';
+    'use strict';
 
-	var jQuery = require('jquery');
-
+    var jQuery = require('jquery');
 	jQuery.easing['jswing'] = jQuery.easing['swing'];
-	jQuery.extend( jQuery.easing,
-	{
+
+	jQuery.extend(jQuery.easing, {
 		def: 'easeOutQuad',
 		swing: function (x, t, b, c, d) {
 			//alert(jQuery.easing.default);
@@ -174,7 +174,8 @@ define(function(require, exports, module) {
 			return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
 		}
 	});
-})
+
+});
 
 /*
  *
@@ -208,3 +209,4 @@ define(function(require, exports, module) {
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
+/* eslint-enable */

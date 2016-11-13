@@ -6,10 +6,12 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var $  = require('jquery');
-    var Mn = require('backbone.marionette');
+    var $     = require('jquery');
+    var Radio = require('backbone.radio');
+    var Mn    = require('backbone.marionette');
 
-    var SCROLL_DURATION = 800;
+    var CHANNEL_NAME = 'OMAHAJS';
+    var CHANNEL = Radio.channel(CHANNEL_NAME);
 
     /**
      * @name RouterController
@@ -32,17 +34,11 @@ define(function(require, exports, module) {
                 this.navigate('feed');
                 top = $feed.offset().top;
             }
-            $('html, body').animate({scrollTop: top}, {
-                duration: SCROLL_DURATION,
-                easing: 'easeInOutQuart'
-            });
+            CHANNEL.trigger('window:scroll', {top: top});
         },
         scrollToSection: function(name) {
             var top = (name && typeof (name) === 'string') ? $('.content-section.' + name).offset().top : 0;
-            $('html, body').animate({scrollTop: top}, {
-                duration: SCROLL_DURATION,
-                easing: 'easeInOutQuart'
-            });
+            CHANNEL.trigger('window:scroll', {top: top});
         }
     });
     /**

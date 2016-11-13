@@ -20,8 +20,6 @@ define(function(require, exports, module) {
     var Item       = require('models/Item');
     var Data       = require('models/Data');
 
-    var SCROLL_DURATION = 300;
-
     function regionObject(selector) {
         return {
             el: selector,
@@ -91,9 +89,7 @@ define(function(require, exports, module) {
             var home = this;
             omaha.banner = new BannerView();
             omaha.navigation = new NavigationMenu();
-            omaha.model.set('sections', Object.keys(home.regions).filter(function(region) {
-                return region !== 'navigation';
-            }));
+            omaha.model.set('sections', _(Object.keys(home.regions)).without('navigation'));
         },
         onRender: function() {
             this
@@ -125,7 +121,7 @@ define(function(require, exports, module) {
             });
             scrollButton.click(function() {
                 omaha.router.navigate('welcome');
-                $('html, body').animate({scrollTop: 0}, SCROLL_DURATION);
+                omaha.vent.trigger('window:scroll', {top: 0});
             });
             return this;
         }
