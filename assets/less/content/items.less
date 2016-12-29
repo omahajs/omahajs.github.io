@@ -190,7 +190,6 @@
 }
 .code {
     .items-container {
-        // background-color: blue;
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -214,7 +213,7 @@
             flex-direction: column;
             header {
                 align-items: stretch;
-                border: solid 5px white;
+                border: solid 5px @node_green_dark;
                 box-sizing: border-box;
                 cursor: pointer;
                 display: flex;
@@ -222,11 +221,9 @@
                 min-height: 100px;
                 width: 70vw;
                 &:hover {
-                    border-color: @even_color_day;
                     color: @even_color_day;
                     cursor: pointer;
                     .item-content-icon {
-                        background-color: @even_color_day;
                         color: @even_color_day;
                     }
                 }
@@ -234,7 +231,7 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: contain;
-                    background-color: white;
+                    background-color: @node_green_dark;
                     color: white;
                     min-height: 100px;
                     width: 100px;
