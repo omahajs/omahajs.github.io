@@ -33,7 +33,7 @@ define(function(require, exports) {
         {
             order: 2,
             type: 'project',
-            tags: ['yeoman', 'node', 'CLI', 'scaffold'],
+            tags: ['yeoman', 'scaffold', 'CLI'],
             technology: 'yeoman',
             date: '',
             name: 'generator-omaha',
@@ -55,7 +55,7 @@ define(function(require, exports) {
             date: '',
             name: 'eslint-config-omaha-prime-grade',
             url: 'https://github.com/omahajs/eslint-config-omaha-prime-grade',
-            title: 'Code Quality Rules',
+            title: 'Code Quality',
             // subtitle: '"Prime Grade" ESLint Shareable Config',
             example: code(
                 '// .eslintrc.js',
