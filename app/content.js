@@ -79,6 +79,7 @@ define(function(require, exports) {
             // subtitle: 'Applied mathematics toolkit (client & server)',
             example: code(
                 'const applied = require(\'applied\');',
+                '',
                 'var geo = applied.geodetic;',
                 'var val = [\'32\', \'49\', \'49.0800\'];',
                 'var dd = geo.convert.toDecimalDegrees(val);',
