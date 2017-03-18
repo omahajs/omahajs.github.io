@@ -145,13 +145,13 @@
 }
 .feed {
     .item-container .item-content header {
-        margin-bottom: 10px;
+        margin-bottom: 0;
         .item-title {
             display: flex;
             flex-direction: column;
             .title {
                 font-size: 1.8rem;
-                padding-bottom: 5px;
+                padding-bottom: 0px;
                 &:after {
                     content: @icon-link;
                     color: darken(@node_green_dark, 6);
@@ -220,6 +220,7 @@
                 display: flex;
                 flex-direction: row;
                 min-height: 100px;
+                padding-bottom: 5px;
                 width: 70vw;
                 &:hover {
                     color: @even_color_day;
@@ -257,7 +258,8 @@
                     padding-bottom: 10px;
                     padding-right: 10px;
                     .title {
-                        padding: 8px 0;
+                        padding: 16px 0;
+                        padding-bottom: 0;
                     }
                     .subtitle {
                         font-size: 1rem;

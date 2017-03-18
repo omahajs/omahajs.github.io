@@ -39,7 +39,7 @@ define(function(require, exports) {
             name: 'generator-omaha',
             url: 'https://github.com/omahajs/generator-omaha',
             title: 'Omaha Generator',
-            subtitle: 'Yeoman generator for projects, web apps, and servers',
+            // subtitle: 'Yeoman generator for projects, web apps, and servers',
             example: code(
                 'npm install --global yo generator-omaha &&',
                 'mkdir my-project &&',
@@ -56,7 +56,7 @@ define(function(require, exports) {
             name: 'eslint-config-omaha-prime-grade',
             url: 'https://github.com/omahajs/eslint-config-omaha-prime-grade',
             title: 'Code Quality Rules',
-            subtitle: '"Prime Grade" ESLint Shareable Config',
+            // subtitle: '"Prime Grade" ESLint Shareable Config',
             example: code(
                 '// .eslintrc.js',
                 '// -> Curated selection of rules',
@@ -65,6 +65,28 @@ define(function(require, exports) {
                 'module.exports = {',
                 '\textends: \'omaha-prime-grade\'',
                 '};'
+            )
+        },
+        {
+            order: 0,
+            type: 'project',
+            tags: ['mathematics', 'library'],
+            technology: 'javascript',
+            date: '',
+            name: 'applied.js',
+            url: 'https://applied.js.org',
+            title: 'Applied JS',
+            // subtitle: 'Applied mathematics toolkit (client & server)',
+            example: code(
+                'const applied = require(\'applied\');',
+                'var geo = applied.geodetic;',
+                'var val = [\'32\', \'49\', \'49.0800\'];',
+                'var dd = geo.convert.toDecimalDegrees(val);',
+                'console.log(dd);// 32.8303',
+                '',
+                'var atm = applied.atmosphere',
+                'var speed = atm.calculate.speedOfSound(86000);',
+                'console.log(speed);// 274.6 m/s'
             )
         }
     ];
