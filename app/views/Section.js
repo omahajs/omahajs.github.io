@@ -55,7 +55,7 @@ define(function(require, exports, module) {
         },
         events: {
             'click .section-title': 'onClickTitle',
-            'click .item-container[data-type=project] header': 'onClickProject'
+            'click .item-container .item-content[data-type=project] header': 'onClickProject'
         },
         initialize: function(options) {
             var section = this;

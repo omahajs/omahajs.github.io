@@ -8,7 +8,6 @@ define(function(require, exports, module) {
     'use strict';
 
     var $          = require('jquery');
-    var _          = require('lodash');
     var hljs       = require('highlightjs');
     var Mn         = require('backbone.marionette');
     var omaha      = require('app');
@@ -57,17 +56,9 @@ define(function(require, exports, module) {
         },
         onRender: function() {
             var view = this;
-            var parent = view._parent;
-            if (parent && parent.collection) {
-                var type = _.chain(view._parent.collection.pluck('type'))
-                    .uniq()
-                    .first()
-                    .value();
-                view.$el.attr('data-type', type);
-                view.$el
-                    .attr('data-post-id', view.model.get('postId'))
-                    .attr('data-post-name', view.model.get('name'));
-            }
+            view.$el
+                .attr('data-post-id', view.model.get('postId'))
+                .attr('data-post-name', view.model.get('name'));
             view.renderGists();
         },
         onDomRefresh: function() {
