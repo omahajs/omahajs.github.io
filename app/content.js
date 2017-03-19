@@ -10,26 +10,7 @@ define(function(require, exports) {
     var code      = element.code;
     var image     = element.image;
 
-    exports.feed = [
-        {
-            order: 1,
-            type: 'post',
-            postId: '1',
-            name: 'coming-soon',
-            date: '20161101',
-            title: 'Coming Soon',
-            subtitle: 'A source for quality content about code and quality code for making content',
-            tags: ['hype', 'slogan'],
-            body: [
-                quote('A source for quality content about code and quality code for making content'),
-                paragraph('We are working on meaningful content to make the world better.'),
-                paragraph('When we are ready to share, we will post it here in the Omaha JS Feed.  Keep us in mind, and check back soon.'),
-                paragraph('Before you leave, please check out our <a href="#code">code section</a>!'),
-                image('../assets/images/cornjs.png', {height: 200})
-            ]
-        }
-    ];
-    exports.code = [
+    exports.projects = [
         {
             order: 2,
             type: 'project',
@@ -91,11 +72,11 @@ define(function(require, exports) {
             )
         }
     ];
-    exports.about = [
+    exports.mission = [
         {
             type: 'about',
             body: [
-                paragraph('Omaha JS is about crafting sustainable, high-quality software with modern front-end technologies.  In simple terms, software is sustainable when it can be maintained indefinitely and Omaha JS seeks to help make creating sustainable software more attainable in real-world settings.'),
+                paragraph('Omaha JS is about crafting sustainable, high-quality software with modern front-end technologies.  In simple terms, software is sustainable when it can be maintained indefinitely. Omaha JS seeks to help make creating sustainable software more attainable in real-world settings.'),
                 paragraph('With this mission in mind, we have some key ideals driving us:'),
                 quote('Writing quality code is a process that must be practiced.'),
                 paragraph('Writing sustainable code is not always easy and like most things that are worth doing, practice is required. When it comes to crafting code, writing more of it usually helps.  However, just writing code is not enough! You must also read, research, experiment, download, install, configure, execute, upload, contribute, comment, clone, fork, discuss, persevere, review, follow, and grow.'),

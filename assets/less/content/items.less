@@ -112,7 +112,7 @@
         color: @odd_color_day;
     }
 }
-.feed, .about {
+.feed, .mission {
     color: white;
     .item-container {
         border-bottom: dashed darken(@node_green_dark, 5) 2px;
@@ -188,7 +188,7 @@
         }
     }
 }
-.code {
+.projects {
     .items-container {
         display: flex;
         flex-direction: column;
@@ -275,8 +275,8 @@
 }
 @media (max-width: unit(@iphone6_width_portrait, px)) {
     .feed,
-    .about,
-    .code {
+    .mission,
+    .projects {
         .items-container .item-container {
             .item-content,
             .item-content header,
@@ -289,7 +289,7 @@
             width: 100vw;
         }
     }
-    .code .items-container {
+    .projects .items-container {
         width: 100vw;
         margin-left: 5vw;
     }

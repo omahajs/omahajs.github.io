@@ -3,16 +3,7 @@ title: Navigation
 sections: Structure
 ---
 
-The navigation menu is very simple.
-
-```example
-<nav>
-    <div class="menu-item">
-        <div class="content-container"></div>
-        <div class="title">feed</div>
-    </div>
-</nav>
-```
+The navigation section houses the buttons that scroll to content (and maintains vertical spacing)
 
 The "scroll to top" button is just a tab on the bottom edge of the screen".
 
@@ -25,59 +16,39 @@ The "scroll to top" button is just a tab on the bottom edge of the screen".
 */
 nav {
     height: 33vh;
-    margin-bottom: 5vh;
+    padding-top: 5vh;
     user-select: none;
-    .menu-container {
-        background-color: darken(@node_green_dark, 2);
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 0 auto;
-        width: 100vw;
-        .menu-item {
-            background-color: darken(@node_green_dark, 2);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: center;
-            height: 20vh;
-            max-height: 100px;
-            min-height: 45px;
-            min-width: 100px;
-            max-width: 250px;
-            padding: 0 10px;
-            width: 25%;
-            a:hover {
-                text-decoration: none;
-            }
-            .title {
-                font-family: sans-serif;
-                font-size: 2em;
-                font-variant: small-caps;
-                text-align: center;
-                text-transform: capitalize;
-                &.show-badge:before {
-                    background-color: @uno_red;
-                    border-radius: 5px;
-                    border-bottom: solid darken(@uno_red, 15) 1px;
-                    content: attr(data-unread-posts);
-                    font-size: 1rem;
-                    padding: 3px 6px;
-                    position: absolute;
-                    margin-left: -1.8em;
-                    margin-top: 0.3em;
-                }
-            }
+    button {
+        background: none;
+        border: solid 2px white;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        font-size: 1.3rem;
+        margin: 3px;
+        padding: 10px 32px;
+        transition: 100ms;
+    }
+    button:hover {
+        background-color: white;
+        color: @node_green_dark;
+        opacity: 1;
+    }
+    .button-container {
+        left: 15vw;
+        position: absolute;
+        text-align: center;
+        width: 70vw;
+    }
+}
+@media (max-width: unit(@iphone6_width_portrait, px)) {
+    nav {
+        button {
+            width: 100%;
         }
-        .menu-item:hover {
-            background-color: white;
-            color: @node_green_dark;
-            cursor: pointer;
-            .title:before {
-                color: white;
-            }
+        .button-container {
+            left: 15vw;
+            width: 70vw;
         }
     }
 }
