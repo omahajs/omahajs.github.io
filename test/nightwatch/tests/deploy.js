@@ -4,7 +4,7 @@ module.exports = {
     'Deployment Check': function(client) {
         'use strict';
 
-        var omahajs = client.page.omaha();
+        var omahajs = client.page.prod();
 
         omahajs.navigate()
             .assert.title('Good Life. Great Code.')

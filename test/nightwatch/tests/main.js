@@ -2,6 +2,7 @@ var chai = require('chai');
 var assert = chai.assert;
 
 module.exports = {
+    disabled: true,
     tags: ['sanity', 'navigation'],
     'Sanity Check': function(browser) {
         browser

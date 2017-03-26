@@ -41,22 +41,18 @@ define(function(require, exports, module) {
             expect(view.model instanceof Data.Model).toBeTruthy();
             expect(Object.keys(view.regions)).toEqual([
                 'navigation',
-                'feed',
-                'code',
-                'about'
+                'projects',
+                'mission'
             ]);
         });
         it('can render', function() {
-            spyOn(view, 'showChildView').and.callThrough();
+            spyOn(view, 'showChildView');
             spyOn(view, 'initSectionViews').and.callThrough();
-            spyOn(view, 'initScrollButton').and.callThrough();
+            spyOn(view, 'initScrollButton');
             view.render();
-            expect(view.showChildView).toHaveBeenCalledWith('navigation', omaha.navigation);
+            expect(view.showChildView.calls.count()).toEqual(2);
             expect(view.initSectionViews).toHaveBeenCalled();
             expect(view.initScrollButton).toHaveBeenCalled();
-        });
-        xit('can execute router routes when navigation menu items are clicked', function() {
-            testLayout.showChildView('test', view);
         });
         it('can initialize a scroll-to-top button with scroll and click listeners', function() {
             function scrollTo(y) {

@@ -71,9 +71,6 @@ define(function(require, exports, module) {
             // Footer is hidden until after render to avoid jitter during scroll
             $('footer').css('display', 'flex');
         },
-        initNavigationMenu: function() {
-            return this;
-        },
         initSectionViews: function() {
             var home = this;
             omaha.model.get('sections').forEach(function(section) {
