@@ -32,7 +32,7 @@ define(function(require, exports, module) {
         childView: Item,
         emptyView: EmptyView,
         viewComparator: function(model) {
-            return -model.get('postId');
+            return -model.get('order');
         },
         childViewEvents: function() {
             return {

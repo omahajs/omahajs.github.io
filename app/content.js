@@ -36,7 +36,7 @@ define(function(require, exports) {
             date: '',
             name: 'eslint-config-omaha-prime-grade',
             url: 'https://github.com/omahajs/eslint-config-omaha-prime-grade',
-            title: 'Code Quality',
+            title: 'Omaha Quality',
             // subtitle: '"Prime Grade" ESLint Shareable Config',
             example: code(
                 '// .eslintrc.js',
@@ -51,12 +51,12 @@ define(function(require, exports) {
         {
             order: 0,
             type: 'project',
-            tags: ['mathematics', 'library'],
+            tags: ['mathematics', 'library', 'toolkit'],
             technology: 'javascript',
             date: '',
             name: 'applied.js',
             url: 'https://applied.js.org',
-            title: 'Applied JS',
+            title: 'Omaha Science',
             // subtitle: 'Applied mathematics toolkit (client & server)',
             example: code(
                 'const applied = require(\'applied\');',
