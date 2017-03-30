@@ -19,20 +19,25 @@ nav {
     padding-top: 5vh;
     user-select: none;
     button {
-        background: none;
-        border: solid 2px white;
-        border-radius: 4px;
-        color: white;
+        background: white;
+        border: none;
+        border-bottom: solid darken(@node_green_dark, 7) 4px;
+        border-radius: 8px;
+        color: darken(@node_green_dark, 4);
         cursor: pointer;
         font-size: 1.3rem;
         margin: 3px;
-        padding: 10px 32px;
+        outline: none;
+        padding: 16px 32px;
         transition: 100ms;
     }
     button:hover {
         background-color: white;
+        border-bottom-width: 2px;
         color: @node_green_dark;
         opacity: 1;
+        position: relative;
+        top: 1px;
     }
     .button-container {
         left: 15vw;
