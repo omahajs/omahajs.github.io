@@ -20,9 +20,9 @@
     "bluebird": "^3.4.7",
     "handlebars": "^4.0.5",
     "highlightjs": "^9.8.0",
-    "jquery": "^3.1.0",
+    "jquery": "^3.2.1",
     "lodash": "^4.16.1",
-    "moment": "^2.15.1",
+    "moment": "^2.18.1",
     "requirejs": "^2.2.0"
   },
   "devDependencies": {
