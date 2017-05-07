@@ -14,12 +14,12 @@ define(function(require, exports) {
         {
             order: 2,
             type: 'project',
-            tags: ['yeoman', 'scaffold', 'CLI'],
+            tags: ['yeoman', 'scaffold', 'CLI', 'plugin'],
             technology: 'yeoman',
             date: '',
             name: 'generator-omaha',
             url: 'https://github.com/omahajs/generator-omaha',
-            title: 'Omaha Generator',
+            title: 'generator-omaha',
             // subtitle: 'Yeoman generator for projects, web apps, and servers',
             example: code(
                 'npm install --global yo generator-omaha &&',
@@ -31,12 +31,12 @@ define(function(require, exports) {
         {
             order: 1,
             type: 'project',
-            tags: ['eslint', 'linting', 'quality'],
+            tags: ['eslint', 'linting', 'rules', 'quality'],
             technology: 'eslint',
             date: '',
             name: 'eslint-config-omaha-prime-grade',
             url: 'https://github.com/omahajs/eslint-config-omaha-prime-grade',
-            title: 'Omaha Quality',
+            title: 'omaha-prime-grade',
             // subtitle: '"Prime Grade" ESLint Shareable Config',
             example: code(
                 '// .eslintrc.js',
@@ -46,29 +46,6 @@ define(function(require, exports) {
                 'module.exports = {',
                 '\textends: \'omaha-prime-grade\'',
                 '};'
-            )
-        },
-        {
-            order: 0,
-            type: 'project',
-            tags: ['mathematics', 'library', 'toolkit'],
-            technology: 'javascript',
-            date: '',
-            name: 'applied.js',
-            url: 'https://applied.js.org',
-            title: 'Omaha Science',
-            // subtitle: 'Applied mathematics toolkit (client & server)',
-            example: code(
-                'const applied = require(\'applied\');',
-                '',
-                'var geo = applied.geodetic;',
-                'var val = [\'32\', \'49\', \'49.0800\'];',
-                'var dd = geo.convert.toDecimalDegrees(val);',
-                'console.log(dd);// 32.8303',
-                '',
-                'var atm = applied.atmosphere',
-                'var speed = atm.calculate.speedOfSound(86000);',
-                'console.log(speed);// 274.6 m/s'
             )
         }
     ];
