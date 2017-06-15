@@ -62,7 +62,7 @@
     "grunt-plato": "^1.3.0",
     "grunt-postcss": "^0.8.0",
     "jasmine-core": "^2.2.0",
-    "jsinspect": "^0.10.0",
+    "jsinspect": "^0.12.5",
     "json-server": "*",
     "karma": "^1.5.0",
     "karma-chrome-launcher": "^2.0.0",
