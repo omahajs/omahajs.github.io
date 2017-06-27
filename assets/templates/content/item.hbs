@@ -41,18 +41,12 @@
         </div>
     </header>
     {{/if_not_eq}}
-    {{#if_not_eq type "project"}}
-        <div class="item-details">
-        {{#each body}}
-            {{{ this }}}
-        {{/each}}
-        {{#if_eq type "post"}}
-            {{> share-buttons}}
-        {{/if_eq}}
-        </div>
-    {{else}}
-        <div class="item-details">
-        {{{ example }}}
-        </div>
-    {{/if_not_eq}}
+    <div class="item-details">
+    {{#each body}}
+        {{{ this }}}
+    {{/each}}
+    {{#if_eq type "post"}}
+        {{> share-buttons}}
+    {{/if_eq}}
+    </div>
 </div>

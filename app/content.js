@@ -21,12 +21,14 @@ define(function(require, exports) {
             url: 'https://github.com/omahajs/generator-omaha',
             title: 'generator-omaha',
             // subtitle: 'Yeoman generator for projects, web apps, and servers',
-            example: code(
-                'npm install --global yo generator-omaha &&',
-                'mkdir my-project &&',
-                'cd my-project &&',
-                'yo omaha'
-            )
+            body: [
+                code(
+                    'npm install --global yo generator-omaha &&',
+                    'mkdir my-project &&',
+                    'cd my-project &&',
+                    'yo omaha'
+                )
+            ]
         },
         {
             order: 1,
@@ -38,15 +40,17 @@ define(function(require, exports) {
             url: 'https://github.com/omahajs/eslint-config-omaha-prime-grade',
             title: 'omaha-prime-grade',
             // subtitle: '"Prime Grade" ESLint Shareable Config',
-            example: code(
-                '// .eslintrc.js',
-                '// -> Curated selection of rules',
-                '// -> Maximum auto-fix capability',
-                '// -> Secure coding practices baked in',
-                'module.exports = {',
-                '\textends: \'omaha-prime-grade\'',
-                '};'
-            )
+            body: [
+                code(
+                    '// .eslintrc.js',
+                    '// -> Curated selection of rules',
+                    '// -> Maximum auto-fix capability',
+                    '// -> Secure coding practices baked in',
+                    'module.exports = {',
+                    '\textends: \'omaha-prime-grade\'',
+                    '};'
+                )
+            ]
         }
     ];
     exports.mission = [
