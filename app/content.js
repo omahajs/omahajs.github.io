@@ -20,7 +20,6 @@ define(function(require, exports) {
             name: 'generator-omaha',
             url: 'https://github.com/omahajs/generator-omaha',
             title: 'generator-omaha',
-            // subtitle: 'Yeoman generator for projects, web apps, and servers',
             body: [
                 code(
                     'npm install --global yo generator-omaha &&',
@@ -39,7 +38,6 @@ define(function(require, exports) {
             name: 'eslint-config-omaha-prime-grade',
             url: 'https://github.com/omahajs/eslint-config-omaha-prime-grade',
             title: 'omaha-prime-grade',
-            // subtitle: '"Prime Grade" ESLint Shareable Config',
             body: [
                 code(
                     '// .eslintrc.js',

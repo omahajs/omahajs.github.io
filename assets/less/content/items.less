@@ -166,24 +166,6 @@
                     color: @odd_color_day;
                 }
             }
-            .subtitle {
-                @list: darken(@node_green_dark, 3), @node_green_dark 100%;
-                background-image: svg-gradient(to right, @list);
-                background-size: 100%;
-                border-left: solid 4px darken(@node_green_dark, 6);
-                font-size: 0.9rem;
-                margin-top: 10px;
-                margin-bottom: 5px;
-                padding: 10px 0;
-                padding-left: 1em;
-            }
-            .subtitle:before {
-                bottom: -1px;
-                content: @icon-calendar;
-                font-family: "icomoon";
-                padding-right: 2px;
-                position: relative;
-            }
         }
     }
 }
