@@ -22,7 +22,7 @@
         background-image: url("../assets/images/patterns/circuit-board.svg");
         background-color: @node_green_dark;
         background-repeat: repeat;
-        &.demo, &.experiment {
+        &, &.demo, &.experiment {
             &:hover, &.active {
                 background-image: url("../assets/images/patterns/circuit-board-energized.svg");
             }
@@ -195,7 +195,7 @@
         flex-wrap: wrap;
         margin: 0 auto;
         overflow: hidden;
-        width: 70vw;
+        width: 100vw;
         &:last-of-type {
             margin-bottom: 20vh;
         }
@@ -213,11 +213,11 @@
             header {
                 align-items: stretch;
                 border: solid 5px @node_green_dark;
-                border-bottom: solid 5px darken(@node_green_dark, 4);
                 box-sizing: border-box;
                 cursor: pointer;
                 display: flex;
                 flex-direction: row;
+                margin-left: 15vw;
                 min-height: 100px;
                 padding-bottom: 5px;
                 width: 70vw;
@@ -266,7 +266,7 @@
                 }
             }
             .item-element-container.code-block {
-                background-image: none;
+                margin-left: 0vw;
                 margin-top: 0;
             }
         }
@@ -280,7 +280,10 @@
             .item-content,
             .item-content header,
             .item-content pre {
-               width: 90vw;
+                width: 90vw;
+            }
+            .item-content header {
+                margin-left: 0vw;
             }
         }
         .item-element-container {
@@ -290,6 +293,6 @@
     }
     .projects .items-container {
         width: 100vw;
-        margin-left: 5vw;
+        margin-left: 0vw;
     }
 }
