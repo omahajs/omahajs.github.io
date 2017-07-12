@@ -65,11 +65,13 @@ define(function(require, exports, module) {
                     $item = $el.a.clone()
                         .attr('href', item.split('(')[1].replace(')', ''))
                         .prop('target', '_blank')
+                        .prop('rel', 'noopener noreferrer')
                         .text(item.split('[')[1].split(']')[0]);
                 } else if (protocolHostPattern.test(item)) {
                     $item = $el.a.clone()
                         .attr('href', item)
                         .prop('target', '_blank')
+                        .prop('rel', 'noopener noreferrer')
                         .text(item);
                 } else {
                     $item = $el.span.clone().text(item);
