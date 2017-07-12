@@ -22,10 +22,7 @@ define(function(require, exports) {
             title: 'generator-omaha',
             body: [
                 code(
-                    'npm install --global yo generator-omaha &&',
-                    'mkdir my-project &&',
-                    'cd my-project &&',
-                    'yo omaha'
+                    'npx yo omaha --defaults'
                 )
             ]
         },
