@@ -86,7 +86,7 @@
     "test": "grunt test",
     "test:ci": "npm test",
     "test:suite": "npm test && npm run nightwatch",
-    "nightwatch": "nightwatch --config ./config/nightwatch.conf.js --env default,chrome",
+    "nightwatch": "nightwatch --config ./config/nightwatch.conf.js --env chrome",
     "nightwatch:headless": "nightwatch --config ./config/nightwatch.conf.js --env headless",
     "preversion": "npm test",
     "postversion": "git push && git push --tags",
