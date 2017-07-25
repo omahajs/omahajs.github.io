@@ -52,7 +52,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^19.0.0",
     "grunt-express": "^1.4.1",
-    "grunt-htmlhint-plus": "^0.4.0",
+    "grunt-htmlhint-plus": "^0.5.0",
     "grunt-jsdoc": "*",
     "grunt-jsinspect": "^2.0.0",
     "grunt-jsonlint": "^1.0.4",
