@@ -22,7 +22,8 @@ define(function(require, exports) {
             title: 'generator-omaha',
             body: [
                 code(
-                    'npx yo omaha --defaults'
+                    'npm i yo generator-omaha --global',
+                    'yo omaha --defaults'
                 )
             ]
         },
