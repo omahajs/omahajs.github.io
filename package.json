@@ -54,7 +54,7 @@
     "grunt-express": "^1.4.1",
     "grunt-htmlhint-plus": "^0.4.0",
     "grunt-jsdoc": "*",
-    "grunt-jsinspect": "^2.0.0",
+    "grunt-jsinspect": "^3.0.0",
     "grunt-jsonlint": "^1.0.4",
     "grunt-karma": "^2.0.0",
     "grunt-open": "^0.2.3",
