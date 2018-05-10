@@ -37,7 +37,7 @@
         "origin": "IMPORTED",
         "originallySharedDir": "src/components/sunshine"
     },
-    "omahajs.home/components/corn@0.0.1": {
+    "omahajs.home/components/corn@0.0.2": {
         "files": [
             {
                 "name": "README.md",
