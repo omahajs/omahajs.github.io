@@ -5,8 +5,9 @@ import styled from 'react-emotion';
 import corn from './logo.png';
 
 const Image = styled.img`
+    height: ${({height}) => height};
+    label: corn;
     position: relative;
-    height: ${({height}) => height}
 `;
 /**
  * @name CornLogo
