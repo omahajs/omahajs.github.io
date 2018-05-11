@@ -18,7 +18,7 @@ const IndexPage = () => (
     <div>
         <Sunshine height="60vh"/>
         <Grass height="100vh" style={{top: '60vh'}}>
-            <Button>Hello World!!</Button>
+            {/* <Button>Hello World!!</Button> */}
         </Grass>/>
         <Wrapper>
             <Logo height="50vh" style={{

@@ -1,15 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled, {keyframes} from 'react-emotion';
 
 const DEFAULT_EVEN_COLOR = '#DFC85D';
 const DEFAULT_ODD_COLOR = '#F4E57E';
 
 const getTransformOrigin = ({side}) => `bottom ${(side === 'left') ? 'right' : 'left'}`;
 
+const shine = initial => keyframes`
+    0% {
+        transform: rotateZ(${-10}deg);
+    }
+    100% {
+        transform: rotateZ(${10}deg);
+    }
+`;
 const Banner = styled.div`
+    animation: ${shine(10)} 9s linear infinite running;
     label: banner;
     position: relative;
+    transform-origin: 50vw 60vh;
     width: 100vw;
 `;
 const Sunshine = styled.div`
@@ -17,7 +27,7 @@ const Sunshine = styled.div`
     display: block;
     height: ${({height}) => height};
     left: ${({side}) => (side === 'left') ? 0 : '50%'};
-    overflow: hidden;
+    ${'' /* overflow: hidden; */}
     position: fixed;
     width: 50vw;
 `;
@@ -35,41 +45,73 @@ const LightRay = styled.div`
     }
     &:nth-of-type(2) {
       transform-origin: ${getTransformOrigin};
-      transform: rotateZ(10deg);
+      transform: rotateZ(0deg);
     }
     &:nth-of-type(3) {
       transform-origin: ${getTransformOrigin};
-      transform: rotateZ(20deg);
+      transform: rotateZ(10deg);
     }
     &:nth-of-type(4) {
       transform-origin: ${getTransformOrigin};
-      transform: rotateZ(30deg);
+      transform: rotateZ(20deg);
     }
     &:nth-of-type(5) {
       transform-origin: ${getTransformOrigin};
-      transform: rotateZ(40deg);
+      transform: rotateZ(30deg);
     }
     &:nth-of-type(6) {
       transform-origin: ${getTransformOrigin};
-      transform: rotateZ(50deg);
+      transform: rotateZ(40deg);
     }
     &:nth-of-type(7) {
       transform-origin: ${getTransformOrigin};
-      transform: rotateZ(60deg);
+      transform: rotateZ(50deg);
     }
     &:nth-of-type(8) {
       transform-origin: ${getTransformOrigin};
-      transform: rotateZ(70deg);
+      transform: rotateZ(60deg);
     }
     &:nth-of-type(9) {
       transform-origin: ${getTransformOrigin};
+      transform: rotateZ(70deg);
+    }
+    &:nth-of-type(10) {
+      transform-origin: ${getTransformOrigin};
       transform: rotateZ(80deg);
     }
+    &:nth-of-type(11) {
+      transform-origin: ${getTransformOrigin};
+      transform: rotateZ(90deg);
+    }
+    &:nth-of-type(12) {
+      transform-origin: ${getTransformOrigin};
+      transform: rotateZ(100deg);
+    }
+    &:nth-of-type(13) {
+      transform-origin: ${getTransformOrigin};
+      transform: rotateZ(110deg);
+    }
+    &:nth-of-type(14) {
+      transform-origin: ${getTransformOrigin};
+      transform: rotateZ(120deg);
+    }
+    &:nth-of-type(15) {
+      transform-origin: ${getTransformOrigin};
+      transform: rotateZ(130deg);
+    }
+    &:nth-of-type(16) {
+      transform-origin: ${getTransformOrigin};
+      transform: rotateZ(140deg);
+    }
+    &:nth-of-type(17) {
+      transform-origin: ${getTransformOrigin};
+      transform: rotateZ(150deg);
+    }
 `;
-const range = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // eslint-disable-line no-magic-numbers
+const range = [...Array(16).fill(0)];
 const LightRays = ({side}) => (
     <div>
-        {range.map(key => <LightRay side={side} key={key.toString()}></LightRay>)}
+        {range.map((key, index) => <LightRay side={side} key={index.toString()}></LightRay>)}
     </div>
 );
 LightRays.propTypes = {
