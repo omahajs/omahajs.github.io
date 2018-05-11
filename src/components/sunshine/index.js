@@ -16,13 +16,13 @@ const shine = initial => keyframes`
     }
 `;
 const Wrapper = styled.div`
-    overflow-x: hidden;
+    overflow: hidden;
     height: ${({height}) => height};
-    position: absolute;
+    position: fixed;
     width: 100vw;
 `;
 const Banner = styled.div`
-    animation: ${shine(10)} 10s linear infinite running;
+    animation: ${shine(10)} 15s linear infinite running;
     label: banner;
     position: relative;
     transform: rotateZ(-180deg);
