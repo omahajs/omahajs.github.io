@@ -17,9 +17,7 @@ const Wrapper = styled.div`
 const IndexPage = () => (
     <div>
         <Sunshine height="60vh"/>
-        <Grass height="100vh" style={{top: '60vh'}}>
-            {/* <Button>Hello World!!</Button> */}
-        </Grass>/>
+        <Grass height="100vh" style={{top: '60vh'}}/>
         <Wrapper>
             <Logo height="50vh" style={{
                 flex: 'flex-grow',
