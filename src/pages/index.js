@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'react-emotion';
-import Link from 'gatsby-link';
 import Sunshine from '../components/sunshine';
 import Logo from '../components/corn';
 import Grass from '../components/grass';
-import Button from '../components/button';
 
 const Wrapper = styled.div`
     display: flex;
