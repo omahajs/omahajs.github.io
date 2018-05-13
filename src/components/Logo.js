@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
-import corn from './logo.png';
+import corn from '../images/logo.png';
 
 const Image = styled.img`
     height: ${({height}) => height};
@@ -16,7 +16,7 @@ const Image = styled.img`
     }
 `;
 /**
- * @name CornLogo
+ * @name Logo
  * @constructor
  * @param {object} props Component props
  * @param {string} props.height Logo height
@@ -26,13 +26,13 @@ const Image = styled.img`
  *     top: '10vh'
  * }}/>
 **/
-class CornLogo extends Component {
+class Logo extends Component {
     render() {
         return <Image {...this.props} src={corn}/>;
     }
 }
-CornLogo.propTypes = {
+Logo.propTypes = {
     height: PropTypes.string
 };
 
-export default CornLogo;
+export default Logo;
