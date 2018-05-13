@@ -26,12 +26,3 @@ const IndexPage = () => (
 );
 
 export default IndexPage;
-export const query = graphql`
-  query LogoImageQuery {
-    logoImage: imageSharp(id: {regex: "/logo/"}) {
-      sizes(maxWidth: 1240) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-  }
-`;

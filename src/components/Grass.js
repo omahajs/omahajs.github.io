@@ -20,7 +20,7 @@ const computeWindowValue = (prop, attribute) => {
     const isPercent = (units === 'px') || (units === 'vh') || (units === 'vw');
     return isPercent ? ((value / 100) * window[lookup[attribute]]) : value;
 };
-const createPattern = height => window.Trianglify({
+const createPattern = height => window.Trianglify({ // eslint-disable-line new-cap
     width: computeWindowValue('100vw', 'width') * 4, // eslint-disable-line no-magic-numbers
     height: computeWindowValue(height, 'height') * 2,
     cell_size: 200, // eslint-disable-line camelcase

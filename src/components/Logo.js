@@ -15,17 +15,7 @@ const Image = styled.img`
         width: auto;
     }
 `;
-/**
- * @name Logo
- * @constructor
- * @param {object} props Component props
- * @param {string} props.height Logo height
- * @example
- * <Logo height="50vh" style={{
- *     flex: 'flex-grow',
- *     top: '10vh'
- * }}/>
-**/
+
 class Logo extends Component {
     render() {
         return <Image {...this.props} src={corn}/>;
