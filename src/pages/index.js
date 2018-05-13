@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'react-emotion';
-import Sunshine from '../components/sunshine';
-import Logo from '../components/corn';
-import Grass from '../components/grass';
+import Sunshine from '../components/Sunshine';
+import Logo from '../components/Logo';
+import Grass from '../components/Grass';
 
 const Wrapper = styled.div`
     display: flex;

@@ -3,6 +3,9 @@ module.exports = {
         commonjs: true,
         es6: true
     },
+    globals: {
+        graphql: true
+    },
     parser: 'babel-eslint',
     parserOptions: {
         ecmaVersion: 7,
