@@ -5,9 +5,23 @@ const DEFAULT_EVEN_COLOR = '#DFC85D';
 const DEFAULT_ODD_COLOR = '#F4E57E';
 
 const getTransformOrigin = ({side}) => `bottom ${(side === 'left') ? 'right' : 'left'}`;
+const rotate = initial => keyframes`
+    0% {
+        transform: rotateZ(${initial}deg) translateZ(0);
+    }
+    100% {
+        transform: rotateZ(${initial - 20}deg) translateZ(0);
+    }
+`;
 const shine = initial => keyframes`
     0% {
         transform: rotateZ(${initial}deg) translateZ(0);
+    }
+    30% {
+        opacity: ${Math.random()};
+    }
+    50% {
+        opacity: ${Math.random()};
     }
     100% {
         transform: rotateZ(${initial - 20}deg) translateZ(0);
@@ -33,7 +47,7 @@ const LightRay = styled.div`
       transform: rotateZ(90deg);
     }
     &:nth-of-type(3) {
-      animation: ${shine(100)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(100)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(100deg);
     }
@@ -43,7 +57,7 @@ const LightRay = styled.div`
       transform: rotateZ(110deg);
     }
     &:nth-of-type(5) {
-      animation: ${shine(120)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(120)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(120deg);
     }
@@ -53,7 +67,7 @@ const LightRay = styled.div`
       transform: rotateZ(130deg);
     }
     &:nth-of-type(7) {
-      animation: ${shine(140)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(140)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(140deg);
     }
@@ -63,7 +77,7 @@ const LightRay = styled.div`
       transform: rotateZ(150deg);
     }
     &:nth-of-type(9) {
-      animation: ${shine(160)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(160)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(160deg);
     }
@@ -73,7 +87,7 @@ const LightRay = styled.div`
       transform: rotateZ(170deg);
     }
     &:nth-of-type(11) {
-      animation: ${shine(180)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(180)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(180deg);
     }
@@ -83,7 +97,7 @@ const LightRay = styled.div`
       transform: rotateZ(190deg);
     }
     &:nth-of-type(13) {
-      animation: ${shine(200)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(200)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(200deg);
     }
@@ -93,7 +107,7 @@ const LightRay = styled.div`
       transform: rotateZ(210deg);
     }
     &:nth-of-type(15) {
-      animation: ${shine(220)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(220)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(220deg);
     }
@@ -103,7 +117,7 @@ const LightRay = styled.div`
       transform: rotateZ(230deg);
     }
     &:nth-of-type(17) {
-      animation: ${shine(240)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(240)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(240deg);
     }
@@ -113,7 +127,7 @@ const LightRay = styled.div`
       transform: rotateZ(250deg);
     }
     &:nth-of-type(19) {
-      animation: ${shine(260)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(260)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(260deg);
     }
@@ -123,7 +137,7 @@ const LightRay = styled.div`
       transform: rotateZ(270deg);
     }
     &:nth-of-type(21) {
-      animation: ${shine(280)} ${duration} infinite ${direction} ${timing};
+      animation: ${rotate(280)} ${duration} infinite ${direction} ${timing};
       transform-origin: ${getTransformOrigin};
       transform: rotateZ(280deg);
     }

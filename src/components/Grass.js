@@ -56,11 +56,17 @@ const Wrapper = styled.div`
 **/
 class Grass extends Component {
     render() {
-        const {height} = this.props;
-        this.pattern = (typeof window !== 'undefined') ? createPattern(height).png() : undefined;
+        const {height, style} = this.props;
         return (
-            <Wrapper {...this.props} bgImage={this.pattern}/>
+            <Wrapper
+                height={height}
+                style={style}
+                bgImage={this.getPattern(height)}
+            />
         );
+    }
+    getPattern(height) {
+        return (typeof window !== 'undefined') ? createPattern(height).png() : undefined;
     }
 }
 Grass.propTypes = {
