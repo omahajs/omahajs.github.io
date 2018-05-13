@@ -39,7 +39,7 @@ const Wrapper = styled.div`
     label: grass;
     left: 0;
     position: absolute;
-    width: 100vw;
+    width: 100%;
 `;
 /**
  * @name Grass
@@ -57,11 +57,7 @@ const Wrapper = styled.div`
 class Grass extends Component {
     render() {
         const {height} = this.props;
-        try {
-            this.pattern = createPattern(height).png();
-        } catch (e) {
-            // hack for GatsbyJS
-        }
+        this.pattern = (typeof window !== 'undefined') ? createPattern(height).png() : undefined;
         return (
             <Wrapper {...this.props} bgImage={this.pattern}/>
         );

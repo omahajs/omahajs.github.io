@@ -32,7 +32,7 @@ module.exports = class HTML extends React.Component {
                     />
                     {this.props.headComponents}
                     {css}
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.1.0/trianglify.min.js"></script>
+                    <script src="third-party/trianglify.min.js"></script>
                 </head>
                 <body {...this.props.bodyAttributes}>
                     {this.props.preBodyComponents}
