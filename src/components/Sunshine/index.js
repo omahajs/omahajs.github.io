@@ -6,7 +6,6 @@ import LightRay from './LightRay';
 const Wrapper = styled.div`
     overflow: hidden;
     height: ${({height}) => height};
-    min-width: 300px;
     position: fixed;
     width: 100vw;
 `;
