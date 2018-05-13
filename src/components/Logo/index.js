@@ -8,6 +8,12 @@ const Image = styled.img`
     height: ${({height}) => height};
     label: corn;
     position: relative;
+    @media (max-width: 450px) {
+        bottom: 0;
+        height: auto;
+        max-height: 50vh;
+        width: auto;
+    }
 `;
 /**
  * @name CornLogo
