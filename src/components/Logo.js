@@ -11,7 +11,7 @@ const Image = styled.img`
     @media (max-width: 450px) {
         bottom: 0;
         height: auto;
-        max-height: 50vh;
+        max-height: ${({height}) => height};
         width: auto;
     }
 `;
