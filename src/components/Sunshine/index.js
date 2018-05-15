@@ -13,7 +13,7 @@ const Banner = styled.div`
     label: banner;
     position: relative;
     transform: rotateZ(-180deg);
-    transform-origin: 50vw 60vh;
+    transform-origin: 50vw 50vh;
     width: 100vw;
 `;
 const Sunshine = styled.div`

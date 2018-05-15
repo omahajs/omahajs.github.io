@@ -28,6 +28,8 @@ const createPattern = height => window.Trianglify({ // eslint-disable-line new-c
         '#3e863d',
         '#669f64',
         '#3e863d',
+        '#3e863d',
+        '#3e863d',
         '#669f64',
         '#6bbf47'
     ]

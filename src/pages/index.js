@@ -25,11 +25,11 @@ const Wrapper = styled.div`
     position: absolute;
     width: 100%;
 `;
-
+const BANNER_HEIGHT = 50;
 const IndexPage = () => (
     <div>
-        <Sunshine height="60vh"/>
-        <Grass height="140vh" style={{top: '60vh', padding: '1em'}}>
+        <Sunshine height={`${BANNER_HEIGHT}vh`}/>
+        <Grass height={`${100 + BANNER_HEIGHT}vh`} style={{top: `${BANNER_HEIGHT}vh`, padding: '1em'}}>
             <Heading>
                 Sustainable Alternative to
                 <br/>
@@ -37,9 +37,9 @@ const IndexPage = () => (
             </Heading>
         </Grass>
         <Wrapper>
-            <Logo height="50vh" style={{
+            <Logo height="48vh" style={{
                 flex: 'flex-grow',
-                top: '5vh'
+                top: '1vh'
             }}/>
         </Wrapper>
     </div>
