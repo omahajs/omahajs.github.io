@@ -15,6 +15,9 @@ const Heading = styled.div`
    width: 100%;
    @media (max-width: 450px), (max-height: 450px) {
        font-size: 2em;
+       margin: 0.5em 0;
+   }
+   @media (max-height: 400px) {
        margin: 0;
    }
 `;
