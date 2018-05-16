@@ -74,6 +74,8 @@ class Grass extends Component {
     }
 }
 Grass.propTypes = {
+    children: PropTypes.object,
+    style: PropTypes.object,
     height: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number

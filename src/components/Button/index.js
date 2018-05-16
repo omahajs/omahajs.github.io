@@ -1,6 +1,8 @@
-import styled from 'react-emotion';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {css} from 'emotion';
 
-const Button = styled.button`
+const styles = css`
     background: none;
     border: 2px solid white;
     border-radius: 1px;
@@ -17,5 +19,21 @@ const Button = styled.button`
         color: #3E863D;
     }
 `;
+class Button extends Component {
+    render() {
+        const {children} = this.props;
+        return (
+            <button className={styles} onClick={() => this.onClick()}>
+                {children}
+            </button>
+        );
+    }
+    onClick() {
+        
+    }
+}
+Button.propTypes = {
+    children: PropTypes.object
+};
 
 export default Button;

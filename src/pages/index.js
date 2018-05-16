@@ -19,9 +19,13 @@ const Heading = styled.div`
        margin: 0;
    }
 `;
-const Emphasis = styled.span`
+const Link = styled.a`
     border-bottom: dotted 2px white;
     color: white;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    user-select: none;
     &:hover {
         border-bottom-color: yellow;
         color: yellow;
@@ -42,7 +46,7 @@ const IndexPage = () => (
             <Heading>
                 Sustainable Alternative to
                 <br/>
-                <Emphasis>Component-based</Emphasis> Technology
+                <Link href="https://reactjs.org/docs/components-and-props.html" target="_blank">Component-based</Link> Solutions
             </Heading>
             <div style={{textAlign: 'center', width: '100%'}}>
                 <Button>Read more</Button>
