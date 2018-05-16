@@ -32,7 +32,7 @@ module.exports = class HTML extends React.Component {
                     />
                     {this.props.headComponents}
                     {css}
-                     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet" /> 
+                    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet" />
                     <script src="third-party/trianglify.min.js"></script>
                 </head>
                 <body {...this.props.bodyAttributes}>
