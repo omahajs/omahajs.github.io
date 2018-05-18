@@ -4,6 +4,8 @@ import Sunshine from '../components/Sunshine';
 import Logo from '../components/Logo';
 import Grass from '../components/Grass';
 import Button from '../components/Button';
+import Github from 'react-icons/lib/fa/github';
+import Twitter from 'react-icons/lib/fa/twitter';
 
 const Heading = styled.div`
    color: white;
@@ -31,6 +33,16 @@ const Link = styled.a`
         color: yellow;
     }
 `;
+const IconLink = styled.a`
+    color: #333;
+    padding: 5px;
+    font-size: 2em;
+    outline: none;
+    user-select: none;
+    &:hover {
+        color: green;
+    }
+`;
 const Wrapper = styled.div`
     display: flex;
     justify-content: center;
@@ -38,10 +50,28 @@ const Wrapper = styled.div`
     position: absolute;
     width: 100%;
 `;
+const Header = styled.div`
+    position: fixed;
+    padding: 0.5em 0.5em 5px 0;
+    right: 0;
+    text-align: right;
+    top: 0;
+    width: 100%;
+`;
 const BANNER_HEIGHT = 50;
 const IndexPage = () => (
     <div>
         <Sunshine height={`${BANNER_HEIGHT}vh`}/>
+        <Wrapper>
+            <Header>
+                <IconLink title="GitHub" target="_blank" href="https://github.com/omahajs"><Github/></IconLink>
+                <IconLink title="Twitter" target="_blank" href="https://www.twitter.com/jhwohlgemuth"><Twitter/></IconLink>
+            </Header>
+            <Logo height="48vh" style={{
+                flex: 'flex-grow',
+                top: '1vh'
+            }}/>
+        </Wrapper>
         <Grass height={`${100 + BANNER_HEIGHT}vh`} style={{top: `${BANNER_HEIGHT}vh`, padding: '1em'}}>
             <Heading>
                 Sustainable Alternative to
@@ -52,12 +82,6 @@ const IndexPage = () => (
                 <Button>Read more</Button>
             </div>
         </Grass>
-        <Wrapper>
-            <Logo height="48vh" style={{
-                flex: 'flex-grow',
-                top: '1vh'
-            }}/>
-        </Wrapper>
     </div>
 );
 

@@ -29,7 +29,7 @@ class Button extends Component {
         );
     }
     onClick() {
-        
+
     }
 }
 Button.propTypes = {
