@@ -7,6 +7,7 @@ const Outer = styled.div`
     flex: 0 1 auto;
     background-color: white;
     border-radius: 4px;
+    label: outer;
     margin: 2em 0;
     width: 100%;
     max-width: 800px;
@@ -18,6 +19,7 @@ const Inner = styled.div`
     border-style: dashed;
     border-width: 2px;
     height: 100px;
+    label: inner;
     padding: 8px 16px;
     width: 100%;
 `;
@@ -31,7 +33,7 @@ class Project extends Component {
             justifyContent: 'center',
             position: 'relative'
         };
-        return (<div style={style}>
+        return (<div id="projects" style={style}>
             <Outer>
                 <Inner>Under construction</Inner>
             </Outer>

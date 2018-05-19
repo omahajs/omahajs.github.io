@@ -87,7 +87,7 @@ const IndexPage = () => (
             <Heading>
                 Craft Sustainable Solutions
                 <br/>
-                with Web Technology
+                with Web Technologies
             </Heading>
             <div style={{textAlign: 'center', width: '100%'}}>
                 <Button>Read more</Button>
