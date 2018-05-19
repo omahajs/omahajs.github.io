@@ -3,6 +3,7 @@ import styled from 'react-emotion';
 import Sunshine from '../components/Sunshine';
 import Logo from '../components/Logo';
 import Grass from '../components/Grass';
+import Projects from '../components/Projects';
 import Button from '../components/Button';
 import Github from 'react-icons/lib/fa/github';
 import Twitter from 'react-icons/lib/fa/twitter';
@@ -64,8 +65,18 @@ const IndexPage = () => (
         <Sunshine height={`${BANNER_HEIGHT}vh`}/>
         <Wrapper>
             <Header>
-                <IconLink title="GitHub" target="_blank" href="https://github.com/omahajs"><Github/></IconLink>
-                <IconLink title="Twitter" target="_blank" href="https://www.twitter.com/jhwohlgemuth"><Twitter/></IconLink>
+                <IconLink
+                    title="GitHub"
+                    target="_blank"
+                    href="https://github.com/omahajs">
+                    <Github/>
+                </IconLink>
+                <IconLink
+                    title="Twitter"
+                    target="_blank"
+                    href="https://www.twitter.com/jhwohlgemuth">
+                    <Twitter/>
+                </IconLink>
             </Header>
             <Logo height="48vh" style={{
                 flex: 'flex-grow',
@@ -74,13 +85,14 @@ const IndexPage = () => (
         </Wrapper>
         <Grass height={`${100 + BANNER_HEIGHT}vh`} style={{top: `${BANNER_HEIGHT}vh`, padding: '1em'}}>
             <Heading>
-                Sustainable Alternative to
+                Craft Sustainable Solutions
                 <br/>
-                <Link href="https://reactjs.org/docs/components-and-props.html" target="_blank">Component-based</Link> Solutions
+                with Web Technology
             </Heading>
             <div style={{textAlign: 'center', width: '100%'}}>
                 <Button>Read more</Button>
             </div>
+            <Projects top={`${BANNER_HEIGHT / 2}vh`}/>
         </Grass>
     </div>
 );
