@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {animateScroll as scroll} from 'react-scroll';
+import {scroller} from 'react-scroll';
 import PropTypes from 'prop-types';
 import {css} from 'emotion';
 
@@ -10,11 +10,14 @@ const styles = css`
     color: white;
     cursor: pointer;
     font-family: serif;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-top: 0.5em;
     position: relative;
-    padding: 0.5em 2.5em;
+    padding: 0.5em 1.5em;
     transition: 150ms all;
+    &+button {
+        margin-left: 1em;
+    }
     &:hover {
         background-color: white;
         color: #3E863D;
@@ -30,15 +33,15 @@ class Button extends Component {
         );
     }
     onClick() {
-        const options = {
-            containerId: '#projects',
+        const {scrollTo: element} = this.props;
+        scroller.scrollTo(element, {
             smooth: true
-        };
-        scroll.scrollTo(2000, options);
+        });
     }
 }
 Button.propTypes = {
-    children: PropTypes.object
+    children: PropTypes.object,
+    scrollTo: PropTypes.string
 };
 
 export default Button;

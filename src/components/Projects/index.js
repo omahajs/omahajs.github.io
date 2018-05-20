@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import {ScrollElement} from 'react-scroll';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import {css} from 'emotion';
 
 const Outer = styled.div`
     flex: 0 1 auto;
@@ -33,7 +33,7 @@ class Project extends Component {
             justifyContent: 'center',
             position: 'relative'
         };
-        return (<div id="projects" style={style}>
+        return (<div {...this.props} style={style}>
             <Outer>
                 <Inner>Under construction</Inner>
             </Outer>
@@ -44,4 +44,4 @@ Project.propTypes = {
     top: PropTypes.string
 };
 
-export default Project;
+export default ScrollElement(Project); // eslint-disable-line new-cap

@@ -22,18 +22,6 @@ const Heading = styled.div`
        margin: 0;
    }
 `;
-const Link = styled.a`
-    border-bottom: dotted 2px white;
-    color: white;
-    cursor: pointer;
-    outline: none;
-    text-decoration: none;
-    user-select: none;
-    &:hover {
-        border-bottom-color: yellow;
-        color: yellow;
-    }
-`;
 const IconLink = styled.a`
     color: #333;
     padding: 5px;
@@ -49,6 +37,10 @@ const Wrapper = styled.div`
     justify-content: center;
     left: 0;
     position: absolute;
+    width: 100%;
+`;
+const ButtonWrapper = styled.div`
+    text-align: center;
     width: 100%;
 `;
 const Header = styled.div`
@@ -83,16 +75,20 @@ const IndexPage = () => (
                 top: '1vh'
             }}/>
         </Wrapper>
-        <Grass height={`${100 + BANNER_HEIGHT}vh`} style={{top: `${BANNER_HEIGHT}vh`, padding: '1em'}}>
+        <Grass
+            height={`${100 + BANNER_HEIGHT}vh`}
+            style={{top: `${BANNER_HEIGHT}vh`, padding: '1em'}}>
             <Heading>
-                Craft Sustainable Solutions
-                <br/>
+                Craft Sustainable Solutions<br/>
                 with Web Technologies
             </Heading>
-            <div style={{textAlign: 'center', width: '100%'}}>
-                <Button>Read more</Button>
-            </div>
-            <Projects top={`${BANNER_HEIGHT / 2}vh`}/>
+            <ButtonWrapper>
+                <Button scrollTo="projects">Show Me More!</Button>
+                <Button scrollTo="bottom">Why Omaha?</Button>
+            </ButtonWrapper>
+            <Projects
+                name="projects"
+                top={`${BANNER_HEIGHT / 2}vh`}/>
         </Grass>
     </div>
 );
