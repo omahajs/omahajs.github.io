@@ -10,13 +10,13 @@ const styles = css`
     color: white;
     cursor: pointer;
     font-family: serif;
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-top: 0.5em;
     position: relative;
-    padding: 0.5em 1.5em;
+    padding: 0.5em 1em;
     transition: 150ms all;
     &+button {
-        margin-left: 1em;
+        margin-left: 0.5em;
     }
     &:hover {
         background-color: white;
