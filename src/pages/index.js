@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Events} from 'react-scroll';
 import styled from 'react-emotion';
 import Sunshine from '../components/Sunshine';
 import Logo from '../components/Logo';
 import Grass from '../components/Grass';
 import Projects from '../components/Projects';
+import Project from '../components/Project';
 import Button from '../components/Button';
 import Github from 'react-icons/lib/fa/github';
 import Twitter from 'react-icons/lib/fa/twitter';
 
-const Heading = styled.div`
+const Title = styled.div`
    color: white;
    font-family: 'Source Sans Pro', sans-serif;
    font-size: 3em;
@@ -52,45 +54,45 @@ const Header = styled.div`
     width: 100%;
 `;
 const BANNER_HEIGHT = 50;
-const IndexPage = () => (
-    <div>
-        <Sunshine height={`${BANNER_HEIGHT}vh`}/>
-        <Wrapper>
-            <Header>
-                <IconLink
-                    title="GitHub"
-                    target="_blank"
-                    href="https://github.com/omahajs">
-                    <Github/>
-                </IconLink>
-                <IconLink
-                    title="Twitter"
-                    target="_blank"
-                    href="https://www.twitter.com/jhwohlgemuth">
-                    <Twitter/>
-                </IconLink>
-            </Header>
-            <Logo height="48vh" style={{
-                flex: 'flex-grow',
-                top: '1vh'
-            }}/>
-        </Wrapper>
-        <Grass
-            height={`${100 + BANNER_HEIGHT}vh`}
-            style={{top: `${BANNER_HEIGHT}vh`, padding: '1em'}}>
-            <Heading>
-                Craft Sustainable Solutions<br/>
-                with Web Technologies
-            </Heading>
-            <ButtonWrapper>
-                <Button scrollTo="projects">Show Me More!</Button>
-                <Button scrollTo="bottom">Why Omaha?</Button>
-            </ButtonWrapper>
-            <Projects
-                name="projects"
-                top={`${BANNER_HEIGHT / 2}vh`}/>
-        </Grass>
-    </div>
-);
+const GRASS_OFFSET = 200;
+class IndexPage extends Component {
+    componentDidMount() {
+        Events.scrollEvent.register('end', (name, element) => {
+            console.log(element);
+        });
+    }
+    render() {
+        return (<div>
+            <Sunshine height={`${BANNER_HEIGHT}vh`}/>
+            <Wrapper>
+                <Header>
+                    <IconLink title="GitHub" target="_blank" href="https://github.com/omahajs">
+                        <Github/>
+                    </IconLink>
+                    <IconLink title="Twitter" target="_blank" href="https://www.twitter.com/jhwohlgemuth">
+                        <Twitter/>
+                    </IconLink>
+                </Header>
+                <Logo height="48vh" top="1vh"/>
+            </Wrapper>
+            <Grass height={`${GRASS_OFFSET + BANNER_HEIGHT}vh`} top={`${BANNER_HEIGHT}vh`}>
+                <Title>
+                    Craft Sustainable Solutions<br/>
+                    with Web Technologies
+                </Title>
+                <ButtonWrapper>
+                    <Button scrollTo="projects">Show Me More!</Button>
+                    <Button scrollTo="bottom">Why Omaha?</Button>
+                </ButtonWrapper>
+                <Projects name="projects">
+                    <Project name="web-app"/>
+                    <Project name="server"/>
+                    <Project name="desktop-app"/>
+                    <Project name="add-standards"/>
+                </Projects>
+            </Grass>
+        </div>);
+    }
+}
 
 export default IndexPage;

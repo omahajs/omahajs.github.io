@@ -40,7 +40,9 @@ const Wrapper = styled.div`
     height: ${({height}) => height};
     label: grass;
     left: 0;
+    padding: 1em;
     position: absolute;
+    top: ${({top}) => top};
     width: 100%;
 `;
 /**
@@ -58,13 +60,9 @@ const Wrapper = styled.div`
 **/
 class Grass extends Component {
     render() {
-        const {children, height, style} = this.props;
+        const {children, height} = this.props;
         return (
-            <Wrapper
-                height={height}
-                style={style}
-                bgImage={this.getPattern(height)}
-            >
+            <Wrapper {...this.props} bgImage={this.getPattern(height)}>
                 {children}
             </Wrapper>
         );

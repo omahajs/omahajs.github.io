@@ -9,8 +9,8 @@ const styles = css`
     border-radius: 1px;
     color: white;
     cursor: pointer;
-    font-family: serif;
-    font-size: 1.2em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
     margin-top: 0.5em;
     position: relative;
     padding: 0.5em 1em;
@@ -35,7 +35,7 @@ class Button extends Component {
     onClick() {
         const {scrollTo: element} = this.props;
         scroller.scrollTo(element, {
-            smooth: true
+            smooth: 'easeInOutQuart'
         });
     }
 }
