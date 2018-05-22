@@ -9,9 +9,8 @@ const Outer = styled.div`
     border-radius: 4px;
     label: outer;
     margin: 2em 0 0;
-    width: 100%;
-    max-width: 800px;
     padding: 8px;
+    width: 100%;
 `;
 const Inner = styled.div`
     border-color: green;

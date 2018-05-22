@@ -5,7 +5,7 @@ import {css} from 'emotion';
 
 const styles = css`
     position: relative;
-    top: 10vh;
+    top: 25vh;
 `;
 
 class Projects extends Component {

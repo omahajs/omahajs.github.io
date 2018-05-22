@@ -23,6 +23,9 @@ const Title = styled.div`
        font-size: 2em;
        margin: 0;
    }
+   @media (max-width: 350px) {
+       font-size: 1.7em;
+   }
 `;
 const IconLink = styled.a`
     color: #333;
@@ -44,6 +47,12 @@ const Wrapper = styled.div`
 const ButtonWrapper = styled.div`
     text-align: center;
     width: 100%;
+    @media (max-width: 500px) {
+        button {
+            font-size: 1.2em;
+            padding: 0.5em;
+        }
+    }
 `;
 const Header = styled.div`
     position: fixed;
