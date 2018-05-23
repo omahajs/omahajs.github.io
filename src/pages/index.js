@@ -23,7 +23,7 @@ const Title = styled.div`
        font-size: 2em;
        margin: 0;
    }
-   @media (max-width: 350px) {
+   @media (max-width: 625px) {
        font-size: 1.7em;
    }
 `;

@@ -9,6 +9,7 @@ const Outer = styled.div`
     border-radius: 4px;
     label: outer;
     margin: 2em 0 0;
+    max-width: 850px;
     padding: 8px;
     width: 100%;
 `;
