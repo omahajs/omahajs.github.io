@@ -13,7 +13,7 @@ import Twitter from 'react-icons/lib/fa/twitter';
 const Title = styled.div`
    color: white;
    font-family: 'Source Sans Pro', sans-serif;
-   font-size: 3em;
+   font-size: 2.5em;
    font-weight: 300;
    line-height: 1.3em;
    margin: 1em 0;
