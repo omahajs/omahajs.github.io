@@ -36,8 +36,8 @@ const createPattern = height => window.Trianglify({ // eslint-disable-line new-c
 });
 
 const Wrapper = styled.div`
-    background-color: #3e863d;
-    background-image: url(${({bgImage}) => bgImage});
+    background-color: #669f64;
+    background-image: ${({bgImage}) => bgImage};
     height: ${({height}) => height};
     label: grass;
     left: 0;
@@ -55,21 +55,30 @@ const Wrapper = styled.div`
  * import Grass from './components/Grass';
  * const Layout = props => (
  *     <div>
- *         <Grass height="100vh" style={{top: '60vh'}}/>
+ *         <Grass height="100vh" top="50vh"/>
  *     </div>
  * );
 **/
 class Grass extends Component {
+    state = {
+        pattern: 'nope'
+    }
+    componentDidMount() {
+        const {height} = this.props;
+        const pattern = this.getPattern(height);
+        this.setState({pattern});
+    }
     render() {
-        const {children, height} = this.props;
+        const {children} = this.props;
+        const {pattern} = this.state;
         return (
-            <Wrapper {...this.props} bgImage={this.getPattern(height)}>
+            <Wrapper {...this.props} bgImage={`url(${pattern})`}>
                 {children}
             </Wrapper>
         );
     }
     getPattern(height) {
-        return (typeof window !== 'undefined') ? createPattern(height).png() : undefined;
+        return (typeof window !== 'undefined') && createPattern(height).png();
     }
 }
 Grass.propTypes = {

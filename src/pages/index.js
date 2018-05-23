@@ -16,15 +16,21 @@ const Title = styled.div`
    font-size: 2.5em;
    font-weight: 300;
    line-height: 1.3em;
-   margin: 1em 0;
+   margin: 1em 0 0 0;
    text-align: center;
    width: 100%;
-   @media (max-width: 450px), (max-height: 450px) {
-       font-size: 2em;
-       margin: 0;
-   }
    @media (max-width: 625px) {
-       font-size: 1.7em;
+       margin: 1em 0 0.5em 0;
+       font-size: 2em;
+   }
+   @media (max-width: 450px) {
+       font-size: 31px;
+   }
+   @media (max-width: 330px) {
+       font-size: 27px;
+   }
+   @media (max-height: 375px) {
+       margin: 0;
    }
 `;
 const IconLink = styled.a`
@@ -45,12 +51,19 @@ const Wrapper = styled.div`
     width: 100%;
 `;
 const ButtonWrapper = styled.div`
+    margin-top: 1em;
     text-align: center;
     width: 100%;
     @media (max-width: 500px) {
-        button {
-            font-size: 1.2em;
-            padding: 0.5em;
+        a {
+            font-size: 1.4em;
+            padding: 5px;
+        }
+    }
+    @media (max-height: 330px) {
+        a {
+            font-size: 1.4em;
+            padding: 5px;
         }
     }
 `;
