@@ -36,6 +36,7 @@ const createPattern = height => window.Trianglify({ // eslint-disable-line new-c
 });
 
 const Wrapper = styled.div`
+    background-color: #3e863d;
     background-image: url(${({bgImage}) => bgImage});
     height: ${({height}) => height};
     label: grass;
