@@ -79,6 +79,7 @@ const Header = styled.div`
 `;
 const BANNER_HEIGHT = 50;
 const GRASS_OFFSET = 200;
+const INITIAL_LEFT = -10000;
 const projects = [
     'web-app',
     'server',
@@ -89,17 +90,20 @@ class IndexPage extends Component {
     constructor() {
         super();
         this.state = {
-            opacity: 0
+            left: INITIAL_LEFT
         };
     }
     componentDidMount() {
         Events.scrollEvent.register('end', (name, element) => {
             console.log(element);
-            this.setState({opacity: 1});
+            this.setState({left: 0});
         });
     }
+    componentShouldUpdate() {
+        console.log('Boot!');
+    }
     render() {
-        const {opacity} = this.state;
+        const {left} = this.state;
         return (<div>
             <Sunshine height={`${BANNER_HEIGHT}vh`}/>
             <Wrapper>
@@ -123,7 +127,7 @@ class IndexPage extends Component {
                     <Button scrollTo="bottom">Why Omaha?</Button>
                 </ButtonWrapper>
                 <Projects name="projects">
-                    <Trail from={{opacity: 0}} to={{opacity}} keys={projects}>
+                    <Trail from={{left: INITIAL_LEFT}} to={{left}} keys={projects}>
                         {projects.map(project => style => <Project name={project} style={style}/>)}
                     </Trail>
                 </Projects>
