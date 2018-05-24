@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {ScrollElement} from 'react-scroll';
+import {animated} from 'react-spring';
+import {css} from 'emotion';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
@@ -24,6 +26,11 @@ const Inner = styled.div`
     padding: 8px 16px;
     width: 100%;
 `;
+const projectStyles = css`
+    display: flex;
+    justify-content: center;
+    position: relative;
+`;
 
 class Project extends Component {
     render() {
@@ -34,7 +41,7 @@ class Project extends Component {
             justifyContent: 'center',
             position: 'relative'
         };
-        return (<div {...this.props} style={style}>
+        return (<div {...this.props} className={projectStyles}>
             <Outer>
                 <Inner>Under construction</Inner>
             </Outer>

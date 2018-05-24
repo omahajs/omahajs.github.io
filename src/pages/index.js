@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Events} from 'react-scroll';
+import {Trail} from 'react-spring';
 import styled from 'react-emotion';
 import Sunshine from '../components/Sunshine';
 import Logo from '../components/Logo';
@@ -85,12 +86,20 @@ const projects = [
     'standards'
 ];
 class IndexPage extends Component {
+    constructor() {
+        super();
+        this.state = {
+            opacity: 0
+        };
+    }
     componentDidMount() {
         Events.scrollEvent.register('end', (name, element) => {
             console.log(element);
+            this.setState({opacity: 1});
         });
     }
     render() {
+        const {opacity} = this.state;
         return (<div>
             <Sunshine height={`${BANNER_HEIGHT}vh`}/>
             <Wrapper>
@@ -114,7 +123,9 @@ class IndexPage extends Component {
                     <Button scrollTo="bottom">Why Omaha?</Button>
                 </ButtonWrapper>
                 <Projects name="projects">
-                    {projects.map(project => <Project name={project}/>)}
+                    <Trail from={{opacity: 0}} to={{opacity}} keys={projects}>
+                        {projects.map(project => style => <Project name={project} style={style}/>)}
+                    </Trail>
                 </Projects>
             </Grass>
         </div>);
