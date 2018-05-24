@@ -51,7 +51,7 @@ const Wrapper = styled.div`
     width: 100%;
 `;
 const ButtonWrapper = styled.div`
-    margin-top: 1em;
+    margin-top: 3em;
     text-align: center;
     width: 100%;
     @media (max-width: 500px) {
@@ -61,6 +61,7 @@ const ButtonWrapper = styled.div`
         }
     }
     @media (max-height: 330px) {
+        margin-top: 0.5em;
         a {
             font-size: 1.4em;
             padding: 5px;
@@ -77,6 +78,12 @@ const Header = styled.div`
 `;
 const BANNER_HEIGHT = 50;
 const GRASS_OFFSET = 200;
+const projects = [
+    'web-app',
+    'server',
+    'desktop-app',
+    'standards'
+];
 class IndexPage extends Component {
     componentDidMount() {
         Events.scrollEvent.register('end', (name, element) => {
@@ -107,10 +114,7 @@ class IndexPage extends Component {
                     <Button scrollTo="bottom">Why Omaha?</Button>
                 </ButtonWrapper>
                 <Projects name="projects">
-                    <Project name="web-app"/>
-                    <Project name="server"/>
-                    <Project name="desktop-app"/>
-                    <Project name="add-standards"/>
+                    {projects.map(project => <Project name={project}/>)}
                 </Projects>
             </Grass>
         </div>);

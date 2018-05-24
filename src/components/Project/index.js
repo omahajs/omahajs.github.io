@@ -7,6 +7,7 @@ const Outer = styled.div`
     flex: 0 1 auto;
     background-color: white;
     border-radius: 4px;
+    box-shadow: -2px 3px 4px #444;
     label: outer;
     margin: 2em 0 0;
     max-width: 850px;
@@ -14,9 +15,9 @@ const Outer = styled.div`
     width: 100%;
 `;
 const Inner = styled.div`
-    border-color: green;
+    border-color: #EEE;
     border-radius: 2px;
-    border-style: dashed;
+    border-style: solid;
     border-width: 2px;
     height: 150px;
     label: inner;
