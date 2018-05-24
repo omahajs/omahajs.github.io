@@ -79,7 +79,12 @@ const Header = styled.div`
 `;
 const BANNER_HEIGHT = 50;
 const GRASS_OFFSET = 200;
-const INITIAL_LEFT = -10000;
+const INITIAL_LEFT = -100;
+const INITIAL_STATE = {
+    isScrolling: false,
+    left: INITIAL_LEFT,
+    opacity: 0
+};
 const projects = [
     'web-app',
     'server',
@@ -89,21 +94,26 @@ const projects = [
 class IndexPage extends Component {
     constructor() {
         super();
-        this.state = {
-            left: INITIAL_LEFT
-        };
+        this.state = INITIAL_STATE;
     }
     componentDidMount() {
-        Events.scrollEvent.register('end', (name, element) => {
-            console.log(element);
-            this.setState({left: 0});
+        const component = this;
+        Events.scrollEvent.register('begin', () => {
+            component.setState({isScrolling: true});
         });
-    }
-    componentShouldUpdate() {
-        console.log('Boot!');
+        function update() {
+            if (window.scrollY > 400) {
+                component.setState({
+                    left: 0,
+                    opacity: 1
+                });
+            }
+            window.requestAnimationFrame(update);
+        }
+        window.requestAnimationFrame(update);
     }
     render() {
-        const {left} = this.state;
+        const {left, opacity} = this.state;
         return (<div>
             <Sunshine height={`${BANNER_HEIGHT}vh`}/>
             <Wrapper>
@@ -127,7 +137,7 @@ class IndexPage extends Component {
                     <Button scrollTo="bottom">Why Omaha?</Button>
                 </ButtonWrapper>
                 <Projects name="projects">
-                    <Trail from={{left: INITIAL_LEFT}} to={{left}} keys={projects}>
+                    <Trail native from={{left: INITIAL_LEFT, opacity: 0}} to={{left, opacity}} keys={projects}>
                         {projects.map(project => style => <Project name={project} style={style}/>)}
                     </Trail>
                 </Projects>

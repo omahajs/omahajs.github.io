@@ -41,11 +41,11 @@ class Project extends Component {
             justifyContent: 'center',
             position: 'relative'
         };
-        return (<div {...this.props} className={projectStyles}>
+        return (<animated.div {...this.props} className={projectStyles}>
             <Outer>
                 <Inner>Under construction</Inner>
             </Outer>
-        </div>);
+        </animated.div>);
     }
 }
 Project.propTypes = {
