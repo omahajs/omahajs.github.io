@@ -119,13 +119,13 @@ class IndexPage extends Component {
                 </Header>
                 <Logo height="48vh" top="1vh"/>
             </Wrapper>
-            <Grass height={`${GRASS_OFFSET + BANNER_HEIGHT}vh`} top={`${BANNER_HEIGHT}vh`}>
+            <Grass top={`${BANNER_HEIGHT}vh`}>
                 <Title>
                     Craft Sustainable Solutions<br/>
                     with Web Technologies
                 </Title>
                 <ButtonWrapper>
-                    <Button scrollTo="projects">Show Me More!</Button>
+                    <Button scrollTo="projects">Show Me How!</Button>
                     <Button scrollTo="bottom">Why Omaha?</Button>
                 </ButtonWrapper>
                 <Projects {...this.state} name="projects"/>

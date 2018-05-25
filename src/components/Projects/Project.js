@@ -49,7 +49,7 @@ const Link = styled.a`
         color: green;
     }
 `;
-const iconStyles = css`
+const linkIcon = css`
     color: #DDD;
     font-size: 0.8em;
     margin-left: 3px;
@@ -68,7 +68,7 @@ class Project extends Component {
             <Outer>
                 <Inner>
                     <Title>
-                        <Link href={url}>{title}<FaLink className={iconStyles}/></Link>
+                        <Link href={url}>{title}<FaLink className={linkIcon}/></Link>
                     </Title>
                     <Description>{description}</Description>
                     <div>foo | bar | baz</div>

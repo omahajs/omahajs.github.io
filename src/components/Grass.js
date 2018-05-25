@@ -22,7 +22,7 @@ const computeWindowValue = (prop, attribute) => {
 };
 const createPattern = height => window.Trianglify({ // eslint-disable-line new-cap
     width: computeWindowValue('100vw', 'width') * 4, // eslint-disable-line no-magic-numbers
-    height: computeWindowValue(height, 'height') * 2,
+    height: computeWindowValue('100vh', 'height') * 8,
     cell_size: 200, // eslint-disable-line camelcase
     x_colors: [ // eslint-disable-line camelcase
         '#3e863d',
@@ -38,11 +38,10 @@ const createPattern = height => window.Trianglify({ // eslint-disable-line new-c
 const Wrapper = styled.div`
     background-color: #669f64;
     background-image: ${({bgImage}) => bgImage};
-    height: ${({height}) => height};
     label: grass;
     left: 0;
     padding: 1em;
-    position: absolute;
+    position: relative;
     top: ${({top}) => top};
     width: 100%;
 `;
@@ -64,8 +63,7 @@ class Grass extends Component {
         pattern: 'nope'
     }
     componentDidMount() {
-        const {height} = this.props;
-        const pattern = this.getPattern(height);
+        const pattern = this.getPattern();
         this.setState({pattern});
     }
     render() {
