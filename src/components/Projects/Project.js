@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {ScrollElement} from 'react-scroll';
 import {animated} from 'react-spring';
+import styled from 'react-emotion';
 import {css} from 'emotion';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import FaLink from 'react-icons/lib/go/link-external';
 
 const Outer = styled.div`
     flex: 0 1 auto;
@@ -33,14 +34,25 @@ const Inner = styled.div`
 const Title = styled.div`
     color: #333;
     font-size: 1.6em;
+    position: relative;
 `;
 const Description = styled.div`
-
+    border-left: solid 4px #DDD;
+    position: relative;
+    margin-top: 1em;
+    padding-left: 8px;
 `;
-const SubTitle = styled.div`
-    border-left: solid 8px #DDD;
-    font-size: 1.3em;
-    padding-left: 4px;
+const Link = styled.a`
+    color: #333;
+    text-decoration: none;
+    &:hover {
+        color: green;
+    }
+`;
+const iconStyles = css`
+    color: #DDD;
+    font-size: 0.8em;
+    margin-left: 3px;
 `;
 const projectStyles = css`
     display: flex;
@@ -50,19 +62,16 @@ const projectStyles = css`
 
 class Project extends Component {
     render() {
-        const {top} = this.props;
-        const style = {
-            top,
-            display: 'flex',
-            justifyContent: 'center',
-            position: 'relative'
-        };
+        const {data} = this.props;
+        const {description, title, url} = data;
         return (<animated.div {...this.props} className={projectStyles}>
             <Outer>
                 <Inner>
-                    <Title>Make a web app</Title>
-                    <Description>Description</Description>
-                    <div>logo | logo | logo</div>
+                    <Title>
+                        <Link href={url}>{title}<FaLink className={iconStyles}/></Link>
+                    </Title>
+                    <Description>{description}</Description>
+                    <div>foo | bar | baz</div>
                 </Inner>
             </Outer>
         </animated.div>);

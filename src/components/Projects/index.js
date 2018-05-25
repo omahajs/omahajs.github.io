@@ -1,22 +1,36 @@
 import React, {Component} from 'react';
+import {Trail} from 'react-spring';
 import PropTypes from 'prop-types';
 import {ScrollElement} from 'react-scroll';
 import {css} from 'emotion';
+import Project from './Project';
+import {data} from './lookup';
 
 const styles = css`
     position: relative;
     top: 25vh;
 `;
 
+const INITIAL_LEFT = -100;
+const items = Object.keys(data);
+
 class Projects extends Component {
     render() {
+        const {left, opacity} = this.props;
         return (<section {...this.props} className={styles}>
-            {this.props.children}
+            <Trail native from={{left: INITIAL_LEFT, opacity: 0}} to={{left, opacity}} keys={items}>
+                {items.map(item => style => <Project
+                    name={item}
+                    data={data[item]}
+                    style={style}/>)}
+            </Trail>
         </section>);
     }
 }
 Projects.propTypes = {
-    children: PropTypes.object
+    children: PropTypes.object,
+    left: PropTypes.number,
+    opacity: PropTypes.number
 };
 
 export default ScrollElement(Projects); // eslint-disable-line new-cap

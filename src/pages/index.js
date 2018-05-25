@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import {Events} from 'react-scroll';
-import {Trail} from 'react-spring';
 import styled from 'react-emotion';
 import Sunshine from '../components/Sunshine';
 import Logo from '../components/Logo';
 import Grass from '../components/Grass';
 import Projects from '../components/Projects';
-import Project from '../components/Project';
 import Button from '../components/Button';
 import Github from 'react-icons/lib/fa/github';
 import Twitter from 'react-icons/lib/fa/twitter';
@@ -85,12 +83,6 @@ const INITIAL_STATE = {
     left: INITIAL_LEFT,
     opacity: 0
 };
-const projects = [
-    'web-app',
-    'server',
-    'desktop-app',
-    'standards'
-];
 class IndexPage extends Component {
     constructor() {
         super();
@@ -102,7 +94,8 @@ class IndexPage extends Component {
             component.setState({isScrolling: true});
         });
         function update() {
-            if (window.scrollY > 400) {
+            const PROJECTS_SCROLL_HEIGHT = 400;
+            if (window.scrollY > PROJECTS_SCROLL_HEIGHT) {
                 component.setState({
                     left: 0,
                     opacity: 1
@@ -113,7 +106,6 @@ class IndexPage extends Component {
         window.requestAnimationFrame(update);
     }
     render() {
-        const {left, opacity} = this.state;
         return (<div>
             <Sunshine height={`${BANNER_HEIGHT}vh`}/>
             <Wrapper>
@@ -136,11 +128,7 @@ class IndexPage extends Component {
                     <Button scrollTo="projects">Show Me More!</Button>
                     <Button scrollTo="bottom">Why Omaha?</Button>
                 </ButtonWrapper>
-                <Projects name="projects">
-                    <Trail native from={{left: INITIAL_LEFT, opacity: 0}} to={{left, opacity}} keys={projects}>
-                        {projects.map(project => style => <Project name={project} style={style}/>)}
-                    </Trail>
-                </Projects>
+                <Projects {...this.state} name="projects"/>
             </Grass>
         </div>);
     }
