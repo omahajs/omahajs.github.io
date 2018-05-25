@@ -6,6 +6,9 @@ import {css} from 'emotion';
 import PropTypes from 'prop-types';
 import FaLink from 'react-icons/lib/go/link-external';
 
+const head = arr => arr[0];
+const last = arr => head(arr.slice(-1));
+
 const Outer = styled.div`
     flex: 0 1 auto;
     background-color: white;
@@ -34,6 +37,7 @@ const Inner = styled.div`
 const Title = styled.div`
     color: #333;
     font-size: 1.6em;
+    line-height: 1em;
     position: relative;
 `;
 const Description = styled.div`
@@ -44,9 +48,10 @@ const Description = styled.div`
 `;
 const Link = styled.a`
     color: #333;
+    outline: none;
     text-decoration: none;
     &:hover {
-        color: green;
+        color: #3e863d;
     }
 `;
 const linkIcon = css`
@@ -60,10 +65,34 @@ const projectStyles = css`
     position: relative;
 `;
 
+const Separator = styled.span`
+    color: #DDD;
+    margin: 0 5px;
+    &:before {
+        content: "/";
+    }
+`;
+class Technology extends Component {
+    render() {
+        const {items} = this.props;
+        const style = css`
+            color: #AAA;
+            margin-right: 5px;
+            white-space: nowrap;
+        `;
+        return (<div><span className={style}>uses:</span>
+            {items
+                .map(item => <Link href={last(item)} target="_blank">{head(item)}</Link>)
+                .reduce((acc, item) => [acc, <Separator/>, item])
+            }
+        </div>);
+    }
+}
+
 class Project extends Component {
     render() {
         const {data} = this.props;
-        const {description, title, url} = data;
+        const {description, technology, title, url} = data;
         return (<animated.div {...this.props} className={projectStyles}>
             <Outer>
                 <Inner>
@@ -71,7 +100,7 @@ class Project extends Component {
                         <Link href={url}>{title}<FaLink className={linkIcon}/></Link>
                     </Title>
                     <Description>{description}</Description>
-                    <div>foo | bar | baz</div>
+                    <Technology items={technology}/>
                 </Inner>
             </Outer>
         </animated.div>);

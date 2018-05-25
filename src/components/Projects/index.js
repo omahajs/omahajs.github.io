@@ -8,7 +8,7 @@ import {data} from './lookup';
 
 const styles = css`
     position: relative;
-    padding: 25vh 0;
+    padding: 25vh 1em;
 `;
 
 const INITIAL_LEFT = -100;

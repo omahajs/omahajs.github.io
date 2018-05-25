@@ -4,10 +4,11 @@ import styled from 'react-emotion';
 import Sunshine from '../components/Sunshine';
 import Logo from '../components/Logo';
 import Grass from '../components/Grass';
-import Projects from '../components/Projects';
 import Button from '../components/Button';
 import Github from 'react-icons/lib/fa/github';
 import Twitter from 'react-icons/lib/fa/twitter';
+import Projects from '../components/Projects';
+import Why from '../components/Why';
 
 const Title = styled.div`
    color: white;
@@ -125,10 +126,11 @@ class IndexPage extends Component {
                     with Web Technologies
                 </Title>
                 <ButtonWrapper>
-                    <Button scrollTo="projects">Show Me How!</Button>
-                    <Button scrollTo="bottom">Why Omaha?</Button>
+                    <Button scrollTo="web-app">Show Me How!</Button>
+                    <Button scrollTo="why">Why Omaha?</Button>
                 </ButtonWrapper>
                 <Projects {...this.state} name="projects"/>
+                <Why name="why"/>
             </Grass>
         </div>);
     }

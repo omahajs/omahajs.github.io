@@ -40,7 +40,7 @@ const Wrapper = styled.div`
     background-image: ${({bgImage}) => bgImage};
     label: grass;
     left: 0;
-    padding: 1em;
+    padding-top: 1em;
     position: relative;
     top: ${({top}) => top};
     width: 100%;
