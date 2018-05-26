@@ -9,6 +9,7 @@ import Github from 'react-icons/lib/fa/github';
 import Twitter from 'react-icons/lib/fa/twitter';
 import Projects from '../components/Projects';
 import Why from '../components/Why';
+import Footer from '../components/Footer';
 
 const Title = styled.div`
    color: white;
@@ -131,6 +132,7 @@ class IndexPage extends Component {
                 </ButtonWrapper>
                 <Projects {...this.state} name="projects"/>
                 <Why name="why"/>
+                <Footer name="footer"/>
             </Grass>
         </div>);
     }

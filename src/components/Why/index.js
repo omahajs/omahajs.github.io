@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'react-emotion';
 import {ScrollElement} from 'react-scroll';
 import PropTypes from 'prop-types';
+import Item from './Item';
 
 const Section = styled.section`
     padding: 1em 0;
@@ -18,7 +19,6 @@ const Title = styled.div`
     width: 100%;
 `;
 const Content = styled.div`
-
     height: 200px;
     width: 100%;
 `;
@@ -27,7 +27,9 @@ class Why extends Component {
     render() {
         return (<Section {...this.props}>
             <Title>Why Omaha?</Title>
-            <Content/>
+            <Item/>
+            <Item/>
+            <Item/>
         </Section>);
     }
 }
