@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'react-emotion';
 import {ScrollElement} from 'react-scroll';
+import IoUpArrow from 'react-icons/lib/io/android-arrow-up';
+import {css} from 'emotion';
+import Button from '../Button';
 import Item from './Item';
 
 const Section = styled.section`
@@ -14,10 +17,28 @@ const Title = styled.div`
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 3em;
+    label: why-title;
     padding: 1.5em 0;
     text-align: center;
     width: 100%;
 `; /* eslint-enable max-len */
+const ButtonWrapper = styled.div`
+    font-size: 12px;
+    label: button-wrapper;
+    margin-top: 1em;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    &:hover svg {
+        top: -4px;
+    }
+`;
+const UpArrow = styled(IoUpArrow)`
+    label: up-arrow;
+    padding-left: 2px;
+    position: relative;
+    top: -2px;
+`;
 
 class Why extends Component {
     render() {
@@ -26,6 +47,11 @@ class Why extends Component {
             <Item/>
             <Item/>
             <Item/>
+            <ButtonWrapper>
+                <Button scrollTo="web-app">
+                    Back to top<UpArrow/>
+                </Button>
+            </ButtonWrapper>
         </Section>);
     }
 }
