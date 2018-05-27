@@ -4,10 +4,6 @@ import {animated} from 'react-spring';
 import styled from 'react-emotion';
 import {css} from 'emotion';
 import PropTypes from 'prop-types';
-import FaLink from 'react-icons/lib/go/link-external';
-
-const head = arr => arr[0];
-const last = arr => head(arr.slice(-1));
 
 const Outer = styled.div`
     flex: 0 1 auto;
@@ -46,31 +42,11 @@ const Description = styled.div`
     margin-top: 1em;
     padding-left: 8px;
 `;
-const Link = styled.a`
-    color: #333;
-    outline: none;
-    text-decoration: none;
-    &:hover {
-        color: #3e863d;
-    }
-`;
-const linkIcon = css`
-    color: #DDD;
-    font-size: 0.8em;
-    margin-left: 3px;
-`;
 const projectStyles = css`
     display: flex;
     justify-content: center;
+    padding: 0 1em;
     position: relative;
-`;
-
-const Separator = styled.span`
-    color: #DDD;
-    margin: 0 5px;
-    &:before {
-        content: "/";
-    }
 `;
 
 class Project extends Component {

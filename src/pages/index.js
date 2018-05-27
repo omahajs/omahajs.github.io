@@ -78,12 +78,31 @@ const Header = styled.div`
     width: 100%;
 `;
 const BANNER_HEIGHT = 50;
-const GRASS_OFFSET = 200;
+const PROJECTS_SCROLL_HEIGHT = 400;
 const INITIAL_LEFT = -100;
 const INITIAL_STATE = {
     isScrolling: false,
     left: INITIAL_LEFT,
     opacity: 0
+};
+const init = component => {
+    Events.scrollEvent.register('begin', () => {
+        component.setState({isScrolling: true});
+    });
+    Events.scrollEvent.register('end', () => {
+        component.setState({isScrolling: false});
+    });
+    const update = () => {
+        const {isScrolling} = component.state;
+        if (!isScrolling && window.scrollY > PROJECTS_SCROLL_HEIGHT) {
+            component.setState({
+                left: 0,
+                opacity: 1
+            });
+        }
+        window.requestAnimationFrame(update);
+    };
+    window.requestAnimationFrame(update);
 };
 class IndexPage extends Component {
     constructor() {
@@ -91,21 +110,7 @@ class IndexPage extends Component {
         this.state = INITIAL_STATE;
     }
     componentDidMount() {
-        const component = this;
-        Events.scrollEvent.register('begin', () => {
-            component.setState({isScrolling: true});
-        });
-        function update() {
-            const PROJECTS_SCROLL_HEIGHT = 400;
-            if (window.scrollY > PROJECTS_SCROLL_HEIGHT) {
-                component.setState({
-                    left: 0,
-                    opacity: 1
-                });
-            }
-            window.requestAnimationFrame(update);
-        }
-        window.requestAnimationFrame(update);
+        init(this);
     }
     render() {
         return (<div>
