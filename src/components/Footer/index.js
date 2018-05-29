@@ -65,13 +65,16 @@ class Credits extends Component {
         return (<Section style={{bottom: 0, padding: '0 1em', textAlign: 'center'}}>
             <Text>
                 Made with <Heart/> using - {items
-                    .map(item => <Link href={last(item)} target="_blank">{head(item)}</Link>)
+                    .map(item => <Link href={last(item)} target="_blank" key={head(item)}>{head(item)}</Link>)
                     .reduce((acc, item) => [acc, ' / ', item])
                 }
             </Text>
         </Section>);
     }
 }
+Credits.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.object)
+};
 
 class Footer extends Component {
     render() {
@@ -91,4 +94,4 @@ class Footer extends Component {
     }
 }
 
-export default ScrollElement(Footer);
+export default ScrollElement(Footer); // eslint-disable-line new-cap

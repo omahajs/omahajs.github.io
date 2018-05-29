@@ -82,13 +82,15 @@ class Technology extends Component {
         `;
         return (<div><span className={style}>uses:</span>
             {items
-                .map(item => <Link href={last(item)} target="_blank">{head(item)}</Link>)
-                .reduce((acc, item) => [acc, <Separator/>, item])
+                .map(item => <Link href={last(item)} target="_blank" key={head(item)}>{head(item)}</Link>)
+                .reduce((acc, item) => [acc, <Separator key={item}/>, item])
             }
         </div>);
     }
 }
-
+Technology.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.object)
+};
 class Project extends Component {
     render() {
         const {data} = this.props;
@@ -107,7 +109,8 @@ class Project extends Component {
     }
 }
 Project.propTypes = {
-    top: PropTypes.string
+    top: PropTypes.string,
+    data: PropTypes.object
 };
 
 export default ScrollElement(Project); // eslint-disable-line new-cap

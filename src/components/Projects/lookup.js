@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 exports.data = {
     'web-app': {
         order: 0,

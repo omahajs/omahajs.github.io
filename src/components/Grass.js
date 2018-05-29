@@ -20,9 +20,9 @@ const computeWindowValue = (prop, attribute) => {
     const isPercent = (units === 'px') || (units === 'vh') || (units === 'vw');
     return isPercent ? ((value / 100) * window[lookup[attribute]]) : value;
 };
-const createPattern = height => window.Trianglify({ // eslint-disable-line new-cap
+const createPattern = () => window.Trianglify({ // eslint-disable-line new-cap
     width: computeWindowValue('100vw', 'width') * 4, // eslint-disable-line no-magic-numbers
-    height: computeWindowValue('100vh', 'height') * 8,
+    height: computeWindowValue('100vh', 'height') * 8, // eslint-disable-line no-magic-numbers
     cell_size: 200, // eslint-disable-line camelcase
     x_colors: [ // eslint-disable-line camelcase
         '#3e863d',

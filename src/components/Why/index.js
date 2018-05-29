@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import styled from 'react-emotion';
-import {css} from 'emotion';
 import {ScrollElement} from 'react-scroll';
 import IoUpArrow from 'react-icons/lib/io/android-arrow-up';
 import Button from '../Button';
@@ -92,7 +91,7 @@ const Example = styled.span`
         content: "example";
     }
 `;
-
+/* eslint-disable max-len */
 class Why extends Component {
     render() {
         return (<Section {...this.props}>
@@ -101,11 +100,11 @@ class Why extends Component {
                 <Outer>
                     <Inner>
                         <Title>
-                            Why the name, "Omaha"?
+                            Why the name, Omaha?
                         </Title>
                         <Description>
                             <p>Omaha Nebraska has a long history of quality — quality of beef, quality of life, etc...</p>
-                            <p>This project wants to extend that connection with quality to code.</p>
+                            <p>This project hopes to extend that connection with quality to code.</p>
                         </Description>
                     </Inner>
                 </Outer>
@@ -149,5 +148,6 @@ class Why extends Component {
         </Section>);
     }
 }
+/* eslint-enable max-len */
 
-export default ScrollElement(Why);
+export default ScrollElement(Why); // eslint-disable-line new-cap
