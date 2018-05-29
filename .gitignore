@@ -1,19 +1,2 @@
-nohup.out
-node_modules/
-.yo-rc.json
-selenium-debug.log
-phantomjsdriver.log
-
-
-#Grunt template files
-.grunt/
-_SpecRunner.html
-
-# Dynamically generated files and folders
-reports/
-test/nightwatch/screenshots/*
-!test/nightwatch/screenshots/.gitkeep
-dist
-app/templates.js
-app/style.css
-app/style.css.map
+/node_modules
+/.cache

@@ -1,13 +1,26 @@
-OMAHA JS
-========
+# gatsby-starter-default
+The default Gatsby starter.
 
-[ ![Codeship Status for omahajs/omahajs.github.io](https://codeship.com/projects/f66a7670-6100-0134-e357-1e1ec2b80fe8/status?branch=site)](https://codeship.com/projects/174703)
+For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
 
-[![Dependency Status](https://www.versioneye.com/user/projects/57d0cd0ec07f2e0042bf9b89/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57d0cd0ec07f2e0042bf9b89)
+## Install
 
-[![NSP Status](https://nodesecurity.io/orgs/omaha-js/projects/1fb0aa9f-f25c-4229-a035-7f4eba7ed005/badge)](https://nodesecurity.io/orgs/omaha-js/projects/1fb0aa9f-f25c-4229-a035-7f4eba7ed005)
-[![Known Vulnerabilities](https://snyk.io/test/github/omahajs/omahajs.github.io/badge.svg)](https://snyk.io/test/github/omahajs/omahajs.github.io)
+Make sure that you have the Gatsby CLI program installed:
+```sh
+npm install --global gatsby-cli
+```
 
-[![bitHound Overall Score](https://www.bithound.io/github/omahajs/omahajs.github.io/badges/score.svg)](https://www.bithound.io/github/omahajs/omahajs.github.io)
-[![bitHound Dependencies](https://www.bithound.io/github/omahajs/omahajs.github.io/badges/dependencies.svg)](https://www.bithound.io/github/omahajs/omahajs.github.io/site/dependencies/npm)
-[![bitHound Dev Dependencies](https://www.bithound.io/github/omahajs/omahajs.github.io/badges/devDependencies.svg)](https://www.bithound.io/github/omahajs/omahajs.github.io/site/dependencies/npm)
+And run from your CLI:
+```sh
+gatsby new gatsby-example-site
+```
+
+Then you can run it by:
+```sh
+cd gatsby-example-site
+npm run develop
+```
+
+## Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
