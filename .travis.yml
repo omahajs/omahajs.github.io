@@ -1,11 +1,11 @@
 sudo: false
 language: node_js
 node_js:
-    - 'lts/*'
+    - '10'
 cache:
   directories:
     - ~/.npm
     - node_modules
 install:
   - npm install
-script: npm test
+script: npm start && npm run cy:run
