@@ -8,6 +8,11 @@ cache:
   directories:
     - ~/.npm
     - node_modules
+before_install:
+    - sudo apt-get update
+    - sudo apt-get install alsa-utils
+    - sudo modprobe snd_bcm2835
+    - sudo apt-get install avahi-utils
 install:
   - npm install
 script: npm start && npm run cy:run
