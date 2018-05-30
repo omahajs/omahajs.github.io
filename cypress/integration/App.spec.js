@@ -34,7 +34,7 @@ describe('Homepage', function() {
             expect(Number($el.css('opacity'))).to.equal(0);
         });
         cy.get('@showMeHow').click();
-        cy.wait(1000);
+        cy.wait(5000);
         cy.get('@firstProject').then($el => {
             expect(Number($el.css('opacity'))).to.equal(1);
         });
