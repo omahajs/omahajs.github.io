@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'react-emotion';
 import {ScrollElement} from 'react-scroll';
 import IoUpArrow from 'react-icons/lib/io/android-arrow-up';
+import FaSmile from 'react-icons/lib/fa/smile-o';
 import Button from '../Button';
 
 const Section = styled.section`
@@ -104,7 +105,8 @@ class Why extends Component {
                         </Title>
                         <Description>
                             <p>Omaha Nebraska has a long history of quality — quality of beef, quality of life, etc...</p>
-                            <p>This project hopes to extend that connection with quality to code.</p>
+                            <p>This project hopes to extend that connection with quality, and start a trend of associating Omaha with quality of code.</p>
+                            <p>..."omaha" is also a short namespace that was available from <a href="https://js.org/">js.org</a> <FaSmile/></p>
                         </Description>
                     </Inner>
                 </Outer>
@@ -113,12 +115,12 @@ class Why extends Component {
                 <Outer>
                     <Inner>
                         <Title>
-                            Why use Omaha?
+                            Why use Omaha tools?
                         </Title>
                         <Description>
                             <p>This project strives to help developers <i>leverage core patterns</i> common to multiple technologies in an effort to <b>maximize flexibility</b> and <b>minimize churn</b>.</p>
                             <p>Toward this end, we embrace incremental enhancement by maintaining control over build tools and leveraging sustainable technologies. This philosophy plays well with <i>many</i> options and will help any project stay ready to <b><a href="https://twitter.com/search?q=%23usetheplatform&src=typd">#usetheplatform</a></b></p>
-                            <p><Example/> - If you choose to use AMD, modules will be scaffolded using <a href="http://requirejs.org/docs/whyamd.html#sugar">CommonJS sugar syntax</a>, and whether you choose to use Browserify or Webpack, modules will be imported using their Browserify-compliant names. Following these simple conventions enables flexibility and helps identify how technoligies differ.</p>
+                            <p><Example/> - If you choose to use AMD, modules will be scaffolded using <a href="http://requirejs.org/docs/whyamd.html#sugar">CommonJS sugar syntax</a>, and whether you choose to use Browserify or Webpack, modules will be imported using their Browserify-compliant names. Following these simple conventions enables flexibility and helps identify how technologies differ.</p>
                             <p>A scaffolded web app will have the same architecture with AMD or CommonJS, Jest or Mocha, Webpack or Browserify!</p>
                             <p><Example/> - <a href="https://marionettejs.com/annotated-src/backbone.marionette.html">Marionette can be read/understood in under 30 minutes</a> and allows for customization (like swapping out renderers...we like to use Morphdom)</p>
                             <p>We like to understand our production dependencies and <i>practice patterns before plugins</i>.</p>
