@@ -106,7 +106,7 @@ class Why extends Component {
                         <Description>
                             <p>Omaha Nebraska has a long history of quality — quality of beef, quality of life, etc...</p>
                             <p>This project hopes to extend that connection with quality, and start a trend of associating Omaha with quality of code.</p>
-                            <p>..."omaha" is also a short namespace that was available from <a href="https://js.org/">js.org</a> <FaSmile/></p>
+                            <p>...&quot;omaha&quot; is also a short namespace that was available from <a href="https://js.org/">js.org</a> <FaSmile/></p>
                         </Description>
                     </Inner>
                 </Outer>
