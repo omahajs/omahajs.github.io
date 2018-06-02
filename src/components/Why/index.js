@@ -122,7 +122,7 @@ class Why extends Component {
                             <p>Toward this end, we embrace incremental enhancement by maintaining control over build tools and leveraging sustainable technologies. This philosophy plays well with <i>many</i> options and will help any project stay ready to <b><a href="https://twitter.com/search?q=%23usetheplatform&src=typd">#usetheplatform</a></b></p>
                             <p><Example/> - If you choose to use AMD, modules will be scaffolded using <a href="http://requirejs.org/docs/whyamd.html#sugar">CommonJS sugar syntax</a>, and whether you choose to use Browserify or Webpack, modules will be imported using their Browserify-compliant names. Following these simple conventions enables flexibility and helps identify how technologies differ.</p>
                             <p>A scaffolded web app will have the same architecture with AMD or CommonJS, Jest or Mocha, Webpack or Browserify!</p>
-                            <p><Example/> - <a href="https://marionettejs.com/annotated-src/backbone.marionette.html">Marionette can be read/understood in under 30 minutes</a> and allows for customization (like swapping out renderers...we like to use Morphdom)</p>
+                            <p><Example/> - <a href="https://marionettejs.com/annotated-src/backbone.marionette.html">Marionette can be read/understood in under 30 minutes</a> and allows for customization (like swapping out renderers...we like to use morphdom)</p>
                             <p>We like to understand our production dependencies and <i>practice patterns before plugins</i>.</p>
                         </Description>
                     </Inner>
