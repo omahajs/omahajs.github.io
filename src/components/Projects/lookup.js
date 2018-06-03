@@ -4,7 +4,7 @@ exports.data = {
         order: 0,
         url: 'https://github.com/omahajs/generator-omaha#quick-start',
         title: 'Craft a web app from scratch',
-        description: 'Scaffold a composite architecture that leverages string interpolation templates and a central event aggregator (includes a build chain for linting, testing and bundling).',
+        description: 'Scaffold a composite architecture that leverages string interpolation templates and event aggregation (includes a build chain for linting, testing and bundling).',
         technology: [
             ['marionette', 'https://marionettejs.com/'],
             ['lodash', 'https://lodash.com/docs/4.17.10'],
