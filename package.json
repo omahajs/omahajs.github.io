@@ -9,7 +9,7 @@
     "gatsby": "^1.9.261",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-drift": "^1.0.0",
-    "gatsby-plugin-emotion": "^1.1.16",
+    "gatsby-plugin-emotion": "^4.0.6",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sharp": "^1.6.44",
     "gatsby-source-filesystem": "^1.5.35",
