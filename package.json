@@ -10,7 +10,7 @@
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-drift": "^1.0.0",
     "gatsby-plugin-emotion": "^4.0.6",
-    "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-sharp": "^1.6.44",
     "gatsby-source-filesystem": "^1.5.35",
     "gatsby-transformer-sharp": "^1.6.24",
