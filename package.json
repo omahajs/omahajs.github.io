@@ -20,7 +20,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-scroll": "^1.7.9",
-    "react-spring": "^5.1.10"
+    "react-spring": "^8.0.23"
   },
   "keywords": [
     "gatsby"
