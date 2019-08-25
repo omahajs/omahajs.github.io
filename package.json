@@ -41,7 +41,7 @@
     "cy:open": "cypress open"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^10.0.3",
     "cypress": "^2.1.0",
     "eslint": "^4.19.1",
     "eslint-config-omaha-prime-grade": "^10.0.0",
