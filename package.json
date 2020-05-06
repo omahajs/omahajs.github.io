@@ -20,7 +20,8 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-scroll": "^1.7.9",
-    "react-spring": "^5.1.10"
+    "react-spring": "^5.1.10",
+    "snyk": "^1.319.0"
   },
   "keywords": [
     "gatsby"
@@ -38,7 +39,9 @@
     "start": "http-server -p 8000 -s &",
     "test": "start-server-and-test develop :8000 cy:run",
     "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -52,5 +55,6 @@
     "http-server": "^0.11.1",
     "start-server-and-test": "^1.4.1",
     "watch": "^1.0.2"
-  }
+  },
+  "snyk": true
 }
